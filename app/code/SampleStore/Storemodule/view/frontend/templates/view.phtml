@@ -1,0 +1,4 @@
+<h2><?php echo 'This is my store module'; ?></h2>
+<h2><?php echo $block->getArticles(); ?></h2>
+<?php $storeInfoBlock = $block->getLayout()->createBlock('SampleStore\Storemodule\Block\StoreInfo'); ?>
+<?php $storeInfoBlock->getStoreInformation(); ?>
