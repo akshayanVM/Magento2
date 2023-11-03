@@ -1,6 +1,7 @@
+
 <?php
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'ProductTest_Productmodule',
+    'SampleProduct_CustomProductModule',
     __DIR__
 );
