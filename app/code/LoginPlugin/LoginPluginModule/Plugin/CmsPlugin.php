@@ -43,34 +43,13 @@ class CmsPlugin
         $pageId = (int)$request->getParam('page_id');
 
         if (in_array($pageId, $restrictedCmsPageIds)) {
-            if ($this->customerSession->isLoggedIn()) {
-                $this->customerSession->logout();
-                $url = $this->url->getUrl('customer/account/login');
-                $subject->getResponse()->setRedirect($url);
-                $this->$message->addErrorMessage(__('You are not allowed to access this page.'));
-            }
+            // Only give access if the user is logged in
+            // if ($this->customerSession->isLoggedIn()) {
+            //     $this->customerSession->logout();
+            $url = $this->url->getUrl('customer/account/login');
+            $subject->getResponse()->setRedirect($url);
+            $this->message->addErrorMessage(__('You are not allowed to access this page.'));
+            //}
         }
-
-        // if (in_array($currentCmsPageId, $restrictedCmsPageIds) && !$this->customerSession->isLoggedIn()) {
-        //     $resultRedirect = $this->redirectFactory->create();
-        //     $resultRedirect->setUrl($this->url->getUrl('customer/account/login'));
-        //     $resultRedirect->setHttpResponseCode(302);
-        //     $resultRedirect->setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0', true);
-        //     $resultRedirect->setHeader('Pragma', 'no-cache', true);
-        //     $resultRedirect->setHeader('Expires', 'Sat, 01 Jan 2000 00:00:00 GMT', true);
-
-        //     return [$request, $resultRedirect];
-        // }
     }
 }
-
-// if (in_array($pageId, $restrictedPages)) {
-//                 if ($this->customerSession->isLoggedIn()) {
-//                     $this->customerSession->logout();
-//                     $url = $this->url->getUrl('customer/account/login');
-//                     $subject->getResponse()->setRedirect($url);
-                    
-//                     $this->messageManager->addErrorMessage(__('You must be logged in to access this page.'));
-
-//                 }
-//             }
