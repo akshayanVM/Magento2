@@ -1,0 +1,12 @@
+{
+    "logger_table": {
+        "column": {
+            "id_column": true,
+            "url": true,
+            "count": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

@@ -1,0 +1,10 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="logger_table">
+        <column xsi:type="int" name="id_column" nullable="false" comment="Entity Id"/>
+        <column xsi:type="varchar" name="url" nullable="false" comment="404 page url"/>
+        <column xsi:type="int" name="count" nullable="false" comment="Title"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+    </table>
+</schema>
