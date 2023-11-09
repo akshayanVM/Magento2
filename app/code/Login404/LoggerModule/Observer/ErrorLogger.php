@@ -47,7 +47,30 @@ class ErrorLogger implements ObserverInterface
             'url' => $url,
             'count' => $count,
         ];
-        $connection->insert($tableName, $data);
+
+        $current_count = $this->getCountFromDatabase();
+        if ($current_count == 0) {
+            $connection->insert($tableName, $data);
+        } else {
+            $current_count++;
+            $data_count = ['count' => $current_count];
+            $where = ['url = ?' => $url];
+
+            $connection->update($tableName, $data_count, $where);
+        }
+    }
+
+    protected function getCountFromDatabase()
+    {
+        $connection = $this->resource->getConnection();
+        $tableName = $this->resource->getTableName('logger_table');
+
+        $select = $connection->select()
+            ->from($tableName, 'count')
+            ->where('url = ?', $this->getCurrentUrl());
+
+        $count = $connection->fetchOne($select);
+        return $count ? (int)$count : 0;
     }
 
     protected function getCurrentUrl()
