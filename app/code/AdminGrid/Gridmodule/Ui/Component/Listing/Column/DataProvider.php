@@ -1,8 +1,8 @@
 <?php
 
-namespace AdminGrid\Gridmodule\Controller\Adminhtml\Post;
+namespace AdminGrid\Gridmodule\Ui\Component\Listing\Column;
 
-class Index extends \Magento\Backend\App\Action
+class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
     // protected $resultPageFactory = false;
     protected $_postFactory;
@@ -21,12 +21,12 @@ class Index extends \Magento\Backend\App\Action
     public function execute()
     {
         $collection =  $this->_postFactory->create();
-        $data = $collection->getCollection();
-        print_r($data->getData());
-        die();
+        $data = $collection->getData();
+        // print_r($data->getData());
+        // die();
         // $resultPage = $this->resultPageFactory->create();
         // $resultPage->getConfig()->getTitle()->prepend((__('Posts')));
 
-        // return $resultPage;
+        return $data;
     }
 }
