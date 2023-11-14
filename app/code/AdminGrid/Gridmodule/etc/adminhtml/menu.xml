@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="AdminGrid_Gridmodule::grid_module" title="404 LOG" module="AdminGrid_Gridmodule" sortOrder="10" resource="Magento_Backend::content"/>
+        <add id="AdminGrid_Gridmodule::grid_module_sub" title="Error Listings" module="AdminGrid_Gridmodule" sortOrder="10" parent="AdminGrid_Gridmodule::grid_module" action="grid_module/index/index" resource="Magento_Backend::content"/>
+    </menu>
+</config>
