@@ -2,7 +2,7 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="admingrid_gridmodule_post_listing"/>
+            <uiComponent name="admingrid_gridmodule_listing"/>
         </referenceContainer>
     </body>
 </page>
