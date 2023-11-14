@@ -12,5 +12,6 @@
             <argument name="resourceModel" xsi:type="string">AdminGrid\Gridmodule\Model\ResourceModel\Post</argument>
         </arguments>
     </virtualType>
+
 </config>
 
