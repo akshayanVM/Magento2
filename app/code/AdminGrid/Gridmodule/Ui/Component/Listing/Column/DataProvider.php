@@ -21,7 +21,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
     public function execute()
     {
         $collection =  $this->_postFactory->create();
-        $data = $collection->getData();
+        $data = $collection->getCollection();
         // print_r($data->getData());
         // die();
         // $resultPage = $this->resultPageFactory->create();
