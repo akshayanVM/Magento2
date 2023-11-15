@@ -15,7 +15,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 
         // $this->resultPageFactory = $resultPageFactory;
         $this->_postFactory = $postFactory;
-        // parent::__construct($context);
+        // parent::__construct($context);a
     }
 
     public function execute()
@@ -26,7 +26,6 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         // die();
         // $resultPage = $this->resultPageFactory->create();
         // $resultPage->getConfig()->getTitle()->prepend((__('Posts')));
-
         return $data;
     }
 }
