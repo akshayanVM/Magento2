@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Akshay_Module::custom_module" title="Profile" module="Akshay_Module" sortOrder="10" resource="Magento_Backend::content"/>
+        <add id="Akshay_Module::custom_module_sub" title="Customer" module="Akshay_Module" sortOrder="10" parent="Akshay_Module::custom_module" action="custom_module/post/index" resource="Magento_Backend::content"/>
+        <add id="Akshay_Module::custom_module_sub2" title="Details" module="Akshay_Module" sortOrder="10" parent="Akshay_Module::custom_module" action="custom_module/post/index" resource="Magento_Backend::content"/>
+    </menu>
+</config>
