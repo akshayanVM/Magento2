@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">customer_module_form.customer_module_form_data_source</item>
             <item name="deps" xsi:type="string">customer_module_form.customer_module_form_data_source</item>
+        </item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">
+                    save
+                </item>
+                <item name="label" xsi:type="string" translate="true">
+                    Save
+                </item>
+                <item name="class" xsi:type="string">
+                    primary
+                </item>
+                <item name="url" xsi:type="string">
+                    */*/save
+                </item>
+            </item>
         </item>
         <item name="label" xsi:type="string" translate="true">General Information</item>
         <item name="config" xsi:type="array">
