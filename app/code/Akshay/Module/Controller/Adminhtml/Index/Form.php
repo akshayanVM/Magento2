@@ -2,7 +2,7 @@
 
 namespace Akshay\Module\Controller\Adminhtml\Index;
 
-class Index extends \Magento\Backend\App\Action
+class Form extends \Magento\Backend\App\Action
 {
     protected $resultPageFactory = false;
     // protected $_postFactory;
@@ -24,7 +24,7 @@ class Index extends \Magento\Backend\App\Action
         // print_r($data->getData());
         // die();
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->getConfig()->getTitle()->prepend((__('The Customers Page')));
+        $resultPage->getConfig()->getTitle()->prepend((__('Enter new customer details')));
 
         return $resultPage;
     }

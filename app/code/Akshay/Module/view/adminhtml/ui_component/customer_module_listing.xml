@@ -5,9 +5,42 @@
             <item name="provider" xsi:type="string">customer_module_listing.customer_module_listing_data_source</item>
             <item name="deps" xsi:type="string">customer_module_listing.customer_module_listing_data_source</item>
         </item>
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">
+                    add
+                </item>
+                <item name="label" xsi:type="string" translate="true">
+                    Add New Customer
+                </item>
+                <item name="class" xsi:type="string">
+                    primary
+                </item>
+                <item name="url" xsi:type="string">
+                    */*/form
+                </item>
+            </item>
+        </item>
         <item name="spinner" xsi:type="string">customer_details</item>
     </argument>
-
+    <!-- <argument name="data" xsi:type="array">
+        <item name="buttons" xsi:type="array">
+            <item name="add" xsi:type="array">
+                <item name="name" xsi:type="string">
+                    add
+                </item>
+                <item name="label" xsi:type="string" translate="true">
+                    Add New Brand
+                </item>
+                <item name="class" xsi:type="string">
+                    primary
+                </item>
+                <item name="url" xsi:type="string">
+                    */*/add
+                </item>
+            </item>
+        </item>
+    </argument> -->
 
     <dataSource name="customer_module_listing_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
@@ -24,6 +57,7 @@
             </settings>
         </dataProvider>
     </dataSource>
+
     <columns name="customer_details">        <!--for checkbox-->
         <!-- <column name="id_column">
             <argument name="data" xsi:type="array">
