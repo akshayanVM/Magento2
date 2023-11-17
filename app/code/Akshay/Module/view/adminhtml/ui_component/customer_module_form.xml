@@ -1,45 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
-        <!-- <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">customer_module_listing.customer_module_listing_data_source</item>
-            <item name="deps" xsi:type="string">customer_module_listing.customer_module_listing_data_source</item>
-        </item> -->
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
-                <item name="name" xsi:type="string">
-                    add
-                </item>
-                <item name="label" xsi:type="string" translate="true">
-                    Add New Customer
-                </item>
-                <item name="class" xsi:type="string">
-                    primary
-                </item>
-                <item name="url" xsi:type="string">
-                    */*/form
-                </item>
-            </item>
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">customer_module_form.customer_module_form_data_source</item>
+            <item name="deps" xsi:type="string">customer_module_form.customer_module_form_data_source</item>
         </item>
-        <!-- <item name="spinner" xsi:type="string">customer_details</item> -->
-    </argument>
-    <!-- <argument name="data" xsi:type="array">
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
-                <item name="name" xsi:type="string">
-                    add
-                </item>
-                <item name="label" xsi:type="string" translate="true">
-                    Add New Brand
-                </item>
-                <item name="class" xsi:type="string">
-                    primary
-                </item>
-                <item name="url" xsi:type="string">
-                    */*/add
-                </item>
-            </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">customer_module_form</item>
         </item>
-    </argument> -->
+        <item name="spinner" xsi:type="string">general_information</item>
+        <!-- <item name="buttons" xsi:type="array">
+            <item name="back" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Back</item>
+            <item name="reset" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Reset</item>
+            <item name="save" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Save</item>
 
-</listing>
+        </item> -->
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <dataSource name="customer_module_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Akshay\Module\Model\FormDataProvider</argument>
+            <argument name="name" xsi:type="string">customer_module_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">customer_id</argument>
+            <argument name="requestFieldName" xsi:type="string">customer_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="*/*/save" />
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general_information">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="label" xsi:type="string" translate="true">General Information</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+
+
+        <field name="name">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Customer Name</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">customer</item>
+                    <item name="dataScope" xsi:type="string">customer_name</item>
+                </item>
+            </argument>
+        </field>
+
+
+        <field name="email">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Email</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">email</item>
+                    <item name="dataScope" xsi:type="string">email</item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="photo" formElement="fileUploader">
+            <settings>
+                <label translate="true">Image Upload</label>
+                <componentType>fileUploader</componentType>
+            </settings>
+            <formElements>
+                <fileUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg png</allowedExtensions>
+                        <maxFileSize>2097152</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="uiexample/upload/image"/>
+                        </uploaderConfig>
+                    </settings>
+                </fileUploader>
+            </formElements>
+        </field>
+
+    </fieldset>
+
+</form>
