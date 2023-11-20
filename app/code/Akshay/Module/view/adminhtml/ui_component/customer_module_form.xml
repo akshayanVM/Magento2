@@ -6,8 +6,8 @@
             <item name="provider" xsi:type="string">customer_module_form.customer_module_form_data_source</item>
             <item name="deps" xsi:type="string">customer_module_form.customer_module_form_data_source</item>
         </item>
-        <item name="buttons" xsi:type="array">
-            <item name="add" xsi:type="array">
+        <!-- <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="array">
                 <item name="name" xsi:type="string">
                     save
                 </item>
@@ -21,19 +21,19 @@
                     */*/save
                 </item>
             </item>
-        </item>
+        </item> -->
         <item name="label" xsi:type="string" translate="true">General Information</item>
         <item name="config" xsi:type="array">
             <item name="dataScope" xsi:type="string">data</item>
             <item name="namespace" xsi:type="string">customer_module_form</item>
         </item>
         <item name="spinner" xsi:type="string">general_information</item>
-        <!-- <item name="buttons" xsi:type="array">
-            <item name="back" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Back</item>
-            <item name="reset" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Reset</item>
-            <item name="save" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Save</item>
+        <item name="buttons" xsi:type="array">
+            <!-- <item name="back" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Back</item>
+            <item name="reset" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Reset</item> -->
+            <item name="save" xsi:type="string">Akshay\Module\Block\Adminhtml\Edit\Button\Save</item>
 
-        </item> -->
+        </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
     <dataSource name="customer_module_form_data_source">
