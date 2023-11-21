@@ -17,7 +17,7 @@ class Save extends Generic implements ButtonProviderInterface
                     'buttonAdapter' => [
                         'actions' => [
                             [
-                                'targetName' => 'customblog_new_form.customblog_new_form',
+                                'targetName' => 'customer_module_form.customer_module_form',
                                 'actionName' => 'save',
                                 'params' => [
                                     false,

@@ -76,7 +76,6 @@
             </argument>
         </field>
 
-
         <field name="email">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -108,5 +107,6 @@
         </field>
 
     </fieldset>
+
 
 </form>
