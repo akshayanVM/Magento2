@@ -28,8 +28,10 @@ class Save extends Action
         // try {
         $data = (array)$this->getRequest()->getParams();
         // var_dump($data);
+        // dd();
         $test = $data['customer_name'];
         $test1 = $data['email'];
+        $test3 = $data['photo'][0]['url'];
         // var_dump($test);
         // dd();
         // dd();
@@ -38,7 +40,7 @@ class Save extends Action
         $model = $this->collectionFactory->create();
         // print_r($model);
         // dd();
-        $model->setData(['name' => $test, 'email' => $test1])->save();
+        $model->setData(['name' => $test, 'email' => $test1, 'photo' => $test3])->save();
         // $model->setData()->save();
         $this->messageManager->addSuccessMessage(__("Data Saved Successfully."));
         // }
