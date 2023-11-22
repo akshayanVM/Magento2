@@ -10,4 +10,14 @@ class Post extends AbstractModel
     {
         $this->_init('Akshay\Module\Model\ResourceModel\Post');
     }
+
+    // public function getName()
+    // {
+    //     return $this->getData(self::name);
+    // }
+
+    // public function setName($name)
+    // {
+    //     return $this->setData(self::name, $name);
+    // }
 }

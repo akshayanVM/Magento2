@@ -63,7 +63,6 @@
             </item>
         </argument>
 
-
         <field name="name">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
