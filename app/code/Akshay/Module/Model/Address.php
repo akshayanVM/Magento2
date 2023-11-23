@@ -2,11 +2,12 @@
 
 namespace Akshay\Module\Model;
 
+use Akshay\Module\Api\Data\AddressViewInterface;
 use Magento\Framework\Model\AbstractModel;
 use Akshay\Module\Api\Data\CustomerViewInterface;
 use \Magento\Framework\DataObject\IdentityInterface;
 
-class Address extends AbstractModel
+class Address extends AbstractModel implements AddressViewInterface, IdentityInterface
 {
     const CACHE_TAG = 'Akshay_Module';
 
@@ -32,6 +33,31 @@ class Address extends AbstractModel
 
         return $values;
     }
+
+    // GETTERS
+
+    public function getAddressId()
+    {
+        return $this->getData(self::ADDRESS_ID);
+    }
+
+    public function getAddress()
+    {
+        return $this->getData(self::ADDRESS);
+    }
+
+    // SETTERS 
+
+    public function setAddressId($id)
+    {
+        return $this->setData(self::ADDRESS_ID, $id);
+    }
+
+    public function setAddress($address)
+    {
+        return $this->setData(self::ADDRESS, $address);
+    }
+
 
     // //GETTERS
     // public function getCustomerId()

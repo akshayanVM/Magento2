@@ -44,7 +44,7 @@
             <argument name="requestFieldName" xsi:type="string">address_id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="submit_url" xsi:type="url" path="*/*/add" />
+                    <item name="submit_url" xsi:type="url" path="*/*/saveaddress" />
                 </item>
             </argument>
         </argument>

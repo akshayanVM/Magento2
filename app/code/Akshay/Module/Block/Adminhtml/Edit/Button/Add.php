@@ -18,7 +18,7 @@ class Add extends Generic implements ButtonProviderInterface
                         'actions' => [
                             [
                                 'targetName' => 'customer_module_details.customer_module_details',
-                                'actionName' => 'add',
+                                'actionName' => 'save',
                                 'params' => [
                                     false,
                                 ],
