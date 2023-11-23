@@ -2,7 +2,7 @@
 
 namespace Akshay\Module\Api\Data;
 
-interface ViewInterface
+interface CustomerViewInterface
 {
     /**#@+
      * Constants for keys of data array. Identical to the name of the getter in snake case

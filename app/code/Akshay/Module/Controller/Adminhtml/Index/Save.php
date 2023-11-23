@@ -40,7 +40,10 @@ class Save extends Action
         $model = $this->collectionFactory->create();
         // print_r($model);
         // dd();
-        $model->setData(['name' => $test, 'email' => $test1, 'photo' => $test3])->save();
+        $model->setCustomerName($test)->save();
+        $model->setCustomerEmail($test1)->save();
+        $model->setImageUrl($test3)->save();
+        // $model->setData(['name' => $test, 'email' => $test1, 'photo' => $test3])->save();
         // $model->setData()->save();
         $this->messageManager->addSuccessMessage(__("Data Saved Successfully."));
         // }
