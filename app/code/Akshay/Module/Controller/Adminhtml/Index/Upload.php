@@ -3,9 +3,21 @@
 namespace Akshay\Module\Controller\Adminhtml\Index;
 
 use Magento\Framework\Controller\ResultFactory;
+use Akshay\Module\Model\Image;
+use Magento\Backend\App\Action\Context;
+use Akshay\Module\Helper\Data as ModuleHelper;
 
 class Upload extends \Magento\Backend\App\Action
 {
+    protected $moduleHelper;
+
+    public function __construct(
+        Context $context,
+        ModuleHelper $moduleHelper
+    ) {
+        parent::__construct($context);
+        $this->moduleHelper = $moduleHelper;
+    }
     public function execute()
     {
         try {
@@ -23,11 +35,21 @@ class Upload extends \Magento\Backend\App\Action
             $result['url'] = $this->_objectManager->get('Magento\Store\Model\StoreManagerInterface')
                 ->getStore()
                 ->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'custom_folder/' . $result['file'];
+            // var_dump($result);
+            // dd();
+            // $image = $this->_objectManager->create(Image::class); // creating an object of the class: Image
+            // $image->setImageUrl($result['url']);
+
+
+            $this->moduleHelper->setValueToPass($result);
+
+
             $this->getResponse()->setHeader('Content-type', 'application/json');
             $this->getResponse()->setBody(json_encode($result));
         } catch (\Exception $e) {
             $this->getResponse()->setHeader('Content-type', 'application/json');
             $this->getResponse()->setBody(json_encode(['error' => $e->getMessage()]));
         }
+        return $result;
     }
 }
