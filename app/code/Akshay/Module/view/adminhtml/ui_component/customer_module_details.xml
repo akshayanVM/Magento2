@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">customer_module_details.customer_module_details_data_source</item>
+            <item name="deps" xsi:type="string">customer_module_details.customer_module_details_data_source</item>
+        </item>
+        <!-- <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="array">
+                <item name="name" xsi:type="string">
+                    save
+                </item>
+                <item name="label" xsi:type="string" translate="true">
+                    Save
+                </item>
+                <item name="class" xsi:type="string">
+                    primary
+                </item>
+                <item name="url" xsi:type="string">
+                    */*/save
+                </item>
+            </item>
+        </item> -->
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">customer_module_details</item>
+        </item>
+        <item name="spinner" xsi:type="string">general_information</item>
+        <item name="buttons" xsi:type="array">
+            <!-- <item name="back" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Back</item>
+            <item name="reset" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Reset</item> -->
+            <item name="add" xsi:type="string">Akshay\Module\Block\Adminhtml\Edit\Button\Add</item>
+
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <dataSource name="customer_module_details_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Akshay\Module\Model\AddressDataProvider</argument>
+            <argument name="name" xsi:type="string">customer_module_details_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">address_id</argument>
+            <argument name="requestFieldName" xsi:type="string">address_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="*/*/add" />
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general_information">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">false</item>
+                <item name="label" xsi:type="string" translate="true">General Information</item>
+                <item name="sortOrder" xsi:type="number">20</item>
+            </item>
+        </argument>
+
+        <field name="address">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Customer Address</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">customer</item>
+                    <item name="dataScope" xsi:type="string">customer_address</item>
+                </item>
+            </argument>
+        </field>
+
+        <!-- <field name="photo" formElement="fileUploader">
+            <settings>
+                <label translate="true">Image Upload</label>
+                <componentType>fileUploader</componentType>
+            </settings>
+            <formElements>
+                <fileUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg png</allowedExtensions>
+                        <maxFileSize>2097152</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="url" name="url" path="uiexample/upload/image"/>
+                        </uploaderConfig>
+                    </settings>
+                </fileUploader>
+            </formElements>
+        </field> -->
+
+    </fieldset>
+    <!-- <img src="<?php echo $this->getViewFileUrl('TestingVendor_Mymodule::images/textile.jpg'); ?>" alt="Textile Image" width="300" height="300" /> -->
+
+
+</form>
