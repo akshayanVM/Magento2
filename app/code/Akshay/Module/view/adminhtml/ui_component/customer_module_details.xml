@@ -31,6 +31,7 @@
         <item name="buttons" xsi:type="array">
             <!-- <item name="back" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Back</item>
             <item name="reset" xsi:type="string">RH\UiExample\Block\Adminhtml\Index\Edit\Button\Reset</item> -->
+            <item name="back" xsi:type="string">Akshay\Module\Block\Adminhtml\Edit\Button\Back</item>
             <item name="add" xsi:type="string">Akshay\Module\Block\Adminhtml\Edit\Button\Add</item>
 
         </item>
