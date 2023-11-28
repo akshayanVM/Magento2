@@ -36,7 +36,7 @@ class Save extends Action
         $test = $data['customer_name'];
         $test1 = $data['email'];
         $test3 = $data['photo'][0]['url'];
-        // var_dump($test);
+        // var_dump($test3);
         // dd();
         // dd();
         // print_r($data);

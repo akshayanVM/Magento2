@@ -41,6 +41,7 @@ interface CustomerViewInterface
 
     public function getImageUrl();
 
+
     /**
      * Set Title
      *

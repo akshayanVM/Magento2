@@ -6,14 +6,8 @@ use Akshay\Module\Model\ResourceModel\Post\CollectionFactory;
 
 class FormDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 {
-    /**
-     * @param string $name
-     * @param string $primaryFieldName
-     * @param string $requestFieldName
-     * @param CollectionFactory $employeeCollectionFactory
-     * @param array $meta
-     * @param array $data
-     */
+    protected $_loadedData;
+
     public function __construct(
         $name,
         $primaryFieldName,

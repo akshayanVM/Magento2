@@ -88,8 +88,8 @@
                 </item>
             </argument>
         </field>
-        <field name="photo" formElement="fileUploader">
-            <settings>
+        <!-- <field name="photo" formElement="fileUploader"> -->
+        <!-- <settings>
                 <label translate="true">
                     Image Upload
                 </label>
@@ -112,7 +112,7 @@
                     </settings>
                 </fileUploader>
             </formElements>
-        </field>
+        </field> -->
         <!-- <field name="photo" formElement="fileUploader">
             <settings>
                 <label translate="true">Image Upload</label>
@@ -124,12 +124,31 @@
                         <allowedExtensions>jpg jpeg png</allowedExtensions>
                         <maxFileSize>2097152</maxFileSize>
                         <uploaderConfig>
-                            <param xsi:type="url" name="url" path="uiexample/upload/image"/>
+                            <param xsi:type="url" name="url" path="custom_module/index/upload"/>
                         </uploaderConfig>
                     </settings>
                 </fileUploader>
             </formElements>
         </field> -->
+        <field name="photo" formElement="imageUploader">
+            <settings>
+                <notice translate="true">Some notice.</notice>
+                <label translate="true">Image Uploader Example</label>
+                <componentType>imageUploader</componentType>
+            </settings>
+            <formElements>
+                <imageUploader>
+                    <settings>
+                        <allowedExtensions>jpg jpeg gif png</allowedExtensions>
+                        <maxFileSize>2097152</maxFileSize>
+                        <uploaderConfig>
+                            <param xsi:type="string" name="url">custom_module/index/upload</param>
+                        </uploaderConfig>
+                    </settings>
+                </imageUploader>
+            </formElements>
+        </field>
+
 
     </fieldset>
     <!-- <img src="<?php echo $this->getViewFileUrl('TestingVendor_Mymodule::images/textile.jpg'); ?>" alt="Textile Image" width="300" height="300" /> -->
