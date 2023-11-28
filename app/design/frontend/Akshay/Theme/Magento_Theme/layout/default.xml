@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceContainer name="header.panel" remove="true">
+
+    </referenceContainer>
+    <referenceContainer name="copyright" remove="true">
+
+    </referenceContainer>
+
+    <referenceContainer name="header.container">
+        <container name="custom_header" as="custom_header" label="My Custom Header" htmlTag="div" htmlClass="my-container" before="page.top"/>
+    </referenceContainer>
+
+    <move element="store_settings_language" destination="header.container" as="store_settings_language"/>
+
+    <!-- <move element="header.links" destination="header-wrapper" after="minicart"/> -->
+
+    <referenceContainer name="header.container">
+
+        <referenceBlock name="header.content">
+            <block class="Magento\Framework\View\Element\Html\Link" name="custom.link" after="-">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Custom Link</argument>
+                    <argument name="path" xsi:type="string">custom/link</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
+    </referenceContainer>
+
+</page>
+
