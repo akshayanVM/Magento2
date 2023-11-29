@@ -11,6 +11,15 @@
         <container name="custom_header" as="custom_header" label="My Custom Header" htmlTag="div" htmlClass="my-container" before="page.top"/>
     </referenceContainer>
 
+    <referenceBlock name="footer_links">
+        <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true"> MyStore</argument>
+                <argument name="path" xsi:type="string">storemodule</argument>
+            </arguments>
+        </block>
+    </referenceBlock>
+
     <move element="store_settings_language" destination="header.container" as="store_settings_language"/>
 
     <!-- <move element="header.links" destination="header-wrapper" after="minicart"/> -->
