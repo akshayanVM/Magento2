@@ -1,7 +1,5 @@
 <!-- app/code/Custom/Module/view/frontend/templates/example.phtml -->
-
-<div>
-    <p>Item 1: <?php echo $block->escapeHtml($block->getItem1()); ?></p>
-    <p>Item 2 Enabled: <?php echo $block->isItem2Enabled() ? 'Yes' : 'No'; ?></p>
-    <p> <?php echo $block->displayMessage(); ?></p>
+<div class="block" style="float: right;margin-bottom: 0.5%;margin-top: 0.5%; ">
+    <?php echo __('This is Custom Text File');
+    echo $this->getChildHtml(); ?>
 </div>
