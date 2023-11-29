@@ -19,4 +19,9 @@ class Example extends Template
     {
         return $this->_getData('item2');
     }
+
+    public function displayMessage()
+    {
+        return 'lorum ipsum';
+    }
 }

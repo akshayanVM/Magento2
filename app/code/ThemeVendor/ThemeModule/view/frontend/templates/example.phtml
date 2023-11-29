@@ -3,4 +3,5 @@
 <div>
     <p>Item 1: <?php echo $block->escapeHtml($block->getItem1()); ?></p>
     <p>Item 2 Enabled: <?php echo $block->isItem2Enabled() ? 'Yes' : 'No'; ?></p>
+    <p> <?php echo $block->displayMessage(); ?></p>
 </div>

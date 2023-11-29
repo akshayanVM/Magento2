@@ -10,5 +10,8 @@
                 </arguments>
             </block>
         </referenceContainer>
+        <!-- <referenceContainer name="content">
+            <block class="TestingVendor\Mymodule\Block\Article" name="articleData" template="TestingVendor_Mymodule::view.phtml" />
+        </referenceContainer> -->
     </body>
 </page>
