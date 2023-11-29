@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <referenceContainer name="header.panel" remove="true">
 
-    </referenceContainer>
-    <referenceContainer name="copyright" remove="true">
+    <referenceContainer name="header.panel" remove="true" />
 
-    </referenceContainer>
+    <referenceContainer name="copyright" remove="true" />
+
+
 
     <referenceContainer name="header.container">
         <container name="custom_header" as="custom_header" label="My Custom Header" htmlTag="div" htmlClass="my-container" before="page.top"/>
