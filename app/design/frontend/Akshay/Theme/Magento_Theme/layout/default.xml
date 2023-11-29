@@ -1,41 +1,97 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 
-    <referenceContainer name="header.panel" remove="true" />
+<!--    <referenceContainer name="header.panel" remove="true" />-->
 
-    <referenceContainer name="copyright" remove="true" />
+<!--    <referenceBlock name="copyright" remove="true"/>-->
 
-
-
-    <referenceContainer name="header.container">
-        <container name="custom_header" as="custom_header" label="My Custom Header" htmlTag="div" htmlClass="my-container" before="page.top"/>
+    <referenceContainer name="page.wrapper">
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="header.panel" remove="true" />
     </referenceContainer>
 
-    <referenceBlock name="footer_links">
-        <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link">
-            <arguments>
-                <argument name="label" xsi:type="string" translate="true"> MyStore</argument>
-                <argument name="path" xsi:type="string">storemodule</argument>
-            </arguments>
-        </block>
-    </referenceBlock>
+    <referenceContainer name="header.content">
+
+    </referenceContainer>
+
+
+    <referenceContainer name="footer">
+       <referenceBlock name="footer_links" remove="true"/>
+        <container name="custom_footer_block" as="custom_footer_block" label="Custom Footer Block" htmlTag="div" htmlClass="custom-footer-block">
+            <!-- Add your custom content or blocks inside this container -->
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link-1">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Custom List 1</argument>
+                    <argument name="path" xsi:type="string">storemodule/link1</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link-2">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Custom List 2</argument>
+                    <argument name="path" xsi:type="string">storemodule/link2</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link-3">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Custom List 3</argument>
+                    <argument name="path" xsi:type="string">storemodule/link3</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link-4">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Custom List 4</argument>
+                    <argument name="path" xsi:type="string">storemodule/link4</argument>
+                </arguments>
+            </block>
+        </container>
+    </referenceContainer>
+
+<!--    <referenceBlock name="footer_links" >-->
+<!--&lt;!&ndash;        <block class="Magento\Framework\View\Element\Html\Link\Current" name="contact-us" remove="true"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <block class="Magento\Framework\View\Element\Html\Link\Current" name="privacy-policy-link" remove="true"/>&ndash;&gt;-->
+
+<!--        <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link-1">-->
+<!--            <arguments>-->
+<!--                <argument name="label" xsi:type="string" translate="true">Custom List 1</argument>-->
+<!--                <argument name="path" xsi:type="string">storemodule/link1</argument>-->
+<!--            </arguments>-->
+<!--        </block>-->
+<!--        <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link-2">-->
+<!--            <arguments>-->
+<!--                <argument name="label" xsi:type="string" translate="true">Custom List 2</argument>-->
+<!--                <argument name="path" xsi:type="string">storemodule/link2</argument>-->
+<!--            </arguments>-->
+<!--        </block>-->
+<!--        <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link-3">-->
+<!--            <arguments>-->
+<!--                <argument name="label" xsi:type="string" translate="true">Custom List 3</argument>-->
+<!--                <argument name="path" xsi:type="string">storemodule/link3</argument>-->
+<!--            </arguments>-->
+<!--        </block>-->
+<!--        <block class="Magento\Framework\View\Element\Html\Link\Current" name="mymodule-link-4">-->
+<!--            <arguments>-->
+<!--                <argument name="label" xsi:type="string" translate="true">Custom List 4</argument>-->
+<!--                <argument name="path" xsi:type="string">storemodule/link4</argument>-->
+<!--            </arguments>-->
+<!--        </block>-->
+<!--    </referenceBlock>-->
 
     <move element="store_settings_language" destination="header.container" as="store_settings_language"/>
 
-    <!-- <move element="header.links" destination="header-wrapper" after="minicart"/> -->
+<!--    &lt;!&ndash; <move element="header.links" destination="header-wrapper" after="minicart"/> &ndash;&gt;-->
 
-    <referenceContainer name="header.container">
+<!--    <referenceContainer name="header.container">-->
 
-        <referenceBlock name="header.content">
-            <block class="Magento\Framework\View\Element\Html\Link" name="custom.link" after="-">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Custom Link</argument>
-                    <argument name="path" xsi:type="string">custom/link</argument>
-                </arguments>
-            </block>
-        </referenceBlock>
+<!--        <referenceBlock name="header.content">-->
+<!--            <block class="Magento\Framework\View\Element\Html\Link" name="custom.link" after="-">-->
+<!--                <arguments>-->
+<!--                    <argument name="label" xsi:type="string" translate="true">Custom Link</argument>-->
+<!--                    <argument name="path" xsi:type="string">custom/link</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceBlock>-->
 
-    </referenceContainer>
+<!--    </referenceContainer>-->
 
 </page>
 
