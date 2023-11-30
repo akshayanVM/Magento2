@@ -1,0 +1,15 @@
+<!-- app/code/[Vendor]/[Module]/etc/widget.xml -->
+
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="custom_theme_widget" class="ThemeVendor\ThemeModule\Block\Widget\CustomWidget">
+        <label translate="true">Custom Widget</label>
+        <description translate="true">Description of the widget.</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" visible="true" sort_order="10">
+                <label>Parameter Label</label>
+                <!-- <block class="ThemeVendor\ThemeModule\Block\Widget\CustomWidget" /> -->
+            </parameter>
+            <!-- Add more parameters as needed -->
+        </parameters>
+    </widget>
+</widgets>
