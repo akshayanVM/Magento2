@@ -1,6 +1,7 @@
 .columns {
     background-color: rgb(255, 255, 255);
 }
+
 .widget {
     display: flex;
     flex-direction: row;
@@ -10,4 +11,16 @@
     justify-content: center;
     text-align: center;
     align-items: center;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(59, 39, 67);
+    margin: 5px;
+    padding: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: azure;
 }

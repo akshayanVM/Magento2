@@ -16,7 +16,7 @@
 
         <!-- <move element="top.search" destination="content" before="-" /> -->
         <!-- <move element="header.links" destination="header.content" /> -->
-        <move element="header.links" destination="header-wrapper" after="minicart"/>
+        <!-- <move element="header.links" destination="header-wrapper" after="minicart"/> -->
         <!-- <move element="header.links" destination="header-wrapper" before="top.search" /> -->
 
 
