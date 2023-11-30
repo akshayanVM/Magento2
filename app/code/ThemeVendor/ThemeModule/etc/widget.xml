@@ -9,6 +9,10 @@
                 <label>Parameter Label</label>
                 <!-- <block class="ThemeVendor\ThemeModule\Block\Widget\CustomWidget" /> -->
             </parameter>
+            <!-- <parameter name="selected_block" xsi:type="block" visible="true" required="true" sort_order="20">
+                <label translate="true">Select Block</label>
+                <block class="ThemeVendor\ThemeModule\Block\Example" />
+            </parameter> -->
             <!-- Add more parameters as needed -->
         </parameters>
     </widget>
