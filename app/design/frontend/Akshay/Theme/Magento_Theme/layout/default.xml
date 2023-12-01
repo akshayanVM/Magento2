@@ -11,6 +11,7 @@
     <body>
         <referenceContainer name="page.wrapper">
             <referenceBlock name="copyright" remove="true"/>
+            <referenceBlock name="logo" remove="true"/>
             <referenceBlock name="header.panel" remove="true" />
         </referenceContainer>
 
