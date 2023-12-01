@@ -1,0 +1,12 @@
+{
+    "thecoachsmb_article_grid": {
+        "column": {
+            "article_id": true,
+            "title": true,
+            "image": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
