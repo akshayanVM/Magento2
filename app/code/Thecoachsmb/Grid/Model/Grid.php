@@ -28,7 +28,7 @@ class Grid extends \Magento\Framework\Model\AbstractModel implements GridInterfa
      */
     protected function _construct()
     {
-        $this->_init('Thecoachsmb\Grid\Model\ResourceModel\Grid');
+        $this->_init('Theme\Grid\Model\ResourceModel\Grid');
     }
     /**
      * Get EntityId.
