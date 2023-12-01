@@ -124,6 +124,15 @@
                 </item>
             </argument>
         </column>
+        <actionsColumn name="actions" class="Akshay\Module\Ui\Component\Listing\Column\Action">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </actionsColumn>
         <!-- <column name="status" sortOrder="14">
             <settings>
                 <filter>text</filter>
