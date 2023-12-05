@@ -2,14 +2,14 @@
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="content">
-            <block class="ThemeVendor\ThemeModule\Block\Example" name="themevendor.thememodule.example" template="ThemeVendor_ThemeModule::example.phtml">
-                <arguments>
-                    <argument name="item1" xsi:type="string">Custom String</argument>
-                    <argument name="item2" xsi:type="boolean">true</argument>
-                </arguments>
-            </block>
-        </referenceContainer>
+<!--        <referenceContainer name="content">-->
+<!--            <block class="ThemeVendor\ThemeModule\Block\Example" name="themevendor.thememodule.example" template="ThemeVendor_ThemeModule::example.phtml">-->
+<!--                <arguments>-->
+<!--                    <argument name="item1" xsi:type="string">Custom String</argument>-->
+<!--                    <argument name="item2" xsi:type="boolean">true</argument>-->
+<!--                </arguments>-->
+<!--            </block>-->
+<!--        </referenceContainer>-->
         <!-- <referenceContainer name="content">
             <block class="TestingVendor\Mymodule\Block\Article" name="articleData" template="TestingVendor_Mymodule::view.phtml" />
         </referenceContainer> -->

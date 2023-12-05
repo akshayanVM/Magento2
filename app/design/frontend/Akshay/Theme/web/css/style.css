@@ -24,3 +24,11 @@
     align-items: center;
     color: azure;
 }
+
+.footer {
+    color: aliceblue;
+}
+
+.left-col {
+    background-color: red;
+}
