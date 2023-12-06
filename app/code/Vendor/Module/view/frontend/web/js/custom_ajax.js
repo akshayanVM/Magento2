@@ -13,7 +13,7 @@ require(['jquery'], function ($) {
                 data: {buttonData: button_Data },
                 success: function (data) {
                     // Handle the response from the controller
-                    alert(data.message + 'Test ID:' + data.test_id_passed);
+                    alert(data.message + 'Test ID:' + data.test_id_passed );
                 },
                 error: function (error) {
                     alert(error.message);

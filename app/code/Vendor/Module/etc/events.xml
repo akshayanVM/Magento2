@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="add_to_cart_event">
+        <observer name="Vendor_Module_Observer" instance="Vendor\Module\Observer\Observer" />
+    </event>
+</config>
