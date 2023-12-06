@@ -1,0 +1,22 @@
+<button id="ajaxButton">Load Data</button>
+<div id="resultContainer"></div>
+
+<script>
+    require(['jquery'], function($) {
+        $(document).ready(function() {
+            $('#ajaxButton').click(function() {
+                $.ajax({
+                    url: '<?php echo $block->getUrl('thememodule/index/index'); ?>',
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        $('#resultContainer').html(response.message);
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+    });
+</script>
