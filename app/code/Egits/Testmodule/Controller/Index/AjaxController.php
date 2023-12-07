@@ -1,6 +1,6 @@
 <?php
 
-namespace Egits\TestModule\Controller\Index;
+namespace Egits\Testmodule\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
@@ -54,23 +54,23 @@ class AjaxController extends Action
         return $result->setData($data);
     }
 
-//    public function displayData()
-//    {
-//        $quote = $this->quoteFactory->create();
-//        $items = $quote->getAllItems();
-//        $output = ''; // Initialize an empty string
-//
-//        foreach ($items as $item) {
-//            $output .= $item->getId() . "
-//";
-//            $output .= $item->getName() . "
-//";
-//            $output .= $item->getProductId() . "
-//";
-//        }
-//
-//        return $output;
-//
-//    }
+    //    public function displayData()
+    //    {
+    //        $quote = $this->quoteFactory->create();
+    //        $items = $quote->getAllItems();
+    //        $output = ''; // Initialize an empty string
+    //
+    //        foreach ($items as $item) {
+    //            $output .= $item->getId() . "
+    //";
+    //            $output .= $item->getName() . "
+    //";
+    //            $output .= $item->getProductId() . "
+    //";
+    //        }
+    //
+    //        return $output;
+    //
+    //    }
 
 }
