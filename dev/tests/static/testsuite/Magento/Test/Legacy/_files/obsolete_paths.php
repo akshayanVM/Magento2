@@ -108,9 +108,9 @@ return [
         '/dev/tests/integration/testsuite/Magento/Framework/DomDocument'
     ],
     ['/dev/tests/unit/testsuite/Magento/DomDocument', '/dev/tests/unit/testsuite/Magento/Framework/DomDocument'],
-    ['/lib/Magento/Module', '/lib/Magento/Framework/Module'],
-    ['/dev/tests/integration/testsuite/Magento/Module', '/dev/tests/integration/testsuite/Magento/Framework/Module'],
-    ['/dev/tests/unit/testsuite/Magento/Module', '/dev/tests/unit/testsuite/Magento/Framework/Module'],
+    ['/lib/Magento/Testmodule', '/lib/Magento/Framework/Testmodule'],
+    ['/dev/tests/integration/testsuite/Magento/Testmodule', '/dev/tests/integration/testsuite/Magento/Framework/Testmodule'],
+    ['/dev/tests/unit/testsuite/Magento/Testmodule', '/dev/tests/unit/testsuite/Magento/Framework/Testmodule'],
     ['/lib/Magento/Css', '/lib/Magento/Framework/Css'],
     ['/dev/tests/integration/testsuite/Magento/Css', '/dev/tests/integration/testsuite/Magento/Framework/Css'],
     ['/dev/tests/unit/testsuite/Magento/Css', '/dev/tests/unit/testsuite/Magento/Framework/Css'],

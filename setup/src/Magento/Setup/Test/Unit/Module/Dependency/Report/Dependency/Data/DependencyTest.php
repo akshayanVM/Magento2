@@ -16,7 +16,7 @@ class DependencyTest extends TestCase
 {
     /**
      * @param string $module
-     * @param string|null $type One of \Magento\Setup\Module\Dependency\Dependency::TYPE_ const
+     * @param string|null $type One of \Magento\Setup\Testmodule\Dependency\Dependency::TYPE_ const
      * @return Dependency
      */
     protected function createDependency($module, $type = null)

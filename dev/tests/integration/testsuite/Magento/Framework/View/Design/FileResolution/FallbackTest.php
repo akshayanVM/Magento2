@@ -91,11 +91,11 @@ class FallbackTest extends \PHPUnit\Framework\TestCase
             ],
             'non-modular: inherit parent theme' => [
                 'fixture_template.phtml', 'Vendor_ViewTest/custom_theme', null,
-                '%s/frontend/Vendor/default/templates/fixture_template.phtml',
+                '%s/frontend/Egits/default/templates/fixture_template.phtml',
             ],
             'non-modular: inherit grandparent theme' => [
                 'fixture_template.phtml', 'Vendor_ViewTest/custom_theme2', null,
-                '%s/frontend/Vendor/default/templates/fixture_template.phtml',
+                '%s/frontend/Egits/default/templates/fixture_template.phtml',
             ],
             'modular: no default inheritance' => [
                 'fixture_template.phtml', 'Vendor_ViewTest/standalone_theme', 'ViewTest_Module',
@@ -107,11 +107,11 @@ class FallbackTest extends \PHPUnit\Framework\TestCase
             ],
             'modular: inherit parent theme' => [
                 'fixture_template.phtml', 'Vendor_ViewTest/custom_theme', 'ViewTest_Module',
-                '%s/frontend/Vendor/default/ViewTest_Module/templates/fixture_template.phtml',
+                '%s/frontend/Egits/default/ViewTest_Module/templates/fixture_template.phtml',
             ],
             'modular: inherit grandparent theme' => [
                 'fixture_template.phtml', 'Vendor_ViewTest/custom_theme2', 'ViewTest_Module',
-                '%s/frontend/Vendor/default/ViewTest_Module/templates/fixture_template.phtml',
+                '%s/frontend/Egits/default/ViewTest_Module/templates/fixture_template.phtml',
             ],
         ];
     }
@@ -152,11 +152,11 @@ class FallbackTest extends \PHPUnit\Framework\TestCase
             ],
             'inherit parent theme' => [
                 'Vendor_ViewTest/custom_theme', 'en_US',
-                '%s/frontend/Vendor/custom_theme/i18n/en_US.csv',
+                '%s/frontend/Egits/custom_theme/i18n/en_US.csv',
             ],
             'inherit grandparent theme' => [
                 'Vendor_ViewTest/custom_theme2', 'en_US',
-                '%s/frontend/Vendor/custom_theme/i18n/en_US.csv',
+                '%s/frontend/Egits/custom_theme/i18n/en_US.csv',
             ],
         ];
     }
@@ -199,23 +199,23 @@ class FallbackTest extends \PHPUnit\Framework\TestCase
             ],
             'non-modular: inherit same package & parent theme' => [
                 'fixture_script.js', 'Vendor_ViewTest/custom_theme', null, null,
-                '%s/frontend/Vendor/default/web/fixture_script.js',
+                '%s/frontend/Egits/default/web/fixture_script.js',
             ],
             'non-modular: inherit same package & grandparent theme' => [
                 'fixture_script.js', 'Vendor_ViewTest/custom_theme2', null, null,
-                '%s/frontend/Vendor/default/web/fixture_script.js',
+                '%s/frontend/Egits/default/web/fixture_script.js',
             ],
             'non-modular: fallback to non-localized file' => [
                 'fixture_script.js', 'Vendor_ViewTest/default', 'en_US', null,
-                '%s/frontend/Vendor/default/web/fixture_script.js',
+                '%s/frontend/Egits/default/web/fixture_script.js',
             ],
             'non-modular: localized file' => [
                 'fixture_script.js', 'Vendor_ViewTest/default', 'ru_RU', null,
-                '%s/frontend/Vendor/default/web/i18n/ru_RU/fixture_script.js',
+                '%s/frontend/Egits/default/web/i18n/ru_RU/fixture_script.js',
             ],
             'non-modular: override js lib file' => [
                 'mage/script.js', 'Vendor_ViewTest/custom_theme', null, null,
-                '%s/frontend/Vendor/custom_theme/web/mage/script.js',
+                '%s/frontend/Egits/custom_theme/web/mage/script.js',
             ],
             'non-modular: inherit js lib file' => [
                 'mage/script.js', 'Vendor_ViewTest/default', null, null,
@@ -239,19 +239,19 @@ class FallbackTest extends \PHPUnit\Framework\TestCase
             ],
             'modular: inherit same package & parent theme' => [
                 'fixture_script.js', 'Vendor_ViewTest/custom_theme', null, 'ViewTest_Module',
-                '%s/frontend/Vendor/default/ViewTest_Module/web/fixture_script.js',
+                '%s/frontend/Egits/default/ViewTest_Module/web/fixture_script.js',
             ],
             'modular: inherit same package & grandparent theme' => [
                 'fixture_script.js', 'Vendor_ViewTest/custom_theme2', null, 'ViewTest_Module',
-                '%s/frontend/Vendor/default/ViewTest_Module/web/fixture_script.js',
+                '%s/frontend/Egits/default/ViewTest_Module/web/fixture_script.js',
             ],
             'modular: fallback to non-localized file' => [
                 'fixture_script.js', 'Vendor_ViewTest/default', 'en_US', 'ViewTest_Module',
-                '%s/frontend/Vendor/default/ViewTest_Module/web/fixture_script.js',
+                '%s/frontend/Egits/default/ViewTest_Module/web/fixture_script.js',
             ],
             'modular: localized file' => [
                 'fixture_script.js', 'Vendor_ViewTest/custom_theme2', 'ru_RU', 'ViewTest_Module',
-                '%s/frontend/Vendor/default/ViewTest_Module/web/i18n/ru_RU/fixture_script.js',
+                '%s/frontend/Egits/default/ViewTest_Module/web/i18n/ru_RU/fixture_script.js',
             ],
         ];
     }
@@ -300,13 +300,13 @@ class FallbackTest extends \PHPUnit\Framework\TestCase
                 'account_new.html',
                 'Vendor_EmailTest/custom_theme',
                 'Magento_Customer',
-                '%s/frontend/Vendor/custom_theme/Magento_Customer/email/account_new.html',
+                '%s/frontend/Egits/custom_theme/Magento_Customer/email/account_new.html',
             ],
             'inherit same package & parent theme' => [
                 'account_new_confirmation.html',
                 'Vendor_EmailTest/custom_theme',
                 'Magento_Customer',
-                '%s/frontend/Vendor/default/Magento_Customer/email/account_new_confirmation.html',
+                '%s/frontend/Egits/default/Magento_Customer/email/account_new_confirmation.html',
             ],
             'inherit parent package & grandparent theme' => [
                 'account_new_confirmed.html',

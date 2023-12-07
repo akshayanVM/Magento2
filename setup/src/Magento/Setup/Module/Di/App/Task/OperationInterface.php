@@ -6,7 +6,7 @@
 namespace Magento\Setup\Module\Di\App\Task;
 
 /**
- * Interface \Magento\Setup\Module\Di\App\Task\OperationInterface
+ * Interface \Magento\Setup\Testmodule\Di\App\Task\OperationInterface
  *
  */
 interface OperationInterface

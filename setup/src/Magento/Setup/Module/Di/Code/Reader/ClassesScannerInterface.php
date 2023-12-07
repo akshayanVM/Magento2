@@ -8,7 +8,7 @@ namespace Magento\Setup\Module\Di\Code\Reader;
 /**
  * Interface ClassesScannerInterface
  *
- * @package Magento\Setup\Module\Di\Code\Reader
+ * @package Magento\Setup\Testmodule\Di\Code\Reader
  */
 interface ClassesScannerInterface
 {

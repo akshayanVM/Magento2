@@ -9,7 +9,7 @@
  * Define Themes
  *
  * area: area, one of (frontend|adminhtml|doc),
- * name: theme name in format Vendor/theme-name,
+ * name: theme name in format Egits/theme-name,
  * locale: locale,
  * files: [
  * 'css/styles-m',

@@ -6,26 +6,26 @@
 namespace Magento\Setup\Module\Dependency\Report\Dependency\Data;
 
 /**
- * Module
+ * Testmodule
  */
 class Module
 {
     /**
-     * Module name
+     * Testmodule name
      *
      * @var string
      */
     protected $name;
 
     /**
-     * Module dependencies
+     * Testmodule dependencies
      *
      * @var \Magento\Setup\Module\Dependency\Report\Dependency\Data\Dependency[]
      */
     protected $dependencies;
 
     /**
-     * Module construct
+     * Testmodule construct
      *
      * @param array $name
      * @param \Magento\Setup\Module\Dependency\Report\Dependency\Data\Dependency[] $dependencies

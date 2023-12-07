@@ -82,7 +82,7 @@ class GraphQlDependencyTest extends TestCase
                 }
                 if (!empty($result)) {
                     $this->fail(
-                        'Module ' . $moduleName . ' has undeclared dependencies: ' . "\n" . implode("\t\n", $result)
+                        'Testmodule ' . $moduleName . ' has undeclared dependencies: ' . "\n" . implode("\t\n", $result)
                     );
                 }
             },

@@ -508,7 +508,7 @@ class DependencyTest extends \PHPUnit\Framework\TestCase
                     $result[] = sprintf("%s [%s]", $type, implode(', ', $modules));
                 }
                 if (!empty($result)) {
-                    $this->fail('Module ' . $module . ' has undeclared dependencies: ' . implode(', ', $result));
+                    $this->fail('Testmodule ' . $module . ' has undeclared dependencies: ' . implode(', ', $result));
                 }
             },
             $this->getAllFiles()
@@ -582,7 +582,7 @@ class DependencyTest extends \PHPUnit\Framework\TestCase
                     $result[] = sprintf("%s [%s]", $type, implode(', ', $modules));
                 }
                 if (!empty($result)) {
-                    $this->fail('Module ' . $module . ' has external dependencies: ' . implode(', ', $result));
+                    $this->fail('Testmodule ' . $module . ' has external dependencies: ' . implode(', ', $result));
                 }
             },
             $this->getAllFiles()
@@ -857,7 +857,7 @@ class DependencyTest extends \PHPUnit\Framework\TestCase
             }
             if (!empty($redundant)) {
                 $result[] = sprintf(
-                    "\r\nModule %s: %s [%s]",
+                    "\r\nTestmodule %s: %s [%s]",
                     $module,
                     self::TYPE_HARD,
                     implode(', ', array_values($redundant))
@@ -1016,11 +1016,11 @@ class DependencyTest extends \PHPUnit\Framework\TestCase
     }
 
     /**
-     * Converts a composer json component name into the Magento Module form
+     * Converts a composer json component name into the Magento Testmodule form
      *
      * @param string $jsonName The name of a composer json component or dependency e.g. 'magento/module-theme'
      * @param array $packageModuleMap Mapping package name with module namespace.
-     * @return string The corresponding Magento Module e.g. 'Magento\Theme'
+     * @return string The corresponding Magento Testmodule e.g. 'Magento\Theme'
      */
     protected static function convertModuleName(string $jsonName, array $packageModuleMap): string
     {
@@ -1269,7 +1269,7 @@ class DependencyTest extends \PHPUnit\Framework\TestCase
 
                             $this->fail(
                                 \sprintf(
-                                    'Module "%s" has dependency on: "%s".' .
+                                    'Testmodule "%s" has dependency on: "%s".' .
                                     ' No direct dependencies must be added on "%s",' .
                                     ' because it must be disabled when "%s" extension is used.' .
                                     ' See AC-2516 for more details',

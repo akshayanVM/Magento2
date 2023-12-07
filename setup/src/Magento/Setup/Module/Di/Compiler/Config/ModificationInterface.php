@@ -7,7 +7,7 @@
 namespace Magento\Setup\Module\Di\Compiler\Config;
 
 /**
- * Interface \Magento\Setup\Module\Di\Compiler\Config\ModificationInterface
+ * Interface \Magento\Setup\Testmodule\Di\Compiler\Config\ModificationInterface
  *
  */
 interface ModificationInterface

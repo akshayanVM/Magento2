@@ -52,9 +52,9 @@ class ContextTest extends TestCase
         return [
             [
                 [Context::CONTEXT_TYPE_MODULE, 'Magento_Module'],
-                '/app/code/Magento/Module/Block/Test.php',
+                '/app/code/Magento/Testmodule/Block/Test.php',
                 [
-                    [Context::CONTEXT_TYPE_MODULE, ['Magento_Module' => '/app/code/Magento/Module']],
+                    [Context::CONTEXT_TYPE_MODULE, ['Magento_Module' => '/app/code/Magento/Testmodule']],
                     [Context::CONTEXT_TYPE_THEME, []],
                 ]
             ],
@@ -117,9 +117,9 @@ class ContextTest extends TestCase
     {
         return [
             [
-                BP . '/app/code/Magento/Module/i18n/',
+                BP . '/app/code/Magento/Testmodule/i18n/',
                 [Context::CONTEXT_TYPE_MODULE, 'Magento_Module'],
-                [[ComponentRegistrar::MODULE, 'Magento_Module', BP . '/app/code/Magento/Module']]
+                [[ComponentRegistrar::MODULE, 'Magento_Module', BP . '/app/code/Magento/Testmodule']]
             ],
             [
                 BP . '/app/design/frontend/Magento/luma/i18n/',

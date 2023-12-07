@@ -6,4 +6,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Vendor/child', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Egits/child', __DIR__);

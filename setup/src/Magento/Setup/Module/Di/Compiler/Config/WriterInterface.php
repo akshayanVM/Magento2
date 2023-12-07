@@ -8,7 +8,7 @@
 namespace Magento\Setup\Module\Di\Compiler\Config;
 
 /**
- * Interface \Magento\Setup\Module\Di\Compiler\Config\WriterInterface
+ * Interface \Magento\Setup\Testmodule\Di\Compiler\Config\WriterInterface
  * @deprecated Moved to Framework to allow broader reuse
  * @see \Magento\Framework\App\ObjectManager\ConfigWriterInterface
  */

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Module\Model\ResourceModel\Post;
+namespace Egits\TestModule\Model\ResourceModel\Post;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {
@@ -15,7 +15,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     protected function _construct()
     {
-        $this->_init('Vendor\Module\Model\Post', 'Vendor\Module\Model\ResourceModel\Post');
+        $this->_init('Egits\TestModule\Model\Post', 'Egits\TestModule\Model\ResourceModel\Post');
     }
 
     // public function addTable2Join()

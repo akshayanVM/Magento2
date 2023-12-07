@@ -1,23 +1,23 @@
 <?php
 
-namespace Vendor\Module\Model;
+namespace Egits\TestModule\Model;
 
 use Magento\Framework\Model\AbstractModel;
-//use Akshay\Module\Api\Data\CustomerViewInterface;
+//use Akshay\Testmodule\Api\Data\CustomerViewInterface;
 use \Magento\Framework\DataObject\IdentityInterface;
 
 class Post extends AbstractModel
 {
-    const CACHE_TAG = 'Vendor_Module';
+    const CACHE_TAG = 'Egits_TestModule';
 
-    protected $_cacheTag = 'Vendor_Module';
+    protected $_cacheTag = 'Egits_TestModule';
 
-    protected $_eventPrefix = 'Vendor_Module';
+    protected $_eventPrefix = 'Egits_TestModule';
 
     protected function _construct()
 
     {
-        $this->_init('Vendor\Module\Model\ResourceModel\Post');
+        $this->_init('Egits\TestModule\Model\ResourceModel\Post');
     }
 
     //The IdentityInterface will force Model class define the getIdentities() -

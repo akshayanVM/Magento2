@@ -121,7 +121,7 @@ class Installer
     private $moduleList;
 
     /**
-     * Module list loader
+     * Testmodule list loader
      *
      * @var ModuleLoader
      */
@@ -205,14 +205,14 @@ class Installer
     private $dbValidator;
 
     /**
-     * Factory to create \Magento\Setup\Module\Setup
+     * Factory to create \Magento\Setup\Testmodule\Setup
      *
      * @var SetupFactory
      */
     private $setupFactory;
 
     /**
-     * Factory to create \Magento\Setup\Module\DataSetup
+     * Factory to create \Magento\Setup\Testmodule\DataSetup
      *
      * @var DataSetupFactory
      */
@@ -610,7 +610,7 @@ class Installer
                     \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                     50,
                     ['nullable' => false, 'primary' => true],
-                    'Module'
+                    'Testmodule'
                 )->addColumn(
                     'schema_version',
                     \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
@@ -623,7 +623,7 @@ class Installer
                     50,
                     [],
                     'Data Version'
-                )->setComment('Module versions registry');
+                )->setComment('Testmodule versions registry');
             $connection->createTable($table);
         }
     }
@@ -1044,12 +1044,12 @@ class Installer
 
         foreach ($moduleNames as $moduleName) {
             if ($this->isDryRun($request)) {
-                $this->log->log("Module '{$moduleName}':");
+                $this->log->log("Testmodule '{$moduleName}':");
                 $this->logProgress();
                 continue;
             }
             $schemaListener->setModuleName($moduleName);
-            $this->log->log("Module '{$moduleName}':");
+            $this->log->log("Testmodule '{$moduleName}':");
             $configVer = $this->moduleList->getOne($moduleName)['setup_version'];
             $currentVersion = $moduleContextList[$moduleName]->getVersion();
             // Schema/Data is installed
@@ -1109,11 +1109,11 @@ class Installer
 
         foreach ($moduleNames as $moduleName) {
             if ($this->isDryRun($request)) {
-                $this->log->log("Module '{$moduleName}':");
+                $this->log->log("Testmodule '{$moduleName}':");
                 $this->logProgress();
                 continue;
             }
-            $this->log->log("Module '{$moduleName}':");
+            $this->log->log("Testmodule '{$moduleName}':");
             $modulePostUpdater = $this->getSchemaDataHandler($moduleName, $handlerType);
             if ($modulePostUpdater) {
                 $this->log->logInline('Running ' . str_replace('-', ' ', $handlerType) . '...');

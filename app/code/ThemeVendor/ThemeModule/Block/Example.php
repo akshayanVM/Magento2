@@ -1,6 +1,6 @@
 <?php
 
-// app/code/Custom/Module/Block/Example.php
+// app/code/Custom/Testmodule/Block/Example.php
 
 namespace ThemeVendor\ThemeModule\Block;
 

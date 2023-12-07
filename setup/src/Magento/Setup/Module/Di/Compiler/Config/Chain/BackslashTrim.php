@@ -11,7 +11,7 @@ use Magento\Setup\Module\Di\Compiler\Config\ModificationInterface;
 /**
  * Class BackslashTrim
  *
- * @package Magento\Setup\Module\Di\Compiler\Config\Chain
+ * @package Magento\Setup\Testmodule\Di\Compiler\Config\Chain
  */
 class BackslashTrim implements ModificationInterface
 {

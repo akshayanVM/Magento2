@@ -132,7 +132,7 @@ class TemplateFilesTest extends \Magento\TestFramework\TestCase\AbstractIntegrit
     /**
      * Returns whether template belongs to a disabled module
      *
-     * @param string $blockModule Module of a block that will render this template
+     * @param string $blockModule Testmodule of a block that will render this template
      * @param string $template
      * @return bool
      */

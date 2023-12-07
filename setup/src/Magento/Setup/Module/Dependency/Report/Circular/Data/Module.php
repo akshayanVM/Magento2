@@ -6,12 +6,12 @@
 namespace Magento\Setup\Module\Dependency\Report\Circular\Data;
 
 /**
- * Module
+ * Testmodule
  */
 class Module
 {
     /**
-     * Module name
+     * Testmodule name
      *
      * @var string
      */
@@ -25,7 +25,7 @@ class Module
     protected $chains;
 
     /**
-     * Module construct
+     * Testmodule construct
      *
      * @param array $name
      * @param \Magento\Setup\Module\Dependency\Report\Circular\Data\Chain[] $chains

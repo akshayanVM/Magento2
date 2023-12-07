@@ -350,7 +350,7 @@ return [
             'Magento/Framework/Interception/PluginList/PluginList.php',
             'Magento/Framework/App/Router/ActionList.php',
             'Magento/Framework/Serialize/Test/Unit/Serializer/SerializeTest.php',
-            'src/Magento/Setup/Module/Di/Compiler/Config/Writer/Filesystem.php',
+            'src/Magento/Setup/Testmodule/Di/Compiler/Config/Writer/Filesystem.php',
             'Magento/Sales/Setup/SerializedDataConverter.php',
             'Magento/Sales/Test/Unit/Setup/SerializedDataConverterTest.php',
             'Magento/Sales/Test/Unit/Setup/SalesOrderPaymentDataConverterTest.php',

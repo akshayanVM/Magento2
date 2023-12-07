@@ -230,7 +230,7 @@ class ObsoleteConfigNodesSniff implements Sniff
             '/config/global/enterprise/giftcardaccount' =>
                 'This configuration moved to Di configuration of \Magento\GiftCardAccountModelPool',
             '/config/global/skip_process_modules_updates' => 'Was replaced using di',
-            '/config/system/page_cache' => 'Module is eliminated. Use PageCache module instead',
+            '/config/system/page_cache' => 'Testmodule is eliminated. Use PageCache module instead',
             '/config/system/cms/content/versioning' => 'Functionality is eliminated',
         ];
     }

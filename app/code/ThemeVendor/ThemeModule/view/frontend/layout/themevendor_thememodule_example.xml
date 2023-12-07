@@ -1,4 +1,4 @@
-<!-- app/code/Custom/Module/view/frontend/layout/custom_module_example.xml -->
+<!-- app/code/Custom/Testmodule/view/frontend/layout/custom_module_example.xml -->
 
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>

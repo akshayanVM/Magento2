@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <virtualType name="Vendor\Module\Model\ResourceModel\Post\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="Egits\TestModule\Model\ResourceModel\Post\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">quote_item</argument>
             <argument name="resourceModel" xsi:type="string">Vendor\Module\Model\ResourceModel\Post</argument>
@@ -10,12 +10,12 @@
 <!--    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">-->
 <!--        <arguments>-->
 <!--            <argument name="collections" xsi:type="array">-->
-<!--                <item name="customer_module_listing_data_source" xsi:type="string">Akshay\Module\Model\ResourceModel\Post\Collection</item>-->
+<!--                <item name="customer_module_listing_data_source" xsi:type="string">Akshay\Testmodule\Model\ResourceModel\Post\Collection</item>-->
 <!--            </argument>-->
 <!--        </arguments>-->
 <!--    </type>-->
     <!--
-    <type name="Akshay\Module\Model\ImageUploader">
+    <type name="Akshay\Testmodule\Model\ImageUploader">
         <arguments>
             <argument name="baseTmpPath" xsi:type="string">label/tmp/image</argument>
             <argument name="basePath" xsi:type="string">label/image</argument>
@@ -31,7 +31,7 @@
     <!-- <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="customer_module_form_data_source" xsi:type="string">Akshay\Module\Model\ResourceModel\Post\Collection</item>
+                <item name="customer_module_form_data_source" xsi:type="string">Akshay\Testmodule\Model\ResourceModel\Post\Collection</item>
             </argument>
         </arguments>
     </type> -->

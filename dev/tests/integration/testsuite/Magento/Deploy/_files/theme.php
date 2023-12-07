@@ -72,18 +72,18 @@ if (!$registrar->getPath(ComponentRegistrar::THEME, 'frontend/Magento/zoom3')) {
     );
 }
 
-if (!$registrar->getPath(ComponentRegistrar::THEME, 'frontend/Vendor/parent')) {
+if (!$registrar->getPath(ComponentRegistrar::THEME, 'frontend/Egits/parent')) {
     ComponentRegistrar::register(
         ComponentRegistrar::THEME,
-        'frontend/Vendor/parent',
+        'frontend/Egits/parent',
         __DIR__ . '/Vendor/parent'
     );
 }
 
-if (!$registrar->getPath(ComponentRegistrar::THEME, 'frontend/Vendor/child')) {
+if (!$registrar->getPath(ComponentRegistrar::THEME, 'frontend/Egits/child')) {
     ComponentRegistrar::register(
         ComponentRegistrar::THEME,
-        'frontend/Vendor/child',
+        'frontend/Egits/child',
         __DIR__ . '/Vendor/child'
     );
 }

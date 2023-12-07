@@ -73,7 +73,7 @@ class LegacyDataFixturePathResolver
         $modulePath = $this->componentRegistrar->getPath(ComponentRegistrar::MODULE, $moduleName);
 
         if ($modulePath === null) {
-            throw new LocalizedException(__('Can\'t find registered Module with name %1 .', $moduleName));
+            throw new LocalizedException(__('Can\'t find registered Testmodule with name %1 .', $moduleName));
         }
 
         return $modulePath . '/' . ltrim($fixtureFile, '/');

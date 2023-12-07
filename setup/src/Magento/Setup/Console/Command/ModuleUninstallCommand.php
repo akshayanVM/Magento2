@@ -57,7 +57,7 @@ class ModuleUninstallCommand extends AbstractModuleCommand
     private $fullModuleList;
 
     /**
-     * Module package info
+     * Testmodule package info
      *
      * @var PackageInfo
      */
@@ -92,14 +92,14 @@ class ModuleUninstallCommand extends AbstractModuleCommand
     private $backupRollbackFactory;
 
     /**
-     * Module Uninstaller
+     * Testmodule Uninstaller
      *
      * @var ModuleUninstaller
      */
     private $moduleUninstaller;
 
     /**
-     * Module Registry uninstaller
+     * Testmodule Registry uninstaller
      *
      * @var ModuleRegistryUninstaller
      */

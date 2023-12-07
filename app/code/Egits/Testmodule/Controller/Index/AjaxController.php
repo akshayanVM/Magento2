@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Module\Controller\Index;
+namespace Egits\TestModule\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;

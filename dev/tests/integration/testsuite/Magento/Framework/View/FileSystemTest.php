@@ -57,7 +57,7 @@ class FileSystemTest extends \PHPUnit\Framework\TestCase
      */
     public function testGetViewFile()
     {
-        $expected = '%s/frontend/Vendor/custom_theme/Fixture_Module/web/fixture_script.js';
+        $expected = '%s/frontend/Egits/custom_theme/Fixture_Module/web/fixture_script.js';
         $params = ['theme' => 'Vendor_FrameworkThemeTest/custom_theme'];
         $actual = $this->_model->getStaticFileName('Fixture_Module::fixture_script.js', $params);
         $this->_testExpectedVersusActualFilename($expected, $actual);

@@ -1,4 +1,4 @@
-<!-- app/code/[Vendor]/[Module]/etc/widget.xml -->
+<!-- app/code/[Egits]/[Testmodule]/etc/widget.xml -->
 
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
     <widget id="custom_theme_widget" class="ThemeVendor\ThemeModule\Block\Widget\CustomWidget">

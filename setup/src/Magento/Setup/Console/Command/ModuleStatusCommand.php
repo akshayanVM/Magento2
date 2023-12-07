@@ -97,17 +97,17 @@ class ModuleStatusCommand extends AbstractSetupCommand
     {
         $allModules = $this->getAllModules();
         if (!in_array($moduleName, $allModules->getNames(), true)) {
-            $output->writeln($moduleName . ' : <error>Module does not exist</error>');
+            $output->writeln($moduleName . ' : <error>Testmodule does not exist</error>');
             return Cli::RETURN_FAILURE;
         }
 
         $enabledModules = $this->getEnabledModules();
         if (in_array($moduleName, $enabledModules->getNames(), true)) {
-            $output->writeln($moduleName . ' : <info>Module is enabled</info>');
+            $output->writeln($moduleName . ' : <info>Testmodule is enabled</info>');
             return Cli::RETURN_FAILURE;
         }
 
-        $output->writeln($moduleName . ' : <info> Module is disabled</info>');
+        $output->writeln($moduleName . ' : <info> Testmodule is disabled</info>');
         return Cli::RETURN_SUCCESS;
     }
 

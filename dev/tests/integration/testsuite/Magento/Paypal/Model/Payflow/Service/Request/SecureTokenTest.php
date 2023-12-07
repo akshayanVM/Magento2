@@ -167,7 +167,7 @@ class SecureTokenTest extends TestCase
             /** @var DataObject $request */
             ->with(self::callback(function ($request) use ($self, $expPartner, $expVendor, $expUser, $expPwd) {
                 $self->performAssertion($expPartner, $request->getPartner(), '{Partner}');
-                $self->performAssertion($expVendor, $request->getVendor(), '{Vendor}');
+                $self->performAssertion($expVendor, $request->getVendor(), '{Egits}');
                 $self->performAssertion($expUser, $request->getUser(), '{User}');
                 $self->performAssertion($expPwd, $request->getPwd(), '{Password}');
 

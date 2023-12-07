@@ -173,13 +173,13 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
             'Template from theme - frontend' => [
                 Area::AREA_FRONTEND,
                 'customer_create_account_email_template',
-                'customer_create_account_email_template template from Vendor/custom_theme',
+                'customer_create_account_email_template template from Egits/custom_theme',
                 Area::AREA_FRONTEND,
             ],
             'Template from parent theme - frontend' => [
                 Area::AREA_FRONTEND,
                 'customer_create_account_email_confirmation_template',
-                'customer_create_account_email_confirmation_template template from Vendor/default',
+                'customer_create_account_email_confirmation_template template from Egits/default',
                 Area::AREA_FRONTEND,
             ],
             'Template from grandparent theme - frontend' => [
@@ -303,13 +303,13 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
                 Area::AREA_FRONTEND,
                 TemplateTypesInterface::TYPE_HTML,
                 '{{template config_path="customer/create_account/email_template"}}',
-                '<strong>customer_create_account_email_template template from Vendor/custom_theme</strong>',
+                '<strong>customer_create_account_email_template template from Egits/custom_theme</strong>',
             ],
             'Template from parent theme - frontend' => [
                 Area::AREA_FRONTEND,
                 TemplateTypesInterface::TYPE_HTML,
                 '{{template config_path="customer/create_account/email_confirmation_template"}}',
-                '<strong>customer_create_account_email_confirmation_template template from Vendor/default</strong',
+                '<strong>customer_create_account_email_confirmation_template template from Egits/default</strong',
             ],
             'Template from grandparent theme - frontend' => [
                 Area::AREA_FRONTEND,
