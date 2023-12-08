@@ -23,11 +23,20 @@ class AlertObserver implements ObserverInterface
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $item = $observer->getEvent()->getData('quote_item');
+        $product = $observer->getEvent()->getProduct();
         $item = ($item->getParentItem() ? $item->getParentItem() : $item);
         $price = 100; //set your price here
         $item->setCustomPrice($price);
         $item->setOriginalCustomPrice($price);
         $item->getProduct()->setIsSuperMode(true);
+        $time = $product['created_at'];
+        $message =
+            __(
+                'You added %1 to your shopping cart at %2.',
+                $product->getName(),
+                $time,
+            );
+        $this->messageManager->addSuccessMessage($message);
     }
 
 
