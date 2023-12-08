@@ -6,6 +6,9 @@
             <argument name="resourceModel" xsi:type="string">Vendor\Module\Model\ResourceModel\Post</argument>
         </arguments>
     </virtualType>
+    <type name="Magento\Checkout\Model\Cart">
+        <plugin name="vendor_module_add_to_cart" type="Egits\Testmodule\Plugin\AddToCartPlugin" sortOrder="10" disabled="false" />
+    </type>
 
     <!--    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">-->
     <!--        <arguments>-->

@@ -18,17 +18,19 @@ class AlertObserver implements ObserverInterface
         $this->logger = $logger;
         $this->request = $request;
         $this->messageManager = $messageManager;
+        // /home/akshayanand/Documents/Magento/magento2/vendor/magento/module-checkout/Controller/Cart/Add.php
     }
 
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $item = $observer->getEvent()->getData('quote_item');
+        // $item = $observer->getEvent()->getData('quote_item');
+
+        // $item = ($item->getParentItem() ? $item->getParentItem() : $item);
+        // $price = 100; //set your price here
+        // $item->setCustomPrice($price);
+        // $item->setOriginalCustomPrice($price);
+        // $item->getProduct()->setIsSuperMode(true);
         $product = $observer->getEvent()->getProduct();
-        $item = ($item->getParentItem() ? $item->getParentItem() : $item);
-        $price = 100; //set your price here
-        $item->setCustomPrice($price);
-        $item->setOriginalCustomPrice($price);
-        $item->getProduct()->setIsSuperMode(true);
         $time = $product['created_at'];
         $message =
             __(
