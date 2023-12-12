@@ -31,14 +31,16 @@ class AlertObserver implements ObserverInterface
         // $item->setOriginalCustomPrice($price);
         // $item->getProduct()->setIsSuperMode(true);
         $product = $observer->getEvent()->getProduct();
-        $time = $product['created_at'];
-        $message =
-            __(
-                'You added %1 to your shopping cart at %2.',
-                $product->getName(),
-                $time,
-            );
-        $this->messageManager->addSuccessMessage($message);
+        // print_r($product);
+        // dd();
+        // $time = $product['updated_at'];
+        // $message =
+        //     __(
+        //         'You added %1 to your shopping cart at %2.',
+        //         $product->getName(),
+        //         $time,
+        //     );
+        // $this->messageManager->addSuccessMessage($message);
     }
 
 

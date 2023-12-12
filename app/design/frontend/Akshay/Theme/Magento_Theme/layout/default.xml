@@ -27,7 +27,7 @@
         <referenceContainer name="page.wrapper">
             <referenceBlock name="copyright" remove="true"/>
             <!--            <referenceBlock name="logo" remove="true"/>-->
-            <referenceBlock name="header.panel" remove="true" />
+            <!-- <referenceBlock name="header.panel" remove="true" /> -->
         </referenceContainer>
 
         <referenceContainer name="footer">
@@ -53,7 +53,7 @@
         <referenceBlock name="footer_links">
             <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="contact-us-link">
                 <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Contact them</argument>
+                    <argument name="label" xsi:type="string" translate="true">Contact Us</argument>
                     <argument name="path" xsi:type="string">contact</argument>
                 </arguments>
             </block>

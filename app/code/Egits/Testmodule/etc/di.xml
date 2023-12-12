@@ -9,6 +9,11 @@
     <type name="Magento\Checkout\Model\Cart">
         <plugin name="vendor_module_add_to_cart" type="Egits\Testmodule\Plugin\AddToCartPlugin" sortOrder="10" disabled="false" />
     </type>
+    <type name="Magento\Checkout\Controller\Cart\Add">
+        <plugin name="vendor_module_add_to_cart_after" type="Egits\Testmodule\Plugin\AddToCartAfterPlugin" sortOrder="10" disabled="false" />
+    </type>
+    <preference for="Magento\Checkout\Controller\Cart\Add" type="Egits\Testmodule\Controller\Cart\Add" />
+
 
     <!--    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">-->
     <!--        <arguments>-->
