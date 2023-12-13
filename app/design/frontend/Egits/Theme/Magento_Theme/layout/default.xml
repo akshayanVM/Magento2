@@ -8,6 +8,12 @@
     <!-- <css src="ThemeVendor_ThemeModule::css/style.css"/> -->
     <!-- </head> -->
 
+    <head>
+        <css src="Magento_Theme::css/owl.carousel.min.css"/>
+        <css src="Magento_Theme::css/owl.theme.default.min.css"/>
+        <css src="Magento_Theme::css/style.css"/>
+    </head>
+
     <!--    <referenceBlock name="copyright" remove="true"/>-->
     <body>
 
