@@ -9,13 +9,11 @@
     <!-- </head> -->
 
     <head>
-        <!-- <css src="css/style.css" rel="stylesheet" type="text/css" />
-        <css src="css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
-        <css src="css/owl.theme.default.min.css" rel="stylesheet" type="text/css" /> -->
 
-        <css src="Magento_Theme::css/owl.carousel.min.css"/>
+
+        <!-- <css src="Magento_Theme::css/owl.carousel.min.css"/>
         <css src="Magento_Theme::css/owl.theme.default.min.css"/>
-        <css src="Magento_Theme::css/style.css"/>
+        <css src="Magento_Theme::css/style.css"/> -->
     </head>
 
     <!--    <referenceBlock name="copyright" remove="true"/>-->
@@ -37,7 +35,7 @@
 
         <referenceContainer name="page.wrapper">
             <!-- <referenceBlock name="copyright" remove="true"/> -->
-            <referenceBlock name="logo" remove="true"/>
+            <!-- <referenceBlock name="logo" remove="true"/> -->
             <referenceBlock name="header.panel" remove="true" />
         </referenceContainer>
 
@@ -57,12 +55,12 @@
             <block class="Magento\Customer\Block\Account\Welcome" name="welcome" template="Magento_Theme::welcome.phtml" after="minicart" />
         </referenceContainer> -->
 
-        <!-- <referenceContainer name="footer"> -->
-        <!--            <referenceBlock name="footer_links" remove="true"/>-->
-        <!-- <container name="custom.footer.block2" as="custom_footer_block2" label="Custom Footer Block 2" htmlTag="div" htmlClass="custom-footer-block2"/> -->
-        <!-- <container name="custom.footer.block" as="custom_footer_block" label="Custom Footer Block" htmlTag="div" htmlClass="custom-footer-block"/> -->
-        <!-- Add your custom content or blocks inside this container -->
-        <!-- </referenceContainer> -->
+        <referenceContainer name="footer">
+            <referenceBlock name="footer_links" remove="true"/>
+            <container name="custom.footer.block2" as="custom_footer_block2" label="Custom Footer Block 2" htmlTag="div" htmlClass="custom-footer-block2"/>
+            <container name="custom.footer.block" as="custom_footer_block" label="Custom Footer Block" htmlTag="div" htmlClass="custom-footer-block"/>
+            <!-- Add your custom content or blocks inside this container -->
+        </referenceContainer>
 
         <!-- <referenceBlock name="footer_links">
             <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="contact-us-link">
