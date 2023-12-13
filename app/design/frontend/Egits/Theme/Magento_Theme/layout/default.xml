@@ -9,6 +9,10 @@
     <!-- </head> -->
 
     <head>
+        <!-- <css src="css/style.css" rel="stylesheet" type="text/css" />
+        <css src="css/owl.carousel.min.css" rel="stylesheet" type="text/css" />
+        <css src="css/owl.theme.default.min.css" rel="stylesheet" type="text/css" /> -->
+
         <css src="Magento_Theme::css/owl.carousel.min.css"/>
         <css src="Magento_Theme::css/owl.theme.default.min.css"/>
         <css src="Magento_Theme::css/style.css"/>
