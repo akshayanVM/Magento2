@@ -32,6 +32,9 @@
             <referenceBlock name="header.panel" remove="true" />
         </referenceContainer>
 
+        <referenceBlock name="copyright" template="Magento_Theme::copyright.phtml"/>
+
+
         <!-- <referenceContainer name="footer">
             <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" before="-" template="Magento_Theme::subscribe.phtml" ifconfig="newsletter/general/active"/>
         </referenceContainer> -->
