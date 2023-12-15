@@ -28,8 +28,6 @@
             <referenceBlock name="form.subscribe" remove="true"/>
             <block class="Magento\Framework\View\Element\Template" name="custom.block1" template="Magento_Theme::ContactUs.phtml"/>
             <block class="Magento\Framework\View\Element\Template" name="custom.block" template="Magento_Theme::AboutUs.phtml"/>
-
-
         </referenceContainer>
 
         <referenceContainer name="page.wrapper">
