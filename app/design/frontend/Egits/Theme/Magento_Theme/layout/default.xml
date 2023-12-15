@@ -1,94 +1,119 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-
-    <!--    <referenceContainer name="header.panel" remove="true" />-->
-
-    <!-- <head>
-        <css src="css/style.css" rel="stylesheet" type="text/css" /> -->
-    <!-- <css src="ThemeVendor_ThemeModule::css/style.css"/> -->
-    <!-- </head> -->
-
-    <head>
-
-
-        <!-- <css src="Magento_Theme::css/owl.carousel.min.css"/>
-        <css src="Magento_Theme::css/owl.theme.default.min.css"/>
-        <css src="Magento_Theme::css/style.css"/> -->
-    </head>
-
-    <!--    <referenceBlock name="copyright" remove="true"/>-->
-    <body>
-        <!-- 
-    <referenceContainer name="">
-    
-    </referenceContainer> -->
-
-        <referenceContainer name="footer">
-            <referenceBlock name="footer_links" remove="true"/>
-            <referenceBlock name="form.subscribe" remove="true"/>
-            <block class="Magento\Framework\View\Element\Template" name="custom.block1" template="Magento_Theme::ContactUs.phtml"/>
-            <block class="Magento\Framework\View\Element\Template" name="custom.block" template="Magento_Theme::AboutUs.phtml"/>
-        </referenceContainer>
-
-        <referenceContainer name="page.wrapper">
-            <!-- <referenceBlock name="copyright" remove="true"/> -->
-            <!-- <referenceBlock name="logo" remove="true"/> -->
-            <referenceBlock name="header.panel" remove="true" />
-        </referenceContainer>
-        <referenceBlock name="copyright" template="Magento_Theme::copyright.phtml"/>
-
-
-        <!--        <referenceBlock name="catalog.compare.link" remove="true"/>-->
-        <!--        <referenceBlock name="catalog.compare.sidebar" remove="true"/>-->
-        <!--        <referenceBlock name="paypal.partner.right.logo" remove="true"/>-->
-
-        <!-- <referenceContainer name="header.container">
-            <container name="header.left" label="headerLeft" htmlTag="div" htmlClass="left-col" />
-            <container name="header.center" label="headerCenter" htmlTag="div" htmlClass="left-center" />
-            <container name="header.right" label="headerRight" htmlTag="div" htmlClass="left-right" />
-        </referenceContainer> -->
-
-        <!-- <move element="logo" destination="header.center"/>
-        <move element="top.search" destination="header.left"/>
-        <move element="minicart" destination="header.right"/> -->
-
-
-
-
-        <!-- <referenceContainer name="footer">
-            <block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" before="-" template="Magento_Theme::subscribe.phtml" ifconfig="newsletter/general/active"/>
-        </referenceContainer> -->
-
-        <!-- <move element="top.search" destination="content" before="-" /> -->
-        <!-- <move element="header.links" destination="header.content" /> -->
-        <!-- <move element="header.links" destination="header-wrapper" after="minicart"/> -->
-        <!-- <move element="header.links" destination="header-wrapper" before="top.search" /> -->
-
-        <!-- <referenceContainer name="header.content">
-            <block class="Magento\Customer\Block\Account\Welcome" name="welcome" template="Magento_Theme::welcome.phtml" after="minicart" />
-        </referenceContainer> -->
-
-        <!-- <referenceContainer name="footer"> -->
-
-        <!-- <container name="custom.footer.block2" as="custom_footer_block2" label="Custom Footer Block 2" htmlTag="div" htmlClass="custom-footer-block2"/>
-            <container name="custom.footer.block" as="custom_footer_block" label="Custom Footer Block" htmlTag="div" htmlClass="custom-footer-block"/> -->
-        <!-- Add your custom content or blocks inside this container -->
-        <!-- </referenceContainer> -->
-
-
-
-        <!-- <referenceBlock name="footer_links">
-            <block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled" name="contact-us-link">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Contact Us</argument>
-                    <argument name="path" xsi:type="string">contact</argument>
-                </arguments>
-            </block>
-        </referenceBlock> -->
-
-        <!-- <move element="footer_links" destination="custom.footer.block" /> -->
-        <!-- <move element="block.newsletter" destination="custom.footer.block2" after="custom.footer.block" /> -->
-
-    </body>
-
+	<!-- <referenceContainer name="header.panel" remove="true" /> -->
+	<!--
+	<head>
+	<css src="css/style.css" rel="stylesheet" type="text/css" />
+	-->
+	<!-- <css src="ThemeVendor_ThemeModule::css/style.css"/> -->
+	<!-- </head> -->
+	<head>
+		<!--
+		<css src="Magento_Theme::css/owl.carousel.min.css"/>
+		<css src="Magento_Theme::css/owl.theme.default.min.css"/>
+		<css src="Magento_Theme::css/style.css"/>
+		-->
+	</head>
+	<!-- <referenceBlock name="copyright" remove="true"/> -->
+	<body>
+		<!--
+		<referenceContainer name="">
+		
+		</referenceContainer>
+		-->
+		<referenceContainer name="footer">
+			<referenceBlock name="footer_links" remove="true" />
+			<referenceBlock name="form.subscribe" remove="true" />
+			<block class="Magento\Framework\View\Element\Template" name="custom.block1" template="Magento_Theme::ContactUs.phtml" />
+			<block class="Magento\Framework\View\Element\Template" name="custom.block" template="Magento_Theme::AboutUs.phtml" />
+		</referenceContainer>
+		<!-- <referenceContainer name="header.content" remove="true"></referenceContainer> -->
+		<move element="top.links" destination="header-wrapper" before="top.search" />
+		<referenceBlock name="header.panel" remove="true" />
+		<referenceContainer name="page.wrapper">
+			<!-- <referenceBlock name="copyright" remove="true"/> -->
+			<!-- <referenceBlock name="logo" remove="true"/> -->
+			<referenceBlock name="header.panel" remove="true" />
+			<referenceBlock name="header.links" remove="true" />
+		</referenceContainer>
+		<referenceBlock name="copyright" template="Magento_Theme::copyright.phtml" />
+		<!-- <referenceBlock name="catalog.compare.link" remove="true"/> -->
+		<!-- <referenceBlock name="catalog.compare.sidebar" remove="true"/> -->
+		<!-- <referenceBlock name="paypal.partner.right.logo" remove="true"/> -->
+		<!--
+		<referenceContainer name="header.container">
+		<container name="header.left" label="headerLeft" htmlTag="div" htmlClass="left-col" />
+		<container name="header.center" label="headerCenter" htmlTag="div" htmlClass="left-center" />
+		<container name="header.right" label="headerRight" htmlTag="div" htmlClass="left-right" />
+		</referenceContainer>
+		-->
+		<referenceBlock name="top.links">
+			<block class="Magento\Customer\Block\Account\Link" name="my-account-link">
+				<arguments>
+					<argument name="label" xsi:type="string" translate="true">
+					</argument>
+					<argument name="class" xsi:type="string">
+						my-account-link
+					</argument>
+				</arguments>
+			</block>
+		</referenceBlock>
+		<referenceBlock name="top.links">
+			<block class="Magento\Wishlist\Block\Link" name="wish-list-link">
+				<arguments>
+					<argument name="label" xsi:type="string" translate="true">
+					</argument>
+					<argument name="class" xsi:type="string">
+						icon
+					</argument>
+				</arguments>
+			</block>
+		</referenceBlock>
+		<!--
+		<move element="logo" destination="header.center"/>
+		<move element="top.search" destination="header.left"/>
+		<move element="minicart" destination="header.right"/>
+		-->
+		<!--
+		<referenceContainer name="footer">
+		<block class="Magento\Newsletter\Block\Subscribe" name="form.subscribe" as="subscribe" before="-"
+		template="Magento_Theme::subscribe.phtml" ifconfig="newsletter/general/active"/>
+		</referenceContainer>
+		-->
+		<!-- <move element="top.search" destination="content" before="-" /> -->
+		<!-- <move element="header.links" destination="header.content" /> -->
+		<!-- <move element="header.links" destination="header-wrapper" after="minicart"/> -->
+		<!-- <move element="header.links" destination="header-wrapper" before="top.search" /> -->
+		<!--
+		<referenceContainer name="header.content">
+		<block class="Magento\Customer\Block\Account\Welcome" name="welcome"
+		template="Magento_Theme::welcome.phtml" after="minicart" />
+		</referenceContainer>
+		-->
+		<!-- <referenceContainer name="footer"> -->
+		<!--
+		<container name="custom.footer.block2" as="custom_footer_block2" label="Custom Footer Block 2"
+		htmlTag="div" htmlClass="custom-footer-block2"/>
+		<container name="custom.footer.block" as="custom_footer_block" label="Custom Footer Block"
+		htmlTag="div" htmlClass="custom-footer-block"/>
+		-->
+		<!-- Add your custom content or blocks inside this container -->
+		<!-- </referenceContainer> -->
+		<!--
+		<referenceBlock name="footer_links">
+		<block class="Magento\Framework\View\Element\Html\Link\Current" ifconfig="contact/contact/enabled"
+		name="contact-us-link">
+		<arguments>
+		<argument name="label" xsi:type="string" translate="true">Contact Us</argument>
+		<argument name="path" xsi:type="string">contact</argument>
+		</arguments>
+		</block>
+		</referenceBlock>
+		-->
+		<!-- <move element="footer_links" destination="custom.footer.block" /> -->
+		<!--
+		<move element="block.newsletter" destination="custom.footer.block2"
+		after="custom.footer.block" />
+		-->
+	</body>
 </page>
