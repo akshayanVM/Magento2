@@ -50,25 +50,39 @@
 		<referenceBlock name="top.links">
 			<block class="Magento\Customer\Block\Account\Link" name="my-account-link">
 				<arguments>
-					<argument name="label" xsi:type="string" translate="true">
-					</argument>
 					<argument name="class" xsi:type="string">
 						my-account-link
 					</argument>
 				</arguments>
 			</block>
 		</referenceBlock>
+		<referenceBlock name="authorization-link" remove="true" />
+		<!-- <referenceBlock name="wish-list-link" remove="true" /> -->
 		<referenceBlock name="top.links">
-			<block class="Magento\Wishlist\Block\Link" name="wish-list-link">
+			<block class="Magento\Wishlist\Block\Link" name="wish-list-link" after="my-account-link">
 				<arguments>
-					<argument name="label" xsi:type="string" translate="true">
-					</argument>
 					<argument name="class" xsi:type="string">
 						icon
 					</argument>
 				</arguments>
 			</block>
 		</referenceBlock>
+		<referenceBlock name="customer_account_navigation" remove="true" />
+		<!-- <referenceBlock name="widget" remove="true" /> -->
+		<!--
+		<referenceBlock name="my-account-link">
+		<arguments>
+		<argument name="label" xsi:type="string" translate="true">
+		</argument>
+		</arguments>
+		</referenceBlock>
+		<referenceBlock name="wish-list-link">
+		<arguments>
+		<argument name="label" xsi:type="string" translate="true">
+		</argument>
+		</arguments>
+		</referenceBlock>
+		-->
 		<!--
 		<move element="logo" destination="header.center"/>
 		<move element="top.search" destination="header.left"/>
