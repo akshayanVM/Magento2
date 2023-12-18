@@ -17,8 +17,17 @@ class Category extends Template
         parent::__construct($context, $data);
     }
     public function getDataForPHTML(){
-        $Collection = $this->CategoryCollection->create();
-        return $Collection->getData()[0]['entity_id'];
+        $categories = $this->CategoryCollection->create();
+        $categories->addAttributeToSelect('*');
+        $categories->addAttributeToFilter('enable_category', 1);
+        foreach ($categories as $category) {
+
+//            var_dump($category->getData());
+//            dd();
+                        $collection[] = $category->getName();
+        }
+
+        return $collection;
     }
 
 }
