@@ -1,4 +1,5 @@
 <?php
+
 use Egits\Integration\Block\Category;
 
 $blockobj = $block->getLayout()->createBlock(Category::class);
@@ -9,7 +10,39 @@ $test = $blockobj->getDataForPHTML();
 ?>
 
 <script type="text/javascript">
-require(['wktestrequire'], function() {
+require(['jquery', 'label'], function($) {
+    $('.testing').owlCarousel({
+        loop: true,
+        dots: false,
+        autoPlay: 2000,
+        responsive: {
+            0: {
+                autoWidth: true,
+                margin: 10
+            },
+            768: {
+                items: 4
+            },
+            800: {
+                items: 4
+            },
+            900: {
+                items: 5
+            },
+            1000: {
+                items: 6
+            },
+            1200: {
+                items: 7
+            },
+            1300: {
+                items: 8
+            },
+            1500: {
+                items: 9
+            }
+        }
+    })
     // Your custom JavaScript code here, if needed
     // Example: $('.top-category-slider').owlCarousel();
 });
@@ -20,8 +53,8 @@ require(['wktestrequire'], function() {
         <div class="content-heading">
             <h2 class="title">Top Categories</h2>
         </div>
-        <ul class="owl-theme top-category-slider">
-            <?php foreach ($test as $item): ?>
+        <ul class="owl-carousel owl-theme top-category-slider owl-loaded owl-drag topcategoryslider testing">
+            <?php foreach ($test as $item) : ?>
             <li class="top-category-list">
                 <a href="#">
                     <figure class="top-category-image" style="background-image: url('<?php echo $item['image']; ?>');">
