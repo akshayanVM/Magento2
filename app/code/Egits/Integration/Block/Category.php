@@ -19,12 +19,12 @@ class Category extends Template
     public function getDataForPHTML(){
         $categories = $this->CategoryCollection->create();
         $categories->addAttributeToSelect('*');
-        $categories->addAttributeToFilter('enable_category', 1);
+//        $categories->addAttributeToFilter('enable_category', 1);
         foreach ($categories as $category) {
 
 //            var_dump($category->getData());
 //            dd();
-                        $collection[] = $category->getName();
+                        $collection[] = $category->getData();
         }
 
         return $collection;
