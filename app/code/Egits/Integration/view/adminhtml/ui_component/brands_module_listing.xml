@@ -9,6 +9,30 @@
 				brands_module_listing.brands_module_listing_data_source
 			</item>
 		</item>
+		<item name="buttons" xsi:type="array">
+			<!--
+			<item name="back" xsi:type="string">
+			Egits\Integration\Block\Adminhtml\Edit\Button\Back
+			</item>
+			-->
+			<item name="add" xsi:type="array">
+				<item name="name" xsi:type="string">
+					add
+				</item>
+				<item name="label" xsi:type="string" translate="true">
+					Add New Customer
+				</item>
+				<item name="class" xsi:type="string">
+					primary
+				</item>
+				<item name="url" xsi:type="string">
+					*/*/form
+				</item>
+			</item>
+		</item>
+		<item name="spinner" xsi:type="string">
+			top_brands
+		</item>
 		<!-- <item name="buttons" xsi:type="array"> -->
 		<!--
 		<item name="delete" xsi:type="string">Dolphin\AddButtonModule\Block\Adminhtml\Edit\Button\Delete</item>
@@ -37,9 +61,6 @@
 		</item>
 		</item>
 		-->
-		<item name="spinner" xsi:type="string">
-			top_brands
-		</item>
 	</argument>
 	<!--
 	<argument name="data" xsi:type="array">
