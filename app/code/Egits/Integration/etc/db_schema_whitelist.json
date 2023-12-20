@@ -1,0 +1,12 @@
+{
+    "top_brands": {
+        "column": {
+            "id": true,
+            "brand_name": true,
+            "image_url": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
