@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">
+				brands_module_listing.brands_module_listing_data_source
+			</item>
+			<item name="deps" xsi:type="string">
+				brands_module_listing.brands_module_listing_data_source
+			</item>
+		</item>
+		<!-- <item name="buttons" xsi:type="array"> -->
+		<!--
+		<item name="delete" xsi:type="string">Dolphin\AddButtonModule\Block\Adminhtml\Edit\Button\Delete</item>
+		<item name="reset" xsi:type="string">Dolphin\AddButtonModule\Block\Adminhtml\Edit\Button\Reset</item>
+		<item name="save" xsi:type="string">Dolphin\AddButtonModule\Block\Adminhtml\Edit\Button\Save</item>
+		-->
+		<!-- </item> -->
+		<!--
+		<item name="buttons" xsi:type="array">
+		<item name="back" xsi:type="string">
+		Akshay\Module\Block\Adminhtml\Edit\Button\Back
+		</item>
+		<item name="add" xsi:type="array">
+		<item name="name" xsi:type="string">
+		add
+		</item>
+		<item name="label" xsi:type="string" translate="true">
+		Add New Customer
+		</item>
+		<item name="class" xsi:type="string">
+		primary
+		</item>
+		<item name="url" xsi:type="string">
+		*/*/form
+		</item>
+		</item>
+		</item>
+		-->
+		<item name="spinner" xsi:type="string">
+			top_brands
+		</item>
+	</argument>
+	<!--
+	<argument name="data" xsi:type="array">
+	<item name="buttons" xsi:type="array">
+	<item name="add" xsi:type="array">
+	<item name="name" xsi:type="string">
+	add
+	</item>
+	<item name="label" xsi:type="string" translate="true">
+	Add New Brand
+	</item>
+	<item name="class" xsi:type="string">
+	primary
+	</item>
+	<item name="url" xsi:type="string">
+	*/*/add
+	</item>
+	</item>
+	</item>
+	</argument>
+	-->
+	<dataSource name="brands_module_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">
+					id
+				</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render" />
+		</settings>
+		<!-- <aclResource>Magento_Cms::page</aclResource> -->
+		<dataProvider name="brands_module_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+			<settings>
+				<requestFieldName>
+					id
+				</requestFieldName>
+				<primaryFieldName>
+					id
+				</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<columns name="top_brands">
+		<!-- for checkbox -->
+		<!--
+		<column name="id_column">
+		<argument name="data" xsi:type="array">
+		<item name="config" xsi:type="array">
+		<item name="resizeEnabled" xsi:type="boolean">false</item>
+		<item name="resizeDefaultWidth" xsi:type="string">55</item>
+		<item name="indexField" xsi:type="string">id</item>
+		</item>
+		</argument>
+		</column>
+		-->
+		<column name="id" sortOrder="13">
+			<!-- for numbers -->
+			<settings>
+				<filter>
+					text
+				</filter>
+				<dataType>
+					text
+				</dataType>
+				<label translate="true">
+					ID
+				</label>
+			</settings>
+		</column>
+		<column name="brand_name">
+			<!-- for string -->
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="filter" xsi:type="string">
+						textRange
+					</item>
+					<item name="sorting" xsi:type="string">
+						desc
+					</item>
+					<item name="label" xsi:type="string" translate="true">
+						Brand Name
+					</item>
+				</item>
+			</argument>
+		</column>
+		<column name="image_url">
+			<!-- for string -->
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="filter" xsi:type="string">
+						textRange
+					</item>
+					<item name="sorting" xsi:type="string">
+						desc
+					</item>
+					<item name="label" xsi:type="string" translate="true">
+						Image
+					</item>
+				</item>
+			</argument>
+		</column>
+		<!-- Image Column -->
+		<!--
+		<column name="image" class="Akshay\Module\Ui\Component\Listing\Column\Thumbnail">
+		<argument name="data" xsi:type="array">
+		<item name="config" xsi:type="array">
+		<item name="component" xsi:type="string">
+		Magento_Ui/js/grid/columns/thumbnail
+		</item>
+		<item name="sortable" xsi:type="boolean">
+		false
+		</item>
+		<item name="altField" xsi:type="string">
+		name
+		</item>
+		<item name="has_preview" xsi:type="string">
+		1
+		</item>
+		<item name="label" xsi:type="string" translate="true">
+		Image
+		</item>
+		<item name="sortOrder" xsi:type="number">
+		20
+		</item>
+		</item>
+		</argument>
+		</column>
+		<actionsColumn name="actions" class="Akshay\Module\Ui\Component\Listing\Column\Action">
+		<argument name="data" xsi:type="array">
+		<item name="config" xsi:type="array">
+		<item name="resizeEnabled" xsi:type="boolean">
+		false
+		</item>
+		<item name="resizeDefaultWidth" xsi:type="string">
+		107
+		</item>
+		<item name="indexField" xsi:type="string">
+		id
+		</item>
+		</item>
+		</argument>
+		</actionsColumn>
+		-->
+		<!--
+		<column name="status" sortOrder="14">
+		<settings>
+		<filter>text</filter>
+		<dataType>text</dataType>
+		<label translate="true">Status</label>
+		</settings>
+		</column>
+		-->
+	</columns>
+</listing>
