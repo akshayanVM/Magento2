@@ -7,7 +7,7 @@
 	-->
 	<!-- </menu> -->
 	<menu>
-		<add id="Egits_Integration::top_brands" title="Top Brands" module="Egits_Integration" sortOrder="10" resource="Egits_Integration::top_brands" parent="Magento_Catalog::inventory" />
+		<add id="Egits_Integration::top_brands" title="Top Brands" module="Egits_Integration" action="brands_module/Index/index" sortOrder="10" resource="Egits_Integration::top_brands" parent="Magento_Catalog::inventory" />
 		<!-- <add id="Egits_Integration::manage" title="Manage Module" module="Egits_Integration" sortOrder="10" parent="Egits_Integration::top_brands" action="module/index/index" resource="Egits_Integration::manage" /> -->
 	</menu>
 </config>
