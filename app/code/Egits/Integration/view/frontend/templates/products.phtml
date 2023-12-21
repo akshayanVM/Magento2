@@ -5,6 +5,7 @@ use Egits\Integration\Block\Products;
 $blockobj = $block->getLayout()->createBlock(Products::class);
 
 $products = $blockobj->getDataForPHTML();
+var_dump($products);
 
 // echo $products;
 
@@ -12,36 +13,36 @@ $products = $blockobj->getDataForPHTML();
 ?>
 
 <script type="text/javascript">
-require(['jquery', 'label'], function($) {
-    $('.product-carousel-class').owlCarousel({
-        loop: true,
-        responsiveClass: true,
-        margin: 20,
-        responsive: {
-            0: {
-                items: 1
-            },
-            400: {
-                items: 2,
-                margin: 20
-            },
-            600: {
-                items: 3
-            },
-            800: {
-                items: 4
-            },
-            1100: {
-                items: 5
-            },
-            1350: {
-                items: 6
+    require(['jquery', 'label'], function($) {
+        $('.product-carousel-class').owlCarousel({
+            loop: true,
+            responsiveClass: true,
+            margin: 20,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                400: {
+                    items: 2,
+                    margin: 20
+                },
+                600: {
+                    items: 3
+                },
+                800: {
+                    items: 4
+                },
+                1100: {
+                    items: 5
+                },
+                1350: {
+                    items: 6
+                }
             }
-        }
-    })
-    // Your custom JavaScript code here, if needed
-    // Example: $('.top-category-slider').owlCarousel();
-});
+        })
+        // Your custom JavaScript code here, if needed
+        // Example: $('.top-category-slider').owlCarousel();
+    });
 </script>
 
 <section class="products-section">
@@ -52,25 +53,22 @@ require(['jquery', 'label'], function($) {
         <div class="block widget block-products-list grid">
             <div class="block-content">
                 <div class="products-grid grid">
-                    <ol
-                        class="product-items widget-product-grid owl-loaded owl-drag product-carousel-class  owl-carousel owl-theme product-carousel ">
+                    <ol class="product-items widget-product-grid owl-loaded owl-drag product-carousel-class  owl-carousel owl-theme product-carousel ">
                         <li class="product-item">
                             <div class="product-item-info">
                                 <a href="#" class="product-item-photo">
-                                    <span class="product-image-container product-image-container-1562"
-                                        style="width: 240px;">
+                                    <span class="product-image-container product-image-container-1562" style="width: 240px;">
                                         <span class="product-image-wrapper" style="padding-bottom: 125%;">
-                                            <img class="product-image-photo" src="images/products/product1.jpg"
-                                                loading="lazy" width="240" height="300" alt="Product image"></span>
+                                            <img class="product-image-photo" src="images/products/product1.jpg" loading="lazy" width="240" height="300" alt="Product image"></span>
                                     </span>
                                     <style>
-                                    .product-image-container-1562 {
-                                        width: 240px;
-                                    }
+                                        .product-image-container-1562 {
+                                            width: 240px;
+                                        }
 
-                                    .product-image-container-1562 span.product-image-wrapper {
-                                        padding-bottom: 125%;
-                                    }
+                                        .product-image-container-1562 span.product-image-wrapper {
+                                            padding-bottom: 125%;
+                                        }
                                     </style>
                                 </a>
                                 <div class="product-item-details">
@@ -78,51 +76,26 @@ require(['jquery', 'label'], function($) {
                                         <a title="Radiant Tee" href="#" class="product-item-link">
                                             Men Rapido - IT Shoe </a>
                                     </strong>
-                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562"
-                                        data-price-box="product-id-1562">
+                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                         <span class="old-price">
                                             <span>₹822.00</span>
                                         </span>
                                         <span class="normal-price">
                                             <span class="price-container price-final_price tax weee">
-                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22"
-                                                    data-price-type="finalPrice" class="price-wrapper "><span
-                                                        class="price">₹522.00</span></span>
+                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">₹522.00</span></span>
                                             </span>
                                         </span>
                                     </div>
                                     <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
-                                        <div class="swatch-attribute size" data-attribute-code="size"
-                                            data-attribute-id="144">
+                                        <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
                                         </div>
-                                        <div class="swatch-attribute color" data-attribute-code="color"
-                                            data-attribute-id="93">
-                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false"
-                                                aria-required="true" role="listbox" aria-label="Color"
-                                                class="swatch-attribute-options clearfix">
-                                                <div class="swatch-option color" id="option-label-color-93-item-50"
-                                                    index="0" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="50" data-option-label="Blue"
-                                                    aria-label="Blue" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#DD4A4A"
-                                                    style="background: #DD4A4A no-repeat center; background-size: initial;">
+                                        <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
+                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
+                                                <div class="swatch-option color" id="option-label-color-93-item-50" index="0" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="50" data-option-label="Blue" aria-label="Blue" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#DD4A4A" style="background: #DD4A4A no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-56"
-                                                    index="1" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="56" data-option-label="Orange"
-                                                    aria-label="Orange" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#717171"
-                                                    style="background: #717171 no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-56" index="1" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="56" data-option-label="Orange" aria-label="Orange" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#717171" style="background: #717171 no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-57"
-                                                    index="2" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="57" data-option-label="Purple"
-                                                    aria-label="Purple" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#4AA8DD"
-                                                    style="background: #4AA8DD no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-57" index="2" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="57" data-option-label="Purple" aria-label="Purple" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#4AA8DD" style="background: #4AA8DD no-repeat center; background-size: initial;">
                                                 </div>
                                             </div>
                                         </div>
@@ -130,33 +103,18 @@ require(['jquery', 'label'], function($) {
                                     <div class="product-item-inner">
                                         <div class="product-item-actions">
                                             <div class="actions-primary">
-                                                <form data-role="tocart-form" data-product-sku="WS12" action="#"
-                                                    method="post">
+                                                <form data-role="tocart-form" data-product-sku="WS12" action="#" method="post">
                                                     <input type="hidden" name="product" value="1562">
-                                                    <input type="hidden" name="uenc"
-                                                        value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
+                                                    <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                     <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                    <button type="submit" title="Add to Cart"
-                                                        class="action tocart primary">
+                                                    <button type="submit" title="Add to Cart" class="action tocart primary">
                                                         <span>Add to Cart</span>
                                                     </button>
-                                                    <input class="swatch-input super-attribute-select"
-                                                        name="super_attribute[144]" type="text" value=""
-                                                        data-selector="super_attribute[144]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false"><input
-                                                        class="swatch-input super-attribute-select"
-                                                        name="super_attribute[93]" type="text" value=""
-                                                        data-selector="super_attribute[93]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false">
+                                                    <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">
                                                 </form>
                                             </div>
                                             <div class="actions-secondary" data-role="add-to-links">
-                                                <a href="#"
-                                                    data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}"
-                                                    class="action towishlist" data-action="add-to-wishlist"
-                                                    title="Add to Wish List">
+                                                <a href="#" data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
                                                     <span>Add to Wish List</span>
                                                 </a>
                                             </div>
@@ -168,20 +126,18 @@ require(['jquery', 'label'], function($) {
                         <li class="product-item">
                             <div class="product-item-info">
                                 <a href="#" class="product-item-photo">
-                                    <span class="product-image-container product-image-container-1562"
-                                        style="width: 240px;">
+                                    <span class="product-image-container product-image-container-1562" style="width: 240px;">
                                         <span class="product-image-wrapper" style="padding-bottom: 125%;">
-                                            <img class="product-image-photo" src="images/products/product2.jpg"
-                                                loading="lazy" width="240" height="300" alt="Product image"></span>
+                                            <img class="product-image-photo" src="images/products/product2.jpg" loading="lazy" width="240" height="300" alt="Product image"></span>
                                     </span>
                                     <style>
-                                    .product-image-container-1562 {
-                                        width: 240px;
-                                    }
+                                        .product-image-container-1562 {
+                                            width: 240px;
+                                        }
 
-                                    .product-image-container-1562 span.product-image-wrapper {
-                                        padding-bottom: 125%;
-                                    }
+                                        .product-image-container-1562 span.product-image-wrapper {
+                                            padding-bottom: 125%;
+                                        }
                                     </style>
                                 </a>
                                 <div class="product-item-details">
@@ -189,51 +145,26 @@ require(['jquery', 'label'], function($) {
                                         <a title="Radiant Tee" href="#" class="product-item-link">
                                             Men Rapido - IT Shoe </a>
                                     </strong>
-                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562"
-                                        data-price-box="product-id-1562">
+                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                         <span class="old-price">
                                             <span>₹822.00</span>
                                         </span>
                                         <span class="normal-price">
                                             <span class="price-container price-final_price tax weee">
-                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22"
-                                                    data-price-type="finalPrice" class="price-wrapper "><span
-                                                        class="price">₹522.00</span></span>
+                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">₹522.00</span></span>
                                             </span>
                                         </span>
                                     </div>
                                     <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
-                                        <div class="swatch-attribute size" data-attribute-code="size"
-                                            data-attribute-id="144">
+                                        <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
                                         </div>
-                                        <div class="swatch-attribute color" data-attribute-code="color"
-                                            data-attribute-id="93">
-                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false"
-                                                aria-required="true" role="listbox" aria-label="Color"
-                                                class="swatch-attribute-options clearfix">
-                                                <div class="swatch-option color" id="option-label-color-93-item-50"
-                                                    index="0" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="50" data-option-label="Blue"
-                                                    aria-label="Blue" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#DD4A4A"
-                                                    style="background: #DD4A4A no-repeat center; background-size: initial;">
+                                        <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
+                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
+                                                <div class="swatch-option color" id="option-label-color-93-item-50" index="0" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="50" data-option-label="Blue" aria-label="Blue" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#DD4A4A" style="background: #DD4A4A no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-56"
-                                                    index="1" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="56" data-option-label="Orange"
-                                                    aria-label="Orange" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#717171"
-                                                    style="background: #717171 no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-56" index="1" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="56" data-option-label="Orange" aria-label="Orange" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#717171" style="background: #717171 no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-57"
-                                                    index="2" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="57" data-option-label="Purple"
-                                                    aria-label="Purple" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#4AA8DD"
-                                                    style="background: #4AA8DD no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-57" index="2" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="57" data-option-label="Purple" aria-label="Purple" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#4AA8DD" style="background: #4AA8DD no-repeat center; background-size: initial;">
                                                 </div>
                                             </div>
                                         </div>
@@ -241,33 +172,18 @@ require(['jquery', 'label'], function($) {
                                     <div class="product-item-inner">
                                         <div class="product-item-actions">
                                             <div class="actions-primary">
-                                                <form data-role="tocart-form" data-product-sku="WS12" action="#"
-                                                    method="post">
+                                                <form data-role="tocart-form" data-product-sku="WS12" action="#" method="post">
                                                     <input type="hidden" name="product" value="1562">
-                                                    <input type="hidden" name="uenc"
-                                                        value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
+                                                    <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                     <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                    <button type="submit" title="Add to Cart"
-                                                        class="action tocart primary">
+                                                    <button type="submit" title="Add to Cart" class="action tocart primary">
                                                         <span>Add to Cart</span>
                                                     </button>
-                                                    <input class="swatch-input super-attribute-select"
-                                                        name="super_attribute[144]" type="text" value=""
-                                                        data-selector="super_attribute[144]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false"><input
-                                                        class="swatch-input super-attribute-select"
-                                                        name="super_attribute[93]" type="text" value=""
-                                                        data-selector="super_attribute[93]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false">
+                                                    <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">
                                                 </form>
                                             </div>
                                             <div class="actions-secondary" data-role="add-to-links">
-                                                <a href="#"
-                                                    data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}"
-                                                    class="action towishlist" data-action="add-to-wishlist"
-                                                    title="Add to Wish List">
+                                                <a href="#" data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
                                                     <span>Add to Wish List</span>
                                                 </a>
                                             </div>
@@ -279,20 +195,18 @@ require(['jquery', 'label'], function($) {
                         <li class="product-item">
                             <div class="product-item-info">
                                 <a href="#" class="product-item-photo">
-                                    <span class="product-image-container product-image-container-1562"
-                                        style="width: 240px;">
+                                    <span class="product-image-container product-image-container-1562" style="width: 240px;">
                                         <span class="product-image-wrapper" style="padding-bottom: 125%;">
-                                            <img class="product-image-photo" src="images/products/product3.jpg"
-                                                loading="lazy" width="240" height="300" alt="Product image"></span>
+                                            <img class="product-image-photo" src="images/products/product3.jpg" loading="lazy" width="240" height="300" alt="Product image"></span>
                                     </span>
                                     <style>
-                                    .product-image-container-1562 {
-                                        width: 240px;
-                                    }
+                                        .product-image-container-1562 {
+                                            width: 240px;
+                                        }
 
-                                    .product-image-container-1562 span.product-image-wrapper {
-                                        padding-bottom: 125%;
-                                    }
+                                        .product-image-container-1562 span.product-image-wrapper {
+                                            padding-bottom: 125%;
+                                        }
                                     </style>
                                 </a>
                                 <div class="product-item-details">
@@ -300,51 +214,26 @@ require(['jquery', 'label'], function($) {
                                         <a title="Radiant Tee" href="#" class="product-item-link">
                                             Men Rapido - IT Shoe </a>
                                     </strong>
-                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562"
-                                        data-price-box="product-id-1562">
+                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                         <span class="old-price">
                                             <span>₹822.00</span>
                                         </span>
                                         <span class="normal-price">
                                             <span class="price-container price-final_price tax weee">
-                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22"
-                                                    data-price-type="finalPrice" class="price-wrapper "><span
-                                                        class="price">₹522.00</span></span>
+                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">₹522.00</span></span>
                                             </span>
                                         </span>
                                     </div>
                                     <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
-                                        <div class="swatch-attribute size" data-attribute-code="size"
-                                            data-attribute-id="144">
+                                        <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
                                         </div>
-                                        <div class="swatch-attribute color" data-attribute-code="color"
-                                            data-attribute-id="93">
-                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false"
-                                                aria-required="true" role="listbox" aria-label="Color"
-                                                class="swatch-attribute-options clearfix">
-                                                <div class="swatch-option color" id="option-label-color-93-item-50"
-                                                    index="0" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="50" data-option-label="Blue"
-                                                    aria-label="Blue" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#DD4A4A"
-                                                    style="background: #DD4A4A no-repeat center; background-size: initial;">
+                                        <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
+                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
+                                                <div class="swatch-option color" id="option-label-color-93-item-50" index="0" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="50" data-option-label="Blue" aria-label="Blue" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#DD4A4A" style="background: #DD4A4A no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-56"
-                                                    index="1" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="56" data-option-label="Orange"
-                                                    aria-label="Orange" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#717171"
-                                                    style="background: #717171 no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-56" index="1" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="56" data-option-label="Orange" aria-label="Orange" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#717171" style="background: #717171 no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-57"
-                                                    index="2" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="57" data-option-label="Purple"
-                                                    aria-label="Purple" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#4AA8DD"
-                                                    style="background: #4AA8DD no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-57" index="2" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="57" data-option-label="Purple" aria-label="Purple" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#4AA8DD" style="background: #4AA8DD no-repeat center; background-size: initial;">
                                                 </div>
                                             </div>
                                         </div>
@@ -352,33 +241,18 @@ require(['jquery', 'label'], function($) {
                                     <div class="product-item-inner">
                                         <div class="product-item-actions">
                                             <div class="actions-primary">
-                                                <form data-role="tocart-form" data-product-sku="WS12" action="#"
-                                                    method="post">
+                                                <form data-role="tocart-form" data-product-sku="WS12" action="#" method="post">
                                                     <input type="hidden" name="product" value="1562">
-                                                    <input type="hidden" name="uenc"
-                                                        value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
+                                                    <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                     <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                    <button type="submit" title="Add to Cart"
-                                                        class="action tocart primary">
+                                                    <button type="submit" title="Add to Cart" class="action tocart primary">
                                                         <span>Add to Cart</span>
                                                     </button>
-                                                    <input class="swatch-input super-attribute-select"
-                                                        name="super_attribute[144]" type="text" value=""
-                                                        data-selector="super_attribute[144]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false"><input
-                                                        class="swatch-input super-attribute-select"
-                                                        name="super_attribute[93]" type="text" value=""
-                                                        data-selector="super_attribute[93]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false">
+                                                    <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">
                                                 </form>
                                             </div>
                                             <div class="actions-secondary" data-role="add-to-links">
-                                                <a href="#"
-                                                    data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}"
-                                                    class="action towishlist" data-action="add-to-wishlist"
-                                                    title="Add to Wish List">
+                                                <a href="#" data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
                                                     <span>Add to Wish List</span>
                                                 </a>
                                             </div>
@@ -390,20 +264,18 @@ require(['jquery', 'label'], function($) {
                         <li class="product-item">
                             <div class="product-item-info">
                                 <a href="#" class="product-item-photo">
-                                    <span class="product-image-container product-image-container-1562"
-                                        style="width: 240px;">
+                                    <span class="product-image-container product-image-container-1562" style="width: 240px;">
                                         <span class="product-image-wrapper" style="padding-bottom: 125%;">
-                                            <img class="product-image-photo" src="images/products/product4.jpg"
-                                                loading="lazy" width="240" height="300" alt="Product image"></span>
+                                            <img class="product-image-photo" src="images/products/product4.jpg" loading="lazy" width="240" height="300" alt="Product image"></span>
                                     </span>
                                     <style>
-                                    .product-image-container-1562 {
-                                        width: 240px;
-                                    }
+                                        .product-image-container-1562 {
+                                            width: 240px;
+                                        }
 
-                                    .product-image-container-1562 span.product-image-wrapper {
-                                        padding-bottom: 125%;
-                                    }
+                                        .product-image-container-1562 span.product-image-wrapper {
+                                            padding-bottom: 125%;
+                                        }
                                     </style>
                                 </a>
                                 <div class="product-item-details">
@@ -411,51 +283,26 @@ require(['jquery', 'label'], function($) {
                                         <a title="Radiant Tee" href="#" class="product-item-link">
                                             Men Rapido - IT Shoe </a>
                                     </strong>
-                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562"
-                                        data-price-box="product-id-1562">
+                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                         <span class="old-price">
                                             <span>₹822.00</span>
                                         </span>
                                         <span class="normal-price">
                                             <span class="price-container price-final_price tax weee">
-                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22"
-                                                    data-price-type="finalPrice" class="price-wrapper "><span
-                                                        class="price">₹522.00</span></span>
+                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">₹522.00</span></span>
                                             </span>
                                         </span>
                                     </div>
                                     <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
-                                        <div class="swatch-attribute size" data-attribute-code="size"
-                                            data-attribute-id="144">
+                                        <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
                                         </div>
-                                        <div class="swatch-attribute color" data-attribute-code="color"
-                                            data-attribute-id="93">
-                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false"
-                                                aria-required="true" role="listbox" aria-label="Color"
-                                                class="swatch-attribute-options clearfix">
-                                                <div class="swatch-option color" id="option-label-color-93-item-50"
-                                                    index="0" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="50" data-option-label="Blue"
-                                                    aria-label="Blue" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#DD4A4A"
-                                                    style="background: #DD4A4A no-repeat center; background-size: initial;">
+                                        <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
+                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
+                                                <div class="swatch-option color" id="option-label-color-93-item-50" index="0" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="50" data-option-label="Blue" aria-label="Blue" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#DD4A4A" style="background: #DD4A4A no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-56"
-                                                    index="1" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="56" data-option-label="Orange"
-                                                    aria-label="Orange" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#717171"
-                                                    style="background: #717171 no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-56" index="1" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="56" data-option-label="Orange" aria-label="Orange" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#717171" style="background: #717171 no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-57"
-                                                    index="2" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="57" data-option-label="Purple"
-                                                    aria-label="Purple" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#4AA8DD"
-                                                    style="background: #4AA8DD no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-57" index="2" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="57" data-option-label="Purple" aria-label="Purple" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#4AA8DD" style="background: #4AA8DD no-repeat center; background-size: initial;">
                                                 </div>
                                             </div>
                                         </div>
@@ -463,33 +310,18 @@ require(['jquery', 'label'], function($) {
                                     <div class="product-item-inner">
                                         <div class="product-item-actions">
                                             <div class="actions-primary">
-                                                <form data-role="tocart-form" data-product-sku="WS12" action="#"
-                                                    method="post">
+                                                <form data-role="tocart-form" data-product-sku="WS12" action="#" method="post">
                                                     <input type="hidden" name="product" value="1562">
-                                                    <input type="hidden" name="uenc"
-                                                        value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
+                                                    <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                     <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                    <button type="submit" title="Add to Cart"
-                                                        class="action tocart primary">
+                                                    <button type="submit" title="Add to Cart" class="action tocart primary">
                                                         <span>Add to Cart</span>
                                                     </button>
-                                                    <input class="swatch-input super-attribute-select"
-                                                        name="super_attribute[144]" type="text" value=""
-                                                        data-selector="super_attribute[144]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false"><input
-                                                        class="swatch-input super-attribute-select"
-                                                        name="super_attribute[93]" type="text" value=""
-                                                        data-selector="super_attribute[93]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false">
+                                                    <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">
                                                 </form>
                                             </div>
                                             <div class="actions-secondary" data-role="add-to-links">
-                                                <a href="#"
-                                                    data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}"
-                                                    class="action towishlist" data-action="add-to-wishlist"
-                                                    title="Add to Wish List">
+                                                <a href="#" data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
                                                     <span>Add to Wish List</span>
                                                 </a>
                                             </div>
@@ -501,20 +333,18 @@ require(['jquery', 'label'], function($) {
                         <li class="product-item">
                             <div class="product-item-info">
                                 <a href="#" class="product-item-photo">
-                                    <span class="product-image-container product-image-container-1562"
-                                        style="width: 240px;">
+                                    <span class="product-image-container product-image-container-1562" style="width: 240px;">
                                         <span class="product-image-wrapper" style="padding-bottom: 125%;">
-                                            <img class="product-image-photo" src="images/products/product5.jpg"
-                                                loading="lazy" width="240" height="300" alt="Product image"></span>
+                                            <img class="product-image-photo" src="images/products/product5.jpg" loading="lazy" width="240" height="300" alt="Product image"></span>
                                     </span>
                                     <style>
-                                    .product-image-container-1562 {
-                                        width: 240px;
-                                    }
+                                        .product-image-container-1562 {
+                                            width: 240px;
+                                        }
 
-                                    .product-image-container-1562 span.product-image-wrapper {
-                                        padding-bottom: 125%;
-                                    }
+                                        .product-image-container-1562 span.product-image-wrapper {
+                                            padding-bottom: 125%;
+                                        }
                                     </style>
                                 </a>
                                 <div class="product-item-details">
@@ -522,51 +352,26 @@ require(['jquery', 'label'], function($) {
                                         <a title="Radiant Tee" href="#" class="product-item-link">
                                             Men Rapido - IT Shoe </a>
                                     </strong>
-                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562"
-                                        data-price-box="product-id-1562">
+                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                         <span class="old-price">
                                             <span>₹822.00</span>
                                         </span>
                                         <span class="normal-price">
                                             <span class="price-container price-final_price tax weee">
-                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22"
-                                                    data-price-type="finalPrice" class="price-wrapper "><span
-                                                        class="price">₹522.00</span></span>
+                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">₹522.00</span></span>
                                             </span>
                                         </span>
                                     </div>
                                     <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
-                                        <div class="swatch-attribute size" data-attribute-code="size"
-                                            data-attribute-id="144">
+                                        <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
                                         </div>
-                                        <div class="swatch-attribute color" data-attribute-code="color"
-                                            data-attribute-id="93">
-                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false"
-                                                aria-required="true" role="listbox" aria-label="Color"
-                                                class="swatch-attribute-options clearfix">
-                                                <div class="swatch-option color" id="option-label-color-93-item-50"
-                                                    index="0" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="50" data-option-label="Blue"
-                                                    aria-label="Blue" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#DD4A4A"
-                                                    style="background: #DD4A4A no-repeat center; background-size: initial;">
+                                        <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
+                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
+                                                <div class="swatch-option color" id="option-label-color-93-item-50" index="0" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="50" data-option-label="Blue" aria-label="Blue" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#DD4A4A" style="background: #DD4A4A no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-56"
-                                                    index="1" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="56" data-option-label="Orange"
-                                                    aria-label="Orange" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#717171"
-                                                    style="background: #717171 no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-56" index="1" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="56" data-option-label="Orange" aria-label="Orange" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#717171" style="background: #717171 no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-57"
-                                                    index="2" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="57" data-option-label="Purple"
-                                                    aria-label="Purple" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#4AA8DD"
-                                                    style="background: #4AA8DD no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-57" index="2" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="57" data-option-label="Purple" aria-label="Purple" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#4AA8DD" style="background: #4AA8DD no-repeat center; background-size: initial;">
                                                 </div>
                                             </div>
                                         </div>
@@ -574,33 +379,18 @@ require(['jquery', 'label'], function($) {
                                     <div class="product-item-inner">
                                         <div class="product-item-actions">
                                             <div class="actions-primary">
-                                                <form data-role="tocart-form" data-product-sku="WS12" action="#"
-                                                    method="post">
+                                                <form data-role="tocart-form" data-product-sku="WS12" action="#" method="post">
                                                     <input type="hidden" name="product" value="1562">
-                                                    <input type="hidden" name="uenc"
-                                                        value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
+                                                    <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                     <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                    <button type="submit" title="Add to Cart"
-                                                        class="action tocart primary">
+                                                    <button type="submit" title="Add to Cart" class="action tocart primary">
                                                         <span>Add to Cart</span>
                                                     </button>
-                                                    <input class="swatch-input super-attribute-select"
-                                                        name="super_attribute[144]" type="text" value=""
-                                                        data-selector="super_attribute[144]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false"><input
-                                                        class="swatch-input super-attribute-select"
-                                                        name="super_attribute[93]" type="text" value=""
-                                                        data-selector="super_attribute[93]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false">
+                                                    <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">
                                                 </form>
                                             </div>
                                             <div class="actions-secondary" data-role="add-to-links">
-                                                <a href="#"
-                                                    data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}"
-                                                    class="action towishlist" data-action="add-to-wishlist"
-                                                    title="Add to Wish List">
+                                                <a href="#" data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
                                                     <span>Add to Wish List</span>
                                                 </a>
                                             </div>
@@ -612,20 +402,18 @@ require(['jquery', 'label'], function($) {
                         <li class="product-item">
                             <div class="product-item-info">
                                 <a href="#" class="product-item-photo">
-                                    <span class="product-image-container product-image-container-1562"
-                                        style="width: 240px;">
+                                    <span class="product-image-container product-image-container-1562" style="width: 240px;">
                                         <span class="product-image-wrapper" style="padding-bottom: 125%;">
-                                            <img class="product-image-photo" src="images/products/product6.jpg"
-                                                loading="lazy" width="240" height="300" alt="Product image"></span>
+                                            <img class="product-image-photo" src="images/products/product6.jpg" loading="lazy" width="240" height="300" alt="Product image"></span>
                                     </span>
                                     <style>
-                                    .product-image-container-1562 {
-                                        width: 240px;
-                                    }
+                                        .product-image-container-1562 {
+                                            width: 240px;
+                                        }
 
-                                    .product-image-container-1562 span.product-image-wrapper {
-                                        padding-bottom: 125%;
-                                    }
+                                        .product-image-container-1562 span.product-image-wrapper {
+                                            padding-bottom: 125%;
+                                        }
                                     </style>
                                 </a>
                                 <div class="product-item-details">
@@ -633,51 +421,26 @@ require(['jquery', 'label'], function($) {
                                         <a title="Radiant Tee" href="#" class="product-item-link">
                                             Men Rapido - IT Shoe </a>
                                     </strong>
-                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562"
-                                        data-price-box="product-id-1562">
+                                    <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                         <span class="old-price">
                                             <span>₹822.00</span>
                                         </span>
                                         <span class="normal-price">
                                             <span class="price-container price-final_price tax weee">
-                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22"
-                                                    data-price-type="finalPrice" class="price-wrapper "><span
-                                                        class="price">₹522.00</span></span>
+                                                <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">₹522.00</span></span>
                                             </span>
                                         </span>
                                     </div>
                                     <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
-                                        <div class="swatch-attribute size" data-attribute-code="size"
-                                            data-attribute-id="144">
+                                        <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
                                         </div>
-                                        <div class="swatch-attribute color" data-attribute-code="color"
-                                            data-attribute-id="93">
-                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false"
-                                                aria-required="true" role="listbox" aria-label="Color"
-                                                class="swatch-attribute-options clearfix">
-                                                <div class="swatch-option color" id="option-label-color-93-item-50"
-                                                    index="0" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="50" data-option-label="Blue"
-                                                    aria-label="Blue" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#DD4A4A"
-                                                    style="background: #DD4A4A no-repeat center; background-size: initial;">
+                                        <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
+                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
+                                                <div class="swatch-option color" id="option-label-color-93-item-50" index="0" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="50" data-option-label="Blue" aria-label="Blue" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#DD4A4A" style="background: #DD4A4A no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-56"
-                                                    index="1" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="56" data-option-label="Orange"
-                                                    aria-label="Orange" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#717171"
-                                                    style="background: #717171 no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-56" index="1" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="56" data-option-label="Orange" aria-label="Orange" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#717171" style="background: #717171 no-repeat center; background-size: initial;">
                                                 </div>
-                                                <div class="swatch-option color" id="option-label-color-93-item-57"
-                                                    index="2" aria-checked="false"
-                                                    aria-describedby="option-label-color-93" tabindex="0"
-                                                    data-option-type="1" data-option-id="57" data-option-label="Purple"
-                                                    aria-label="Purple" role="option" data-thumb-width="110"
-                                                    data-thumb-height="90" data-option-tooltip-value="#4AA8DD"
-                                                    style="background: #4AA8DD no-repeat center; background-size: initial;">
+                                                <div class="swatch-option color" id="option-label-color-93-item-57" index="2" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="57" data-option-label="Purple" aria-label="Purple" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#4AA8DD" style="background: #4AA8DD no-repeat center; background-size: initial;">
                                                 </div>
                                             </div>
                                         </div>
@@ -685,33 +448,18 @@ require(['jquery', 'label'], function($) {
                                     <div class="product-item-inner">
                                         <div class="product-item-actions">
                                             <div class="actions-primary">
-                                                <form data-role="tocart-form" data-product-sku="WS12" action="#"
-                                                    method="post">
+                                                <form data-role="tocart-form" data-product-sku="WS12" action="#" method="post">
                                                     <input type="hidden" name="product" value="1562">
-                                                    <input type="hidden" name="uenc"
-                                                        value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
+                                                    <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                     <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                    <button type="submit" title="Add to Cart"
-                                                        class="action tocart primary">
+                                                    <button type="submit" title="Add to Cart" class="action tocart primary">
                                                         <span>Add to Cart</span>
                                                     </button>
-                                                    <input class="swatch-input super-attribute-select"
-                                                        name="super_attribute[144]" type="text" value=""
-                                                        data-selector="super_attribute[144]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false"><input
-                                                        class="swatch-input super-attribute-select"
-                                                        name="super_attribute[93]" type="text" value=""
-                                                        data-selector="super_attribute[93]"
-                                                        data-validate="{required: true}" aria-required="true"
-                                                        aria-invalid="false">
+                                                    <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">
                                                 </form>
                                             </div>
                                             <div class="actions-secondary" data-role="add-to-links">
-                                                <a href="#"
-                                                    data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}"
-                                                    class="action towishlist" data-action="add-to-wishlist"
-                                                    title="Add to Wish List">
+                                                <a href="#" data-post="{&quot;action&quot;:&quot;https:\/\/magento.nublue.co.uk\/wishlist\/index\/add\/&quot;,&quot;data&quot;:{&quot;product&quot;:1562,&quot;uenc&quot;:&quot;aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8,&quot;}}" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
                                                     <span>Add to Wish List</span>
                                                 </a>
                                             </div>

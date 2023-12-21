@@ -3,33 +3,35 @@
 namespace Egits\Integration\Block;
 
 use Magento\Framework\View\Element\Template;
-use Magento\Catalog\Model\ResourceModel\Category\CollectionFactory;
+// use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
+use \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 
 class Products extends Template
 {
-    protected $CategoryCollection;
+    protected $ProductCollection;
     public function __construct(
         Template\Context $context,
-        CollectionFactory $CategoryCollection,
+        CollectionFactory $ProductCollection,
         array $data = []
     ) {
-        $this->CategoryCollection = $CategoryCollection;
+        $this->ProductCollection = $ProductCollection;
         parent::__construct($context, $data);
     }
     public function getDataForPHTML()
     {
 
-        return "Hello from Products";
-        // $categories = $this->CategoryCollection->create();
-        // $categories->addAttributeToSelect('*');
-        // $categories->addAttributeToFilter('enable_category', 1);
-        // foreach ($categories as $category) {
+        // return "Hello from Products";
+        $products = $this->ProductCollection->create();
+        // $categories = $this->ProductCollection->create();
+        $products->addAttributeToSelect('*');
+        // $categories->addAttributeToFilter('enable_Product', 1);
+        foreach ($products as $product) {
 
-        //     //            var_dump($category->getData());
-        //     //            dd();
-        //     $collection[] = $category->getData();
-        // }
+            //            var_dump($Product->getData());
+            //            dd();
+            $collection[] = $product->getData();
+        }
 
-        // return $collection;
+        return $collection;
     }
 }
