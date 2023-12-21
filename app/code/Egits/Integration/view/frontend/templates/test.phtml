@@ -55,8 +55,9 @@ $category = $blockobj->getDataForPHTML();
         </div>
         <ul class="owl-carousel owl-theme top-category-slider owl-loaded owl-drag topcategoryslider testing">
             <?php foreach ($category as $item) : ?>
+
                 <li class="top-category-list">
-                    <a href="<?php echo $item['url_path'] ?>">
+                    <a href="<?php echo $item['url_path'] . "html" ?>">
                         <figure class="top-category-image" style="background-image: url('<?php echo $item['image']; ?>');">
                         </figure>
                         <h4><?php echo $item['url_key']; ?></h4>
