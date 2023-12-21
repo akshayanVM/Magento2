@@ -35,7 +35,7 @@ class Save extends Action
         // dd();
         $test = $data['brand_name'];
         // $test1 = $data['email'];
-        // $test3 = $data['photo'][0]['url'];
+        $test3 = $data['image_url'][0]['image_url'];
         // var_dump($test3);
         // dd();
         // dd();
@@ -46,7 +46,7 @@ class Save extends Action
         // dd();
         $model->setBrandName($test);
         // $model->setCustomerEmail($test1);
-        // $model->setImageUrl($test3);
+        $model->setImageUrl($test3);
         // var_dump($model['name']);
         // dd();
         $this->postResource->save($model);
