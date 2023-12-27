@@ -1,6 +1,6 @@
 <?php
 
-namespace Akshay\Module\Model\ResourceModel\Post;
+namespace Egits\Integration\Model\ResourceModel\Post;
 
 class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection
 {

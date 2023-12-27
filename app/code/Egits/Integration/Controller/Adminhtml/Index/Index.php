@@ -2,6 +2,8 @@
 
 namespace Egits\Integration\Controller\Adminhtml\Index;
 
+use Magento\Framework\App\ResponseInterface;
+
 class Index extends \Magento\Backend\App\Action
 {
     protected $resultPageFactory = false;
@@ -15,7 +17,12 @@ class Index extends \Magento\Backend\App\Action
         $this->resultPageFactory = $resultPageFactory;
         // $this->_postFactory = $postFactory;
         parent::__construct($context);
-    }
+    /**
+     * @inheritDoc
+     */public function execute()
+{
+    // TODO: Implement execute() method.
+}}
 
     public function execute()
     {
