@@ -17,19 +17,14 @@ class Index extends \Magento\Backend\App\Action
         $this->resultPageFactory = $resultPageFactory;
         // $this->_postFactory = $postFactory;
         parent::__construct($context);
-    /**
-     * @inheritDoc
-     */public function execute()
-{
-    // TODO: Implement execute() method.
-}}
-
+    }
     public function execute()
     {
         // $collection =  $this->_postFactory->create();
         // $data = $collection->getCollection();
         // print_r($data->getData());
         // die();
+        $testVariable = 1;
         $resultPage = $this->resultPageFactory->create();
         $resultPage->getConfig()->getTitle()->prepend((__('The Top Brands Page')));
 
