@@ -7,7 +7,7 @@ $blockobj = $block->getLayout()->createBlock(Products::class);
 $products = $blockobj->getDataForPHTML();
 $productimage = $blockobj->getImageUrlFromPath($products[0]['image']);
 
-//var_dump($products);
+var_dump($products);
 // dd();
 //var_dump($productimage);
 //dd();
@@ -79,12 +79,18 @@ $productimage = $blockobj->getImageUrlFromPath($products[0]['image']);
                                         </strong>
                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                             <span class="old-price">
-                                                <span>₹<?php echo $product['price']; ?></span>
+                                                <span>₹<?php echo substr($product['price'], 0, 6); ?></span>
+                                            </span>
+                                            <span class="normal-price">
+                                                <span class="price-container price-final_price tax weee">
+                                                    <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">₹<?= substr($product['special_price'], 0, 6); ?></span></span>
+                                                </span>
                                             </span>
 
                                         </div>
                                         <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
                                             <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
+
                                             </div>
                                             <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
                                                 <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">

@@ -245,5 +245,8 @@
 		</field>
 		-->
 	</fieldset>
-	<!-- <img src="<?php echo $this->getViewFileUrl('TestingVendor_Mymodule::images/textile.jpg'); ?>" alt="Textile Image" width="300" height="300" /> -->
+	<!--
+	<img src="<?php echo $this->getViewFileUrl('TestingVendor_Mymodule::images/textile.jpg');
+	?>" alt="Textile Image" width="300" height="300" />
+	-->
 </form>
