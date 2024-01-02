@@ -1,0 +1,30 @@
+<?php
+
+/** @var \Egits\Integration\Block\Template $block */
+?>
+
+
+
+<script type="text/javascript">
+    require(['jquery', 'label'], function($) {
+        $('.home-slider-custom').owlCarousel({
+            loop: true,
+            nav: true,
+            dots: true,
+            items: 1,
+            autoPlay: 2000,
+        })
+        // Your custom JavaScript code here, if needed
+        // Example: $('.top-category-slider').owlCarousel();
+    });
+</script>
+<section class="slider-section">
+    <div class="page-main">
+        <div class="owl-carousel owl-theme home-slider home-slider-custom">
+            <div class="item"><img src="{{view url='images/slider1.jpg'}}" alt="Image Not Loaded!!!!!!!"></div>
+            <div class="item"><img src="{{view url='images/slider1.jpg'}}" alt="Image Not Loaded!!!!!!!"></div>
+            <div class="item"><img src="{{view url='images/slider1.jpg'}}" alt="Image Not Loaded!!!!!!!"></div>
+            <!-- <div class="item"><img href="#" src="images/slider1.jpg"></div> -->
+        </div>
+    </div>
+</section>
