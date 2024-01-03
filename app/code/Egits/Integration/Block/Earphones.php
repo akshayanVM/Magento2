@@ -9,6 +9,7 @@ use \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\UrlInterface;
 
+
 class Earphones extends Template
 {
     protected $ProductCollection;

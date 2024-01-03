@@ -3,8 +3,11 @@
 /** @var \Egits\Integration\Block\Template $block */
 
 use Egits\Integration\Block\Earphones;
+use Egits\Integration\Block\PriceConverter;
+
 
 $blockobj = $block->getLayout()->createBlock(Earphones::class);
+$priceobj = $block->getLayout()->createBlock(PriceConverter::class);
 
 $earphones = $blockobj->getDataForPHTML();
 $earphoneimage = $blockobj->getImageUrlFromPath($earphones[0]['image']);
@@ -65,6 +68,8 @@ $earphoneimage = $blockobj->getImageUrlFromPath($earphones[0]['image']);
                             ////                            var_dump($product['entity_id']);
                             // var_dump($product['entity_id']);
                             $earphoneimage = $blockobj->getImageUrlFromPath($earphone['image']);
+                            $convertedPrice = $priceobj->getFormattedPrice($earphone['price']);
+                            $convertedSpecialPrice = $priceobj->getFormattedPrice($earphone['special_price']);
                             //                            
                         ?>
                             <li class="product-item">
@@ -83,11 +88,11 @@ $earphoneimage = $blockobj->getImageUrlFromPath($earphones[0]['image']);
                                         </strong>
                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                             <span class="old-price">
-                                                <span>₹<?php echo substr($earphone['price'], 0, 6); ?></span>
+                                                <span><?php echo $convertedPrice ?></span>
                                             </span>
                                             <span class="normal-price">
                                                 <span class="price-container price-final_price tax weee">
-                                                    <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">₹<?= substr($earphone['special_price'], 0, 6); ?></span></span>
+                                                    <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price"><?= $convertedSpecialPrice ?></span></span>
                                                 </span>
                                             </span>
                                         </div>
