@@ -1,0 +1,12 @@
+<?php
+
+use Egits\Integration\Block\Products;
+
+$blockObj = $block->getLayout()->createBlock(Products::class);
+$productCollection = $blockObj->getDataForPHTML();
+foreach ($productCollection as $products) {
+    $productid = $blockObj->getProductId($products);
+    ?>
+    <button id="testbutton" data-test-id="<?= $productid ?>">Wishlist</button>
+<?php } ?>
+

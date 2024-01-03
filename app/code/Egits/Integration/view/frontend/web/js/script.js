@@ -1,8 +1,8 @@
 require(["jquery"], function ($) {
     $(document).ready(function () {
-        $("#wish-list-button").click(function (e) {
+        $("#testbutton").click(function (e) {
             e.preventDefault();
-            const productId = $(this).data("product-entity-id");
+            let productId = $(this).data("test-id");
             console.log(productId);
             // $.ajax({
             //     url: "http://test.magento2.com/index.php/wishlist/index/add/", // Replace with your controller URL
