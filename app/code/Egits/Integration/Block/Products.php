@@ -19,6 +19,7 @@ class Products extends Template
     protected $storeManager;
 
     public function __construct(
+
         Template\Context $context,
         CollectionFactory $ProductCollection,
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
@@ -34,33 +35,50 @@ class Products extends Template
     {
         $categoryId = 55;
 
-        // $productName = 'Bag';
+
         $category = $this->categoryFactory->create()->load($categoryId);
         $collection = [];
-        // return "Hello from Products";
-        $products = $this->ProductCollection->create();
-        // $category->getProductCollection()->addAttributeToSelect('*');
-        // $categories = $this->ProductCollection->create();
-        $products->addAttributeToSelect('*');
-        // $products->addAttributeToFilter('name', ['like' => '%' . $productName . '%']);
-        // $products->setPageSize(2000);
-        // $products->addCategoriesFilter(['in' => $categoryId]);
-        $products->addCategoryFilter($category);
-        // $products->addAttributeToFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
-        // $products->addAttributeToFilter('name', 1);
-        // $categories->addAttributeToFilter('enable_Product', 1);
-        foreach ($products as $product) {
 
-            //            var_dump($Product->getData());
-            //            dd();
-            $collection[] = $product->getData();
-        }
-        return $collection;
+        $products = $this->ProductCollection->create();
+
+        $products->addAttributeToSelect('*');
+
+        $products->addCategoryFilter($category);
+
+//        foreach ($products as $product) {
+//
+//
+//            $collection[] = $product->getData();
+//        }
+        return $products;
     }
 
     public function getImageUrlFromPath($imagePath)
     {
         //  used to get the store url
         return $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $imagePath;
+    }
+
+    public function getProductId($product)
+    {
+//        $productId = '';
+//        $collection = $this->ProductCollection->create();
+//        foreach ($collection as $item){
+//            if ($item['entity_id'] == $product['entity_id'])
+//            {
+//                $productId = $item->getProductURL();
+//
+//                break;
+//            }
+//        }
+//        var_dump($productId);
+//        dd();
+//        return $productId;
+
+        return $product->getId();
+    }
+
+    public function getUrlForProduct($product){
+        return $product->getProductURL();
     }
 }
