@@ -8,6 +8,7 @@ use Magento\Catalog\Model\CategoryFactory;
 use \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\UrlInterface;
+use Magento\Framework\Data\Form\FormKey;
 
 
 class Earphones extends Template
@@ -21,11 +22,13 @@ class Earphones extends Template
 
     public function __construct(
         Template\Context $context,
+        FormKey $formKey,
         CollectionFactory $ProductCollection,
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
         StoreManagerInterface $storeManager,
         array $data = []
     ) {
+        $this->formKey = $formKey;
         $this->ProductCollection = $ProductCollection;
         $this->categoryFactory = $categoryFactory;
         $this->storeManager = $storeManager;
@@ -68,5 +71,28 @@ class Earphones extends Template
     public function getUrlForEarphone($earphone) // move it into the utility block
     {
         return $earphone->getProductURL();
+    }
+
+    public function getEarphoneId($earphone)
+    {
+        //        $productId = '';
+        //        $collection = $this->ProductCollection->create();
+        //        foreach ($collection as $item){
+        //            if ($item['entity_id'] == $product['entity_id'])
+        //            {
+        //                $productId = $item->getProductURL();
+        //
+        //                break;
+        //            }
+        //        }
+        //        var_dump($productId);
+        //        dd();
+        //        return $productId;
+
+        return $earphone->getId();
+    }
+    public function getFormKeyForEarphoneWishlist()
+    {
+        return $this->formKey->getFormKey();
     }
 }
