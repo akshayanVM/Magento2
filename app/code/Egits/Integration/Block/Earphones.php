@@ -50,18 +50,23 @@ class Earphones extends Template
         // $products->addAttributeToFilter('visibility', \Magento\Catalog\Model\Product\Visibility::VISIBILITY_BOTH);
         // $products->addAttributeToFilter('name', 1);
         // $categories->addAttributeToFilter('enable_Product', 1);
-        foreach ($products as $product) {
+        // foreach ($products as $product) {
 
-            //            var_dump($Product->getData());
-            //            dd();
-            $collection[] = $product->getData();
-        }
-        return $collection;
+        //     //            var_dump($Product->getData());
+        //     //            dd();
+        //     $collection[] = $product->getData();
+        // }
+        return $products;
     }
 
     public function getImageUrlFromPath($imagePath)
     {
         //  used to get the store url
         return $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $imagePath;
+    }
+
+    public function getUrlForEarphone($earphone) // move it into the utility block
+    {
+        return $earphone->getProductURL();
     }
 }
