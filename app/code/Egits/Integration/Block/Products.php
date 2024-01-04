@@ -8,6 +8,7 @@ use Magento\Catalog\Model\CategoryFactory;
 use \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\UrlInterface;
+use Magento\Framework\Data\Form\FormKey;
 
 class Products extends Template
 {
@@ -21,11 +22,13 @@ class Products extends Template
     public function __construct(
 
         Template\Context $context,
+        FormKey $formKey,
         CollectionFactory $ProductCollection,
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
         StoreManagerInterface $storeManager,
         array $data = []
     ) {
+        $this->formKey = $formKey;
         $this->ProductCollection = $ProductCollection;
         $this->categoryFactory = $categoryFactory;
         $this->storeManager = $storeManager;
@@ -45,11 +48,11 @@ class Products extends Template
 
         $products->addCategoryFilter($category);
 
-//        foreach ($products as $product) {
-//
-//
-//            $collection[] = $product->getData();
-//        }
+        //        foreach ($products as $product) {
+        //
+        //
+        //            $collection[] = $product->getData();
+        //        }
         return $products;
     }
 
@@ -61,24 +64,30 @@ class Products extends Template
 
     public function getProductId($product)
     {
-//        $productId = '';
-//        $collection = $this->ProductCollection->create();
-//        foreach ($collection as $item){
-//            if ($item['entity_id'] == $product['entity_id'])
-//            {
-//                $productId = $item->getProductURL();
-//
-//                break;
-//            }
-//        }
-//        var_dump($productId);
-//        dd();
-//        return $productId;
+        //        $productId = '';
+        //        $collection = $this->ProductCollection->create();
+        //        foreach ($collection as $item){
+        //            if ($item['entity_id'] == $product['entity_id'])
+        //            {
+        //                $productId = $item->getProductURL();
+        //
+        //                break;
+        //            }
+        //        }
+        //        var_dump($productId);
+        //        dd();
+        //        return $productId;
 
         return $product->getId();
     }
 
-    public function getUrlForProduct($product){
+    public function getUrlForProduct($product)
+    {
         return $product->getProductURL();
+    }
+
+    public function getFormKeyForWishlist()
+    {
+        return $this->formKey->getFormKey();
     }
 }
