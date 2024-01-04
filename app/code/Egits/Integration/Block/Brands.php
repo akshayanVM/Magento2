@@ -23,13 +23,18 @@ class Brands extends Template
         // return "brands collection";
         // $categories->addAttributeToSelect('*');
         // $categories->addAttributeToFilter('enable_category', 1);
-        foreach ($brands as $brand) {
+        // foreach ($brands as $brand) {
 
-            //            var_dump($category->getData());
-            //            dd();
-            $collection[] = $brand->getData();
-        }
+        //     //            var_dump($category->getData());
+        //     //            dd();
+        //     $collection[] = $brand->getData();
+        // }
 
-        return $collection;
+        return $brands;
+    }
+
+    public function getUrlForBrand($brand)
+    {
+        return $brand->getProductURL();
     }
 }

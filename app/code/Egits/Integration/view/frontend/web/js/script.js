@@ -11,14 +11,16 @@ require(["jquery"], function ($) {
                 // url: "http://test.magento2.com/index.php/wishlist/index/add/", // Replace with your controller URL
                 url: "/wishlist/index/add/product/" + productId + "/",
                 type: "POST",
-                dataType: "json",
-                data: { productId: productId, formKeyTest: formKeyTest },
+                // dataType: "json",
+                data: { productId: productId, form_key: formKey }, // it wasnt working because the form_key name was the same
                 success: function (response) {
-                    if (response.success) {
-                        alert("Value sent successfully!");
-                    } else {
-                        alert("Failed to send value.");
-                    }
+                    console.log(response);
+                    window.location.href = "/wishlist/index/index";
+                    // if (response.success) {
+                    //     alert("Value sent successfully!");
+                    // } else {
+                    //     alert("Failed to send value.");
+                    // }
                 },
                 error: function (xhr, status, error) {
                     console.error("AJAX Error:", status, error);

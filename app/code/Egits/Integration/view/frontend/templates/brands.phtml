@@ -48,9 +48,11 @@ $brands = $blockobj->getDataForPHTML();
             <h2 class="title">Top brands</h2>
         </div>
         <ul class="owl-carousel owl-theme top-brands-slider top-brandSlider owl-loaded owl-drag">
-            <?php foreach ($brands as $brand) : ?>
+            <?php foreach ($brands as $brand) :
+                $brandUrl = $blockobj->getUrlForBrands($brand);
+            ?>
                 <li class="top-brands-list">
-                    <a href="#">
+                    <a href="<?= $brandUrl ?>">
                         <figure class="top-brands-image" style="background-image: url('<?php echo $brand['image_url']; ?>');"> </figure>
                         <h4><?php echo $brand['brand_name']; ?></h4>
                     </a>
