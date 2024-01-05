@@ -9,6 +9,24 @@
 				brands_module_listing.brands_module_listing_data_source
 			</item>
 		</item>
+		<!--
+		<item name="fieldAction" xsi:type="array">
+		<item name="provider" xsi:type="string">
+		brands_module_listing.brands_module_listing.actions
+		</item>
+		<item name="target" xsi:type="string">
+		applyAction
+		</item>
+		<item name="params" xsi:type="array">
+		<item name="0" xsi:type="string">
+		edit
+		</item>
+		<item name="1" xsi:type="string">
+		${ $.$data.rowIndex }
+		</item>
+		</item>
+		</item>
+		-->
 		<item name="buttons" xsi:type="array">
 			<!--
 			<item name="back" xsi:type="string">
@@ -186,7 +204,7 @@
 				</item>
 			</argument>
 		</column>
-		<actionsColumn name="actions" class="Egits\Integration\Ui\Component\Listing\Column\Action">
+		<actionsColumn name="actions" class="Egits\Integration\Ui\Component\Listing\Column\Actions">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
 					<item name="resizeEnabled" xsi:type="boolean">
@@ -201,6 +219,37 @@
 				</item>
 			</argument>
 		</actionsColumn>
+		<!--
+		<actionsColumn name="actions" class="Magento\Catalog\Ui\Component\Listing\Columns\ProductActions">
+		<argument name="data" xsi:type="array">
+		<item name="config" xsi:type="array">
+		<item name="indexField" xsi:type="string">
+		id
+		</item>
+		<item name="sortOrder" xsi:type="number">
+		200
+		</item>
+		</item>
+		</argument>
+		</actionsColumn>
+		-->
+		<!--
+		<actionsColumn name="actions" class="Egits\Integration\Ui\Component\Listing\Column\Action">
+		<argument name="data" xsi:type="array">
+		<item name="config" xsi:type="array">
+		<item name="resizeEnabled" xsi:type="boolean">
+		false
+		</item>
+		<item name="resizeDefaultWidth" xsi:type="string">
+		107
+		</item>
+		<item name="indexField" xsi:type="string">
+		id
+		</item>
+		</item>
+		</argument>
+		</actionsColumn>
+		-->
 		<!-- Image Column -->
 		<!--
 		<column name="image" class="Akshay\Module\Ui\Component\Listing\Column\Thumbnail">
