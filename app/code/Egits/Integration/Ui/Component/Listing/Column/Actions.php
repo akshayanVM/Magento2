@@ -10,9 +10,9 @@ use Magento\Framework\UrlInterface;
 class Actions extends Column
 {
     /** Url path */
-    const ROW_EDIT_URL = 'egits/integration/addrow';
+    const ROW_EDIT_URL = 'brands_module/index/addrow'; // routeid/controller/class
 
-    const ROW_DELETE_URL = 'egits/integration/deleterow';
+    const ROW_DELETE_URL = 'brands_module/index/deleterow';
     /** @var UrlInterface */
     protected $_urlBuilder;
 
