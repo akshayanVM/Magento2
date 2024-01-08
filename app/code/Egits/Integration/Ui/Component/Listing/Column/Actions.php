@@ -10,7 +10,7 @@ use Magento\Framework\UrlInterface;
 class Actions extends Column
 {
     /** Url path */
-    const ROW_EDIT_URL = 'brands_module/index/addrow'; // routeid/controller/class
+    const ROW_EDIT_URL = 'brands_module/index/editform'; // routeid/controller/class
 
     const ROW_DELETE_URL = 'brands_module/index/deleterow';
     /** @var UrlInterface */
@@ -61,7 +61,7 @@ class Actions extends Column
                     $item[$name]['edit'] = [
                         'href' => $this->_urlBuilder->getUrl(
                             $this->_editUrl,
-                            ['id' => $item['id']]
+                            ['id' => $item['id']] // appends the id to the url and builds a url which takes the id of the item along with it
                         ),
                         'label' => __('Edit'),
                     ];
