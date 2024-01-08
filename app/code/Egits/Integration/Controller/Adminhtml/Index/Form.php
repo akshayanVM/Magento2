@@ -37,6 +37,7 @@ class Form extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGetAct
      */
     public function execute()
     {
+
         $resultPage = $this->resultPageFactory->create();
         $resultPage->getConfig()->getTitle()->prepend((__('Add New Brand Page')));
         return $resultPage;
