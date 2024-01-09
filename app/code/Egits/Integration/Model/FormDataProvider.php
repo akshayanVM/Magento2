@@ -35,6 +35,8 @@ class FormDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
      */
     public function getData()
     {
+
+        // This data provider is responsible for populating the data into the input fields when we click the edit button.
         if (isset($this->_loadedData)) {
             return $this->_loadedData;
         }
@@ -45,6 +47,8 @@ class FormDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
             $items = $this->collection->addFieldToFilter('id', $id)->getItems();
             foreach ($items as $item) {
                 $this->_loadedData[$item->getId()] = $item->getData();
+                // Ensure 'image_url' is part of the loaded data
+                $this->_loadedData[$item->getId()]['image_url'] = $item->getImageUrl(); // Replace 'getImageUrl()' with the actual method to get image URL
             }
         }
         return $this->_loadedData;

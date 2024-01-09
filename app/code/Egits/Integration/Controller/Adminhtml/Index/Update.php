@@ -31,6 +31,13 @@ class Update extends Action
     {
         $data = $this->getRequest()->getParams();
 
+        if (isset($data['image_url_edit'][0]['image_url'])) {
+            $imageUrlFromNestedArray = $data['image_url_edit'][0]['image_url'];
+        }
+
+        // var_dump($imageUrlFromNestedArray);
+        // dd();
+
         // Check if 'id' exists in the data
         if (isset($data['id'])) {
             $model = $this->collectionFactory->create();
@@ -43,8 +50,8 @@ class Update extends Action
                 $model->setBrandName($data['brand_name']);
             }
 
-            if (isset($data['image_url'][0]['image_url'])) {
-                $model->setImageUrl($data['image_url'][0]['image_url']);
+            if (isset($imageUrlFromNestedArray)) {
+                $model->setImageUrl($imageUrlFromNestedArray);
             }
 
             // Save the updated model

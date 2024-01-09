@@ -98,11 +98,48 @@
 				</item>
 			</argument>
 		</field>
+		<field name="image_url_edit" formElement="imageUploader">
+			<settings>
+				<notice translate="true">
+					Some notice.
+				</notice>
+				<label translate="true">
+					Image Uploader Example
+				</label>
+				<componentType>
+					imageUploader
+				</componentType>
+			</settings>
+			<formElements>
+				<imageUploader>
+					<settings>
+						<allowedExtensions>
+							jpg jpeg gif png
+						</allowedExtensions>
+						<maxFileSize>
+							2097152
+						</maxFileSize>
+						<uploaderConfig>
+							<param xsi:type="string" name="url">
+								brands_module/index/upload
+							</param>
+						</uploaderConfig>
+					</settings>
+				</imageUploader>
+			</formElements>
+		</field>
 		<!--
-		<field name="image_url" formElement="imageUploader">
+		<field name="image_url_edit" formElement="imageUploader">
+		<argument name="data" xsi:type="array">
+		<item name="config" xsi:type="array">
+		<item name="dataScope" xsi:type="string">
+		image_url
+		</item>
+		</item>
+		</argument>
 		<settings>
 		<notice translate="true">
-		Some notice.
+		Some test notice.
 		</notice>
 		<label translate="true">
 		Image Uploader Example

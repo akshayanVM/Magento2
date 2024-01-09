@@ -164,22 +164,26 @@
 				</item>
 			</argument>
 		</column>
-		<column name="image_url">
-			<!-- for string -->
-			<argument name="data" xsi:type="array">
-				<item name="config" xsi:type="array">
-					<item name="filter" xsi:type="string">
-						textRange
-					</item>
-					<item name="sorting" xsi:type="string">
-						desc
-					</item>
-					<item name="label" xsi:type="string" translate="true">
-						Image
-					</item>
-				</item>
-			</argument>
-		</column>
+		<!-- <column name="image_url"> -->
+		<!-- for string -->
+		<!-- <argument name="data" xsi:type="array"> -->
+		<!-- <item name="config" xsi:type="array"> -->
+		<!--
+		<item name="filter" xsi:type="string">
+		textRange
+		</item>
+		-->
+		<!--
+		<item name="sorting" xsi:type="string">
+		desc
+		</item>
+		<item name="label" xsi:type="string" translate="true">
+		Image
+		</item>
+		-->
+		<!-- </item> -->
+		<!-- </argument> -->
+		<!-- </column> -->
 		<column name="image" class="Egits\Integration\Ui\Component\Listing\Column\Thumbnail">
 			<argument name="data" xsi:type="array">
 				<item name="config" xsi:type="array">
