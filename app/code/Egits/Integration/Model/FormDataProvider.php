@@ -47,7 +47,6 @@ class FormDataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
                 $this->_loadedData[$item->getId()] = $item->getData();
             }
         }
-
         return $this->_loadedData;
     }
 }

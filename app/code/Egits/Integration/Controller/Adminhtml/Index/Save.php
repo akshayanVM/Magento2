@@ -29,38 +29,31 @@ class Save extends Action
 
     public function execute()
     {
-        // try {
+
         $data = (array)$this->getRequest()->getParams();
-        // var_dump($data);
-        // dd();
+
         $test = $data['brand_name'];
-        // $test1 = $data['email'];
+
         $test3 = $data['image_url'][0]['image_url'];
-        // var_dump($test3);
-        // dd();
-        // dd();
-        // print_r($data);
-        // if ($data) {
+
         $model = $this->collectionFactory->create();
-        // print_r($model);
-        // dd();
+
+        if (isset($data['id'])) {
+            // Load existing record for update
+            $model = $this->postResource->load($model, $data['id']);
+        }
+
         $model->setBrandName($test);
-        // $model->setCustomerEmail($test1);
+
         $model->setImageUrl($test3);
-        // var_dump($model['name']);
-        // dd();
+
         $this->postResource->save($model);
 
-        // $model->setData(['name' => $test, 'email' => $test1, 'photo' => $test3])->save();
-        // $model->setData()->save();
         $this->messageManager->addSuccessMessage(__("Data Saved Successfully."));
-        // }
-        // } catch (\Exception $e) {
-        //     $this->messageManager->addErrorMessage($e, __("We can\'t submit your request, Please try again."));
-        // }
+
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
         $resultRedirect->setPath('brands_module/Index');
-        // $resultRedirect->setUrl($this->_redirect->getRefererUrl());
+
         return $resultRedirect;
     }
 }
