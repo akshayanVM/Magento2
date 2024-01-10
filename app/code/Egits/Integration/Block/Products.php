@@ -7,12 +7,18 @@ use Magento\Catalog\Model\CategoryFactory;
 // use Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory;
 use Magento\Store\Model\StoreManagerInterface;
+use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\Data\Form\FormKey;
+use Magento\ConfigurableProduct\Model\Product\Type\Configurable;
+
 
 class Products extends Template
 {
     protected $ProductCollection;
+    protected $productRepository;
+    protected $configurable;
+
     protected $categoryFactory;
     /**
      * @var StoreManagerInterface
@@ -24,14 +30,20 @@ class Products extends Template
         Template\Context $context,
         FormKey $formKey,
         CollectionFactory $ProductCollection,
+        ProductRepositoryInterface $productRepository,
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
         StoreManagerInterface $storeManager,
+        Configurable $configurable,
+
         array $data = []
     ) {
         $this->formKey = $formKey;
+        $this->productRepository = $productRepository;
         $this->ProductCollection = $ProductCollection;
         $this->categoryFactory = $categoryFactory;
         $this->storeManager = $storeManager;
+        $this->configurable = $configurable;
+
         parent::__construct($context, $data);
     }
     public function getDataForPHTML()
@@ -63,6 +75,24 @@ class Products extends Template
         $logger = $objectManager->get(\Psr\Log\LoggerInterface::class);
         $logger->info($products->getSelect()->__toString());
 
+
+        $configurableProductIds = [];
+        foreach ($products as $items) {
+            $configurableProductIds[] = $items->getData()['entity_id'];
+
+            foreach ($configurableProductIds as $configurableProductId) {
+                $configurableProduct = $this->productRepository->getById($configurableProductId);
+                if ($configurableProduct->getTypeId() == Configurable::TYPE_CODE) {
+                    $associatedProductIds = $this->configurable->getChildrenIds($configurableProductId);
+                    // Log or process the associated simple product IDs
+                    foreach ($associatedProductIds[0] as $simpleProductId) {
+                        var_dump($simpleProductId);
+                        //                    dd();
+                    }
+                }
+            }
+        }
+
         return $products;
     }
 
@@ -89,6 +119,27 @@ class Products extends Template
         //        return $productId;
 
         return $product->getId();
+    }
+
+    public function getSimpleProductsFromConfigurable($configurableProductSkuOrId)
+    {
+        // Step 2: Load Configurable Product
+        $configurableProduct = $this->productRepository->get($configurableProductSkuOrId);
+
+        // Step 3: Fetch Associated Simple Products
+        $associatedProducts = $configurableProduct->getTypeInstance()->getUsedProducts($configurableProduct);
+
+        // Step 4: Process and return the Simple Products
+        $simpleProducts = [];
+        foreach ($associatedProducts as $simpleProduct) {
+            $simpleProducts[] = [
+                'id' => $simpleProduct->getId(),
+                'sku' => $simpleProduct->getSku(),
+                // Add other attributes if needed
+            ];
+        }
+
+        return $simpleProducts;
     }
 
     public function getUrlForProduct($product)
