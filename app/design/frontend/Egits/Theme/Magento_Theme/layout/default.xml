@@ -37,6 +37,7 @@
 			<referenceBlock name="header.links" remove="true" />
 		</referenceContainer>
 		<referenceBlock name="copyright" template="Magento_Theme::copyright.phtml" />
+		<!-- <referenceBlock name="navigation" template="Magento_Theme::topmenu.phtml" /> -->
 		<!-- <referenceBlock name="catalog.compare.link" remove="true"/> -->
 		<!-- <referenceBlock name="catalog.compare.sidebar" remove="true"/> -->
 		<!-- <referenceBlock name="paypal.partner.right.logo" remove="true"/> -->

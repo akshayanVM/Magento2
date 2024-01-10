@@ -10,12 +10,12 @@ $priceobj = $block->getLayout()->createBlock(Utilities::class);
 $products = $blockobj->getDataForPHTML();
 //$productimage = $blockobj->getImageUrlFromPath($products[0]['image']);
 
+var_dump($products->getData());
 // var_dump($products);
 // dd();
 //var_dump($productimage);
 //dd();
 // echo $products;
-
 //var_dump($category);
 ?>
 
@@ -65,9 +65,10 @@ $products = $blockobj->getDataForPHTML();
                             //                            var_dump($product);
                             //                            dd();
                             $productId = $blockobj->getProductId($product);
+
                             $productUrl = $blockobj->getUrlForProduct($product);
                             $formKey = $blockobj->getFormKeyForWishlist();
-                            //                        var_dump($productId);
+                            // var_dump($productId);
                             //                            dd();
                             $productimage = $blockobj->getImageUrlFromPath($product['image']);
                             $convertedPrice = $priceobj->getFormattedPrice($product['price']);
@@ -120,7 +121,7 @@ $products = $blockobj->getDataForPHTML();
                                                         <input type="hidden" name="product" value="1562">
                                                         <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                         <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                        <button id="product-add-to-cart-button" data-cart-form-key="<?= $formKey ?>" data-product-cart-entity-id="<?= $productId ?>" title="Add to Cart" class="action tocart primary">
+                                                        <button id="product-add-to-cart-button-<?= $productId ?>" data-cart-form-key="<?= $formKey ?>" data-product-cart-entity-id="<?= $productId ?>" title="Add to Cart" class="action tocart primary">
                                                             <span>Add to Cart</span>
                                                         </button>
                                                         <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">

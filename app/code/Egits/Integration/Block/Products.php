@@ -44,15 +44,25 @@ class Products extends Template
 
         $products = $this->ProductCollection->create();
 
+        // $products->addAttributeToFilter('type_id', ['eq' => \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE]);
+
+        // $products->getData();
         $products->addAttributeToSelect('*');
 
         $products->addCategoryFilter($category);
+
 
         //        foreach ($products as $product) {
         //
         //
         //            $collection[] = $product->getData();
         //        }
+
+        // Debugging: Log the generated SQL query
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $logger = $objectManager->get(\Psr\Log\LoggerInterface::class);
+        $logger->info($products->getSelect()->__toString());
+
         return $products;
     }
 
