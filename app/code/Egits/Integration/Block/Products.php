@@ -15,7 +15,7 @@ use Magento\ConfigurableProduct\Model\Product\Type\Configurable;
 
 class Products extends Template
 {
-    protected $ProductCollection;
+    protected CollectionFactory $ProductCollection;
     protected $productRepository;
     protected $configurable;
 
@@ -64,32 +64,23 @@ class Products extends Template
         $products->addCategoryFilter($category);
 
 
-        //        foreach ($products as $product) {
-        //
-        //
-        //            $collection[] = $product->getData();
-        //        }
+        foreach ($products as $product) {
+            $a = $product;
+        }
 
         // Debugging: Log the generated SQL query
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $logger = $objectManager->get(\Psr\Log\LoggerInterface::class);
         $logger->info($products->getSelect()->__toString());
 
-
-        $configurableProductIds = [];
-        foreach ($products as $items) {
-            $configurableProductIds[] = $items->getData()['entity_id'];
-
-            foreach ($configurableProductIds as $configurableProductId) {
-                $configurableProduct = $this->productRepository->getById($configurableProductId);
-                if ($configurableProduct->getTypeId() == Configurable::TYPE_CODE) {
-                    $associatedProductIds = $this->configurable->getChildrenIds($configurableProductId);
-                    // Log or process the associated simple product IDs
-                    foreach ($associatedProductIds[0] as $simpleProductId) {
-                        var_dump($simpleProductId);
-                        //                    dd();
-                    }
-                }
+        // very important nested foreach example
+        foreach ($products as $product) {
+            $configurableProductId = $product->getData()['entity_id'];
+            $associatedProductIds = $this->configurable->getChildrenIds($configurableProductId);
+            // var_dump($associatedProductIds);
+            // dd();
+            foreach ($associatedProductIds[0] as $simpleProductId) {
+                var_dump($simpleProductId);
             }
         }
 
