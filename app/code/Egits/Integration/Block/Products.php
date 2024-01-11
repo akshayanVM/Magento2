@@ -60,6 +60,7 @@ class Products extends Template
 
         // $products->getData();
         $products->addAttributeToSelect('*');
+        $products->addAttributeToSelect('color');
 
         $products->addCategoryFilter($category);
 
@@ -67,6 +68,16 @@ class Products extends Template
         foreach ($products as $product) {
             $a = $product;
         }
+
+        // foreach ($products as $product) {
+        //     $color = $product->getResource()->getAttribute('color'); // Assuming 'color' is the attribute code for the color attribute
+        //     if ($color) {
+        //         echo "Color: " . $color . "<br>";
+        //     } else {
+        //         echo "Color not available for product ID: " . $product->getId() . "<br>";
+        //     }
+        // }
+
 
         // Debugging: Log the generated SQL query
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
@@ -85,6 +96,25 @@ class Products extends Template
         }
 
         return $products;
+    }
+
+    public function getColorOptions($productId)
+    {
+        $product = $this->productRepository->getById($productId);
+        if ($product->getTypeId() === 'configurable') {
+            $colorOptions = [];
+            $attributes = $product->getTypeInstance()->getConfigurableAttributesAsArray($product);
+            foreach ($attributes as $attribute) {
+                if ($attribute['attribute_code'] == 'color') { // Assuming 'color' is your attribute code
+                    foreach ($attribute['values'] as $value) {
+                        $colorOptions[] = $value['store_label'];
+                    }
+                    break;
+                }
+            }
+            return $colorOptions;
+        }
+        return [];
     }
 
     public function getImageUrlFromPath($imagePath)

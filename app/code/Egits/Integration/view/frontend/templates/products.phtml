@@ -9,7 +9,7 @@ $priceobj = $block->getLayout()->createBlock(Utilities::class);
 
 $products = $blockobj->getDataForPHTML();
 
-$configurableProductId = 2098;
+// $configurableProductId = 2098;
 
 foreach ($products as $configurableProduct) {
     $configurableProductId = $configurableProduct->getId();
@@ -18,7 +18,8 @@ foreach ($products as $configurableProduct) {
     }
 }
 
-//var_dump($configurableProductIds);
+var_dump($configurableProductIds);
+
 
 // $simpleProducts = $blockobj->getSimpleProductsFromConfigurable($configurableProductId);
 
@@ -75,6 +76,8 @@ foreach ($products as $configurableProduct) {
                 <div class="products-grid grid">
                     <ol class="product-items widget-product-grid owl-carousel product-carousel-class owl-theme product-carousel ">
                         <?php foreach ($products as $product) :
+
+                            // $colors = [];
                             ////                            var_dump($product['entity_id']);
                             // var_dump($product['entity_id']);
                             //                            var_dump($product);
@@ -88,6 +91,10 @@ foreach ($products as $configurableProduct) {
                             $productimage = $blockobj->getImageUrlFromPath($product['image']);
                             $convertedPrice = $priceobj->getFormattedPrice($product['price']);
                             $convertedSpecialPrice = $priceobj->getFormattedPrice($product['special_price']);
+                            $colors = $blockobj->getColorOptions($productId);
+                            // $color1 = $colors[0];
+                            // $color2 = $colors[1];
+                            // $color3 = $colors[2];
 
                         ?>
                             <li class="product-item">
@@ -120,12 +127,12 @@ foreach ($products as $configurableProduct) {
                                             </div>
                                             <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
                                                 <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
-                                                    <div class="swatch-option color" id="option-label-color-93-item-50" index="0" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="50" data-option-label="Blue" aria-label="Blue" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#DD4A4A" style="background: #DD4A4A no-repeat center; background-size: initial;">
-                                                    </div>
-                                                    <div class="swatch-option color" id="option-label-color-93-item-56" index="1" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="56" data-option-label="Orange" aria-label="Orange" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#717171" style="background: #717171 no-repeat center; background-size: initial;">
-                                                    </div>
-                                                    <div class="swatch-option color" id="option-label-color-93-item-57" index="2" aria-checked="false" aria-describedby="option-label-color-93" tabindex="0" data-option-type="1" data-option-id="57" data-option-label="Purple" aria-label="Purple" role="option" data-thumb-width="110" data-thumb-height="90" data-option-tooltip-value="#4AA8DD" style="background: #4AA8DD no-repeat center; background-size: initial;">
-                                                    </div>
+                                                    <?php foreach ($colors as $color) :
+
+                                                    ?>
+                                                        <button class="swatch-option color" style="background: <?= $color ?> no-repeat center;">
+                                                        </button>
+                                                    <?php endforeach; ?>
                                                 </div>
                                             </div>
                                         </div>
