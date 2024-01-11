@@ -9,19 +9,31 @@ $priceobj = $block->getLayout()->createBlock(Utilities::class);
 
 $products = $blockobj->getDataForPHTML();
 
-// $configurableProductId = 2098;
+$configurableProductId = 2098;
+// $simpleProducts[] = $blockobj->getSimpleProductsFromConfigurable($configurableProductId);
+// $colorOptions = $blockobj->getColorOptionsFromSimpleProducts('2105');
 
-foreach ($products as $configurableProduct) {
-    $configurableProductId = $configurableProduct->getId();
-    if ($configurableProductId) {
-        $configurableProductIds[] = $configurableProductId;
-    }
-}
-
-var_dump($configurableProductIds);
+// foreach ($products as $product) {
+//     $productId = $blockobj->getProductId($product);
+//     $simpleProductId = $blockobj->getSimpleProducts($productId);
+//     var_dump($simpleProductId);
+// }
 
 
-// $simpleProducts = $blockobj->getSimpleProductsFromConfigurable($configurableProductId);
+// foreach ($products as $configurableProduct) {
+//     $configurableProductId = $configurableProduct->getId();
+//     if ($configurableProductId) {
+//         $configurableProductIds[] = $configurableProductId;
+//     }
+// }
+
+
+
+
+//var_dump($configurableProductIds);
+
+
+
 
 // var_dump($simpleProducts);
 //$productimage = $blockobj->getImageUrlFromPath($products[0]['image']);
@@ -83,6 +95,12 @@ var_dump($configurableProductIds);
                             //                            var_dump($product);
                             //                            dd();
                             $productId = $blockobj->getProductId($product);
+                            // $singleSimpleProduct = $blockobj->getSimpleProductDetails($productId);
+                            // $colorOptions = $blockobj->getColorOptionsFromSimpleProducts($configurableProductId);
+                            // $simpleProductDetails = $blockobj->getSimpleProductDetails($simpleProductId);
+                            // var_dump($simpleProductDetails);
+                            // var_dump($simpleProductId->getId());
+                            // $simpleProducts = $blockobj->getSimpleProductsFromConfigurable($configurableProductId);
 
                             $productUrl = $blockobj->getUrlForProduct($product);
                             $formKey = $blockobj->getFormKeyForWishlist();
