@@ -110,6 +110,9 @@ $configurableProductId = 2098;
                             $convertedPrice = $priceobj->getFormattedPrice($product['price']);
                             $convertedSpecialPrice = $priceobj->getFormattedPrice($product['special_price']);
                             $colors = $blockobj->getColorOptions($productId);
+                            $simpleProductArray = $blockobj->getSimpleProductArray($productId);
+                            // var_dump($simpleProductArray);
+                            // dd();
                             // $color1 = $colors[0];
                             // $color2 = $colors[1];
                             // $color3 = $colors[2];
@@ -145,8 +148,8 @@ $configurableProductId = 2098;
                                             </div>
                                             <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
                                                 <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
-                                                    <?php foreach ($colors as $color) :
-
+                                                    <?php foreach ($simpleProductArray as $product) :
+                                                        $color = $product['color'];
                                                     ?>
                                                         <button class="swatch-option color" style="background: <?= $color ?> no-repeat center;">
                                                         </button>

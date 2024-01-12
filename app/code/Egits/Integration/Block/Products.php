@@ -173,28 +173,28 @@ class Products extends Template
         $associatedProducts = $configurableProduct->getTypeInstance()->getUsedProducts($configurableProduct);
         // var_dump($associatedProducts);
 
-        foreach ($associatedProducts as $product) {
-            $productId = $product->getId(); // Entity ID
-            $productSku = $product->getSku(); // SKU
-            $productPrice = $product->getPrice();
-            $productColor = $product->getAttributeText('color'); // Price
+        // foreach ($associatedProducts as $product) {
+        //     $productId = $product->getId(); // Entity ID
+        //     $productSku = $product->getSku(); // SKU
+        //     $productPrice = $product->getPrice();
+        //     $productColor = $product->getAttributeText('color'); // Price
 
-            // Collect attributes into an array for each product
-            $productDetails[] = [
-                'entity_id' => $productId,
-                'sku' => $productSku,
-                'price' => $productPrice,
-                'color' => $productColor
-            ];
+        //     // Collect attributes into an array for each product
+        //     $productDetails[] = [
+        //         'entity_id' => $productId,
+        //         'sku' => $productSku,
+        //         'price' => $productPrice,
+        //         'color' => $productColor
+        //     ];
 
-            // You can also output or process each product's details here
-            echo "Entity ID: " . $productId . "<br>";
-            echo "SKU: " . $productSku . "<br>";
-            echo "Price: " . $productPrice . "<br>";
-            echo "Price: " . $productColor . "<br>";
-            echo "--------------------------<br>";
-        }
-        dd();
+        //     // You can also output or process each product's details here
+        //     echo "Entity ID: " . $productId . "<br>";
+        //     echo "SKU: " . $productSku . "<br>";
+        //     echo "Price: " . $productPrice . "<br>";
+        //     echo "Price: " . $productColor . "<br>";
+        //     echo "--------------------------<br>";
+        // }
+        // dd();
 
         $product = $this->productRepository->getById($productId);
         if ($product->getTypeId() === 'configurable') {
@@ -211,6 +211,40 @@ class Products extends Template
             return $colorOptions;
         }
         return [];
+    }
+
+    public function getSimpleProductArray($productId)
+    {
+        // Step 2: Load Configurable Product
+        $configurableProduct = $this->productRepository->getById($productId);
+
+        // Step 3: Fetch Associated Simple Products
+        $associatedProducts = $configurableProduct->getTypeInstance()->getUsedProducts($configurableProduct);
+        // var_dump($associatedProducts);
+
+        foreach ($associatedProducts as $product) {
+            $productId = $product->getId(); // Entity ID
+            $productSku = $product->getSku(); // SKU
+            $productPrice = $product->getPrice();
+            $productColor = $product->getAttributeText('color'); // Price
+
+            // Collect attributes into an array for each product
+            $productDetails[] = [
+                'entity_id' => $productId,
+                'sku' => $productSku,
+                'price' => $productPrice,
+                'color' => $productColor
+            ];
+
+            // You can also output or process each product's details here
+            // echo "Entity ID: " . $productId . "<br>";
+            // echo "SKU: " . $productSku . "<br>";
+            // echo "Price: " . $productPrice . "<br>";
+            // echo "Price: " . $productColor . "<br>";
+            // echo "--------------------------<br>";
+        }
+
+        return $productDetails;
     }
 
     public function getImageUrlFromPath($imagePath)
