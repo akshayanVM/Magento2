@@ -184,6 +184,8 @@ class Products extends Template
         $singleSimpleProduct = [];
         try {
             $simpleProduct = $this->productRepository->getById((int)$simpleProductId);
+            // var_dump($simpleProduct);
+            // dd();
             $simpleProductId = $simpleProduct->getId();
             $simpleProductSku = $simpleProduct->getSku();
             $simpleProductColor = $simpleProduct->getAttributeText('color');
