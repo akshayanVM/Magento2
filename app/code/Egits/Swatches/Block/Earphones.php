@@ -14,7 +14,7 @@ use Magento\Framework\Data\Form\FormKey;
 use Magento\ConfigurableProduct\Model\Product\Type\Configurable;
 
 
-class Products extends Template
+class Earphones extends Template
 {
     protected CollectionFactory $ProductCollection;
     protected $productRepository;
@@ -49,7 +49,7 @@ class Products extends Template
     }
     public function getDataForPHTML()
     {
-        $categoryId = 55;
+        $categoryId = 53;
 
 
         $category = $this->categoryFactory->create()->load($categoryId);
@@ -138,6 +138,7 @@ class Products extends Template
 
     public function getProductId($product)
     {
+
 
         return $product->getId();
     }

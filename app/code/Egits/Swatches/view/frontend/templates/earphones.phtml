@@ -1,20 +1,31 @@
 <?php
 
-use Egits\Swatches\Block\Products;
+/** @var \Egits\Swatches\Block\Template $block */
+
+use Egits\Swatches\Block\Earphones;
 use Egits\Swatches\Block\Utilities;
 
-$blockobj = $block->getLayout()->createBlock(Products::class);
+
+$blockobj = $block->getLayout()->createBlock(Earphones::class);
 $priceobj = $block->getLayout()->createBlock(Utilities::class);
 
-$products = $blockobj->getDataForPHTML();
+$earphones = $blockobj->getDataForPHTML();
+// $earphoneimage = $blockobj->getImageUrlFromPath($earphones[0]['image']);
 
-$configurableProductId = 2098;
+// foreach ($products as $product) {
+//     var_dump($product['special_price']);
+// }
+// var_dump($earphones);
+// dd();
+//var_dump($productimage);
+//dd();
+// echo $products;
 
+//var_dump($category);
 ?>
-
 <script type="text/javascript">
     require(['jquery', 'label'], function($) {
-        $('.product-carousel-class').owlCarousel({
+        $('.earphones-carousel-class').owlCarousel({
             loop: true,
             responsiveClass: true,
             margin: 20,
@@ -40,80 +51,82 @@ $configurableProductId = 2098;
                 }
             }
         })
+        // Your custom JavaScript code here, if needed
+        // Example: $('.top-category-slider').owlCarousel();
     });
 </script>
-
 <section class="products-section">
     <div class="page-main">
         <div class="content-heading">
-            <h2 class="title">Mens Shoes</h2>
+            <h2 class="title">EarPhones</h2>
         </div>
         <div class="block widget block-products-list grid">
             <div class="block-content">
                 <div class="products-grid grid">
-                    <ol class="product-items widget-product-grid owl-carousel product-carousel-class owl-theme product-carousel ">
-                        <?php foreach ($products as $product) :
+                    <ol class="product-items widget-product-grid product-carousel owl-carousel earphones-carousel-class owl-theme ">
+                        <?php foreach ($earphones as $earphone) :
+                            ////                            var_dump($product['entity_id']);
+                            // var_dump($product['entity_id']);
+                            $earphoneUrl = $blockobj->getUrlForEarphone($earphone);
+                            $earphoneId = $blockobj->getProductId($earphone);
+                            $earphoneFormKey = $blockobj->getFormKeyForWishlist();
 
-
-                            $productId = $blockobj->getProductId($product);
-
-
-                            $productUrl = $blockobj->getUrlForProduct($product);
-                            $formKey = $blockobj->getFormKeyForWishlist();
-
-                            $productimage = $blockobj->getImageUrlFromPath($product['image']);
-                            $convertedPrice = $priceobj->getFormattedPrice($product['price']);
-                            $convertedSpecialPrice = $priceobj->getFormattedPrice($product['special_price']);
-                            $colors = $blockobj->getColorOptions($productId);
-                            $simpleProductArray = $blockobj->getSimpleProductArray($productId);
-
-
+                            $earphoneimage = $blockobj->getImageUrlFromPath($earphone['image']);
+                            $convertedPrice = $priceobj->getFormattedPrice($earphone['price']);
+                            $convertedSpecialPrice = $priceobj->getFormattedPrice($earphone['special_price']);
+                            $simpleProductArray = $blockobj->getSimpleProductArray($earphoneId);
+                            // var_dump($simpleProductArray);
+                            // dd();
+                            //                            
                         ?>
                             <li class="product-item">
                                 <div class="product-item-info">
-                                    <a href="<?= $productUrl ?>" class="product-item-photo">
-                                        <span class="product-image-container product-image-container-1562">
+                                    <a href="<?= $earphoneUrl  ?>" class="product-item-photo">
+                                        <span class="product-image-container product-image-container-1562" style="width: 240px;">
                                             <span class="product-image-wrapper" style="padding-bottom: 125%;">
-                                                <img class="product-image-photo" src="<?= $productimage ?>"></span>
+                                                <img class="product-image-photo" src="<?= $earphoneimage ?>"></span></span>
                                         </span>
+
                                     </a>
                                     <div class="product-item-details">
                                         <strong class="product-item-name">
-                                            <a title="Radiant Tee" href="<?= $productUrl  ?>" class="product-item-link">
-                                                <?php echo $product['name']; ?> </a>
+                                            <a title="Radiant Tee" href="<?= $earphoneUrl ?>" class="product-item-link">
+                                                <?php echo $earphone['name']; ?> </a>
                                         </strong>
                                         <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
                                             <span class="old-price">
-                                                <span>$822.00</span>
+                                                <span><?php echo $convertedPrice ?></span>
                                             </span>
                                             <span class="normal-price">
                                                 <span class="price-container price-final_price tax weee">
                                                     <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price">--</span></span>
                                                 </span>
                                             </span>
-
                                         </div>
                                         <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
-                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
-                                                <?php foreach ($simpleProductArray as $product) :
-                                                    $color = $product['color'];
-                                                    $swatchId = $product['entity_id'];
-                                                    $swatchPrice = $priceobj->getFormattedPrice($product['price']);
-                                                ?>
-                                                    <button id="swatch-button-id" data-swatch-price="<?= $swatchPrice ?>" data-swatch-color="<?= $color ?>" data-swatch-data-id-final="<?= $swatchId ?>" data-swatch-form-key-final="<?= $formKey ?>" class="swatch-option final color" style="background: <?= $color ?> no-repeat center;">
-                                                    </button>
-                                                <?php endforeach; ?>
+                                            <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
                                             </div>
-                                            <!-- </div> -->
+                                            <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93">
+                                                <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
+                                                    <?php foreach ($simpleProductArray as $product) :
+                                                        $color = $product['color'];
+                                                        $swatchId = $product['entity_id'];
+                                                        $swatchPrice = $priceobj->getFormattedPrice($product['price']);
+                                                    ?>
+                                                        <button id="swatch-button-id-earphone" data-earphone-swatch-price="<?= $swatchPrice ?>" data-earphone-swatch-color="<?= $color ?>" data-earphone-swatch-data-id-final="<?= $swatchId ?>" data-earphone-swatch-form-key-final="<?= $earphoneFormKey ?>" class="swatch-option final earphone color" style="background: <?= $color ?> no-repeat center;">
+                                                        </button>
+                                                    <?php endforeach; ?>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="product-item-inner">
                                             <div class="product-item-actions">
                                                 <div class="actions-primary">
-                                                    <form data-role="tocart-form" data-product-sku="WS12" method="post">
+                                                    <form data-role="tocart-form" data-product-sku="WS12" action="#" method="post">
                                                         <input type="hidden" name="product" value="1562">
                                                         <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                         <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                        <button type="submit" id="product-add-to-cart-button-final" data-cart-form-key-final="<?= $formKey ?>" data-product-cart-entity-id-final="<?= $productId ?>" title="Add to Cart" class="action final tocart primary">
+                                                        <button id="<?= $earphoneId ?>" data-earphone-cart-form-key="<?= $earphoneFormKey ?>" data-earphone-cart-entity-id="<?= $earphoneId ?>" title="Add to Cart" class="action final earphone tocart primary">
                                                             <span>Add to Cart</span>
                                                         </button>
                                                         <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">
@@ -123,7 +136,7 @@ $configurableProductId = 2098;
                                                     </form>
                                                 </div>
                                                 <div class="actions-secondary" data-role="add-to-links">
-                                                    <button id="wish-list-button-final" data-form-key-final="<?= $formKey ?>" data-product-entity-id-final="<?= $productId ?>" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
+                                                    <button id="<?= $earphoneId ?>" data-earphone-key="<?= $earphoneFormKey ?>" data-earphone-final-entity-id="<?= $earphoneId ?>" class="action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
                                                         <span>Add to Wish List</span>
                                                     </button>
                                                 </div>
@@ -133,6 +146,7 @@ $configurableProductId = 2098;
                                 </div>
                             </li>
                         <?php endforeach; ?>
+
                     </ol>
                 </div>
             </div>

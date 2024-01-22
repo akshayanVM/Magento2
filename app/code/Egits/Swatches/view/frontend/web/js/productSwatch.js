@@ -130,7 +130,7 @@ require(["jquery"], function ($) {
                     console.log("Response:", response);
                     // Redirect to cart or perform other actions upon successful addition
                     // if (selectedProductId !== null) {
-                    //     window.location.href = "/checkout/cart";
+                    window.location.href = "/checkout/cart";
                     // }
                 },
                 error: function (xhr, status, error) {

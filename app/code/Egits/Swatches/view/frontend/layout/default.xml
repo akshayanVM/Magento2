@@ -2,6 +2,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 	<head>
 		<script src="Egits_Swatches::js/productSwatch.js" />
+		<script src="Egits_Swatches::js/earphoneSwatch.js" />
+		<script src="Egits_Swatches::js/earphoneWishlist.js" />
+		<script src="Egits_Swatches::js/productWishlist.js" />
 		<!-- <script src="Egits_Swatches::js/productCartSwatch.js" /> -->
 		<!-- <script src="Egits_Swatches::js/productWishlist.js" /> -->
 	</head>
