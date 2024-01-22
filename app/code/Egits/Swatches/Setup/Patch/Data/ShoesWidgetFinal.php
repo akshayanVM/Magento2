@@ -1,6 +1,6 @@
 <?php
 
-namespace Egits\Integration\Setup\Patch\Data;
+namespace Egits\Swatches\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Module\Dir\Reader;
@@ -11,7 +11,7 @@ use Magento\Widget\Model\Widget\InstanceFactory;
 use Magento\Framework\Filesystem\Io\File;
 use Magento\Cms\Block\Widget\Block;
 
-class MensShoesWidget implements DataPatchInterface, PatchVersionInterface
+class ShoesWidgetFinal implements DataPatchInterface, PatchVersionInterface
 {
     /**
 
@@ -80,20 +80,20 @@ class MensShoesWidget implements DataPatchInterface, PatchVersionInterface
         $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_ADMINHTML);
         $this->moduleDataSetup->startSetup();
         $cmsBlockData = [
-            'title' => 'Mens Shoes Block',
-            'identifier' => 'Mens Shoes Widget Block',
+            'title' => 'Shoes Block Final',
+            'identifier' => 'Shoes Block Swatch Module',
             'content' => '{{block class="Magento\Framework\View\Element\Template"
-            template="Egits_Integration::products.phtml"}}',
+            template="Egits_Swatches::products.phtml"}}',
             'is_active' => 1,
             'stores' => [0],
-            'sort_order' => 25
+            'sort_order' => 20
         ];
         $cmsBlock = $this->blockFactory->create()->setData($cmsBlockData)->save();
         $widgetData = [
             'instance_type' => Block::class,
             'instance_code' => 'cms_static_block',
             'theme_id' => '6',
-            'title' => 'Mens Shoes Widget',
+            'title' => ' Shoes Widget Swatch Module',
             'store_ids' => '1',
             'widget_parameters' => '{"block_id":"' . $cmsBlock->getId() . '"}',
             'sort_order' => 0,
