@@ -80,8 +80,8 @@ class BannerSliderWidget implements DataPatchInterface, PatchVersionInterface
         $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_ADMINHTML);
         $this->moduleDataSetup->startSetup();
         $cmsBlockData = [
-            'title' => 'Banner Slider Block',
-            'identifier' => 'Mens Product Slider Block',
+            'title' => 'Banner Slider Block test',
+            'identifier' => 'Mens Product Slider Block test',
             'content' => '{{block class="Magento\Framework\View\Element\Template"
             template="Egits_Integration::slider.phtml"}}',
             'is_active' => 1,
@@ -93,7 +93,7 @@ class BannerSliderWidget implements DataPatchInterface, PatchVersionInterface
             'instance_type' => Block::class,
             'instance_code' => 'cms_static_block',
             'theme_id' => '6',
-            'title' => 'Banner Slider Widget',
+            'title' => 'Banner Slider Widget test',
             'store_ids' => '1',
             'widget_parameters' => '{"block_id":"' . $cmsBlock->getId() . '"}',
             'sort_order' => 0,

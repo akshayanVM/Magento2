@@ -426,7 +426,7 @@ select:not([disabled]):focus {
 
 /*------------- product listing  ---------------------*/
 .sidebar.sidebar-main .block.filter {
-    background-color: #f5f5f5;
+    background-color: #ae7e7e;
     border-radius: 15px;
     padding: 10px 0;
     box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;

@@ -11,7 +11,7 @@ use Magento\Widget\Model\Widget\InstanceFactory;
 use Magento\Framework\Filesystem\Io\File;
 use Magento\Cms\Block\Widget\Block;
 
-class EarphonesWidget implements DataPatchInterface, PatchVersionInterface
+class TopBrandsBlock implements DataPatchInterface, PatchVersionInterface
 {
     /**
 
@@ -80,23 +80,23 @@ class EarphonesWidget implements DataPatchInterface, PatchVersionInterface
         $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_ADMINHTML);
         $this->moduleDataSetup->startSetup();
         $cmsBlockData = [
-            'title' => 'Earphones Block',
-            'identifier' => 'Earphones Widget Block',
+            'title' => 'Top Brands Final Block',
+            'identifier' => 'Top Brands Final Block',
             'content' => '{{block class="Magento\Framework\View\Element\Template"
-            template="Egits_Integration::earphones.phtml"}}',
+            template="Egits_Integration::brands.phtml"}}',
             'is_active' => 1,
             'stores' => [0],
-            'sort_order' => 40
+            'sort_order' => 30
         ];
         $cmsBlock = $this->blockFactory->create()->setData($cmsBlockData)->save();
         $widgetData = [
             'instance_type' => Block::class,
             'instance_code' => 'cms_static_block',
             'theme_id' => '6',
-            'title' => 'Earphones Widget',
+            'title' => 'Top Brands Final Widget',
             'store_ids' => '1',
             'widget_parameters' => '{"block_id":"' . $cmsBlock->getId() . '"}',
-            'sort_order' => 0,
+            'sort_order' => 30,
             'page_groups' => [[
                 'page_id' => 1,
                 'page_group' => 'pages',

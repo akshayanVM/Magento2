@@ -1,6 +1,6 @@
 <?php
 
-namespace Egits\Swatches\Setup\Patch\Data;
+namespace Egits\Integration\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Module\Dir\Reader;
@@ -11,7 +11,7 @@ use Magento\Widget\Model\Widget\InstanceFactory;
 use Magento\Framework\Filesystem\Io\File;
 use Magento\Cms\Block\Widget\Block;
 
-class ShoesWidgetFinal implements DataPatchInterface, PatchVersionInterface
+class TopCategoriesBlock implements DataPatchInterface, PatchVersionInterface
 {
     /**
 
@@ -80,23 +80,23 @@ class ShoesWidgetFinal implements DataPatchInterface, PatchVersionInterface
         $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_ADMINHTML);
         $this->moduleDataSetup->startSetup();
         $cmsBlockData = [
-            'title' => 'Shoes Block Final',
-            'identifier' => 'Shoes Block Swatch Module',
+            'title' => 'Top Categories Final Block',
+            'identifier' => 'Top Categories Final Block',
             'content' => '{{block class="Magento\Framework\View\Element\Template"
-            template="Egits_Swatches::products.phtml"}}',
+            template="Egits_Integration::test.phtml"}}',
             'is_active' => 1,
             'stores' => [0],
-            'sort_order' => 20
+            'sort_order' => 10
         ];
         $cmsBlock = $this->blockFactory->create()->setData($cmsBlockData)->save();
         $widgetData = [
             'instance_type' => Block::class,
             'instance_code' => 'cms_static_block',
             'theme_id' => '6',
-            'title' => ' Shoes Widget Swatch Module',
+            'title' => 'Top Categories Final Widget',
             'store_ids' => '1',
             'widget_parameters' => '{"block_id":"' . $cmsBlock->getId() . '"}',
-            'sort_order' => 0,
+            'sort_order' => 10,
             'page_groups' => [[
                 'page_id' => 1,
                 'page_group' => 'pages',

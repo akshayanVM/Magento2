@@ -1,6 +1,6 @@
 <?php
 
-namespace Egits\Integration\Setup\Patch\Data;
+namespace Egits\Swatches\Setup\Patch\Data;
 
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Module\Dir\Reader;
@@ -11,7 +11,7 @@ use Magento\Widget\Model\Widget\InstanceFactory;
 use Magento\Framework\Filesystem\Io\File;
 use Magento\Cms\Block\Widget\Block;
 
-class BrandsSliderWidget implements DataPatchInterface, PatchVersionInterface
+class MensShoesFinalBlock implements DataPatchInterface, PatchVersionInterface
 {
     /**
 
@@ -80,23 +80,23 @@ class BrandsSliderWidget implements DataPatchInterface, PatchVersionInterface
         $this->state->setAreaCode(\Magento\Framework\App\Area::AREA_ADMINHTML);
         $this->moduleDataSetup->startSetup();
         $cmsBlockData = [
-            'title' => 'Brands Slider Custom Block',
-            'identifier' => 'Top Brands Custom Block',
+            'title' => 'Men Shoes Final Block',
+            'identifier' => 'Men Shoes Final Block',
             'content' => '{{block class="Magento\Framework\View\Element\Template"
-            template="Egits_Integration::brands.phtml"}}',
+            template="Egits_Swatches::products.phtml"}}',
             'is_active' => 1,
             'stores' => [0],
-            'sort_order' => 30
+            'sort_order' => 20
         ];
         $cmsBlock = $this->blockFactory->create()->setData($cmsBlockData)->save();
         $widgetData = [
             'instance_type' => Block::class,
             'instance_code' => 'cms_static_block',
             'theme_id' => '6',
-            'title' => 'Brands Slider Widget',
+            'title' => 'Men Shoes Final Widget',
             'store_ids' => '1',
             'widget_parameters' => '{"block_id":"' . $cmsBlock->getId() . '"}',
-            'sort_order' => 0,
+            'sort_order' => 20,
             'page_groups' => [[
                 'page_id' => 1,
                 'page_group' => 'pages',
