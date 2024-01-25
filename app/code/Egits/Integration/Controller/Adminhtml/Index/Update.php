@@ -4,12 +4,13 @@ namespace Egits\Integration\Controller\Adminhtml\Index;
 
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
+use Magento\Framework\App\Action\HttpPostActionInterface;
 use Egits\Integration\Model\PostFactory;
 use Egits\Integration\Model\ResourceModel\Post as PostResource;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\App\Action\Action;
 
-class Update extends Action
+class Update extends \Magento\Backend\App\Action implements HttpPostActionInterface
 {
     /**
      * @var PostResource

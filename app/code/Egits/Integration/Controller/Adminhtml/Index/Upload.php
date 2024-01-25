@@ -115,8 +115,10 @@ class Upload extends \Magento\Backend\App\Action implements HttpPostActionInterf
         $fileUploader->setAllowCreateFolders(true);
 
         try {
-            if (!$fileUploader->checkMimeType(['image/png', 'image/jpeg',
-                'image/gif', 'image/customtype'])) {
+            if (!$fileUploader->checkMimeType([
+                'image/png', 'image/jpeg',
+                'image/gif', 'image/customtype'
+            ])) {
                 throw new \Magento\Framework\Exception\LocalizedException(
                     __('File validation failed.')
                 );

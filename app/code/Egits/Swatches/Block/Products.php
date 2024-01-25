@@ -172,6 +172,7 @@ class Products extends Template
 
         return $productDetails;
     }
+
     /**
      * This function returns the image url path from the string
      *

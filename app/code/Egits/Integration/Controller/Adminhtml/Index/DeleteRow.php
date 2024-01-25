@@ -5,7 +5,7 @@ namespace Egits\Integration\Controller\Adminhtml\Index;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
-use Egits\Integration\Model\ResourceModel\PostFactory;
+use Egits\Integration\Model\PostFactory;
 
 /**
  * @param Egits\Integration\Controller\Adminhtml\Index
