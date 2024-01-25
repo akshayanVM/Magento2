@@ -2,14 +2,14 @@
 
 namespace Egits\Integration\Model\ResourceModel;
 
-class Post extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
-{
-    public function __construct(
-        \Magento\Framework\Model\ResourceModel\Db\Context $context
-    ) {
-        parent::__construct($context);
-    }
+use \Magento\Framework\Model\ResourceModel\Db\AbstractDb;
 
+class Post extends AbstractDb
+{
+
+    /**
+     * Constructor function
+     */
     protected function _construct()
     {
         $this->_init('top_brands', 'id');

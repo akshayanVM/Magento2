@@ -13,21 +13,51 @@ use Magento\Framework\UrlInterface;
 use Magento\Framework\Data\Form\FormKey;
 use Magento\ConfigurableProduct\Model\Product\Type\Configurable;
 
-
 class Products extends Template
 {
+    /**
+     * Holds an instance of the collection factory
+     *
+     * @var CollectionFactory
+     */
     protected CollectionFactory $ProductCollection;
+    /**
+     * Holds an instance of the product repository
+     *
+     * @var ProductRepositoryInterface
+     */
     protected $productRepository;
+    /**
+     * Holds an instance of the configurable products collection
+     *
+     * @var Configurable
+     */
     protected $configurable;
 
+    /**
+     * Holds an instance of the category factory
+     *
+     * @var CategoryFactory
+     */
     protected $categoryFactory;
     /**
      * @var StoreManagerInterface
      */
     protected $storeManager;
 
+    /**
+     * Products constructor.
+     *
+     * @param Template\Context $context
+     * @param FormKey $formKey
+     * @param CollectionFactory $ProductCollection
+     * @param ProductRepositoryInterface $productRepository
+     * @param CategoryFactory $categoryFactory
+     * @param StoreManagerInterface $storeManager
+     * @param Configurable $configurable
+     * @param array $data
+     */
     public function __construct(
-
         Template\Context $context,
         FormKey $formKey,
         CollectionFactory $ProductCollection,
@@ -35,7 +65,6 @@ class Products extends Template
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
         StoreManagerInterface $storeManager,
         Configurable $configurable,
-
         array $data = []
     ) {
         $this->formKey = $formKey;
@@ -47,122 +76,47 @@ class Products extends Template
 
         parent::__construct($context, $data);
     }
+
+    /**
+     * This function is used to get the products details based on id
+     *
+     * @return \Magento\Catalog\Model\ResourceModel\Product\Collection
+     */
     public function getDataForPHTML()
     {
         $categoryId = 55;
-
 
         $category = $this->categoryFactory->create()->load($categoryId);
         $collection = [];
 
         $products = $this->ProductCollection->create();
 
-        // $products->addAttributeToFilter('type_id', ['eq' => \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE]);
-
-        // $products->getData();
         $products->addAttributeToSelect('*');
         $products->addAttributeToSelect('color');
 
         $products->addCategoryFilter($category);
 
-
         foreach ($products as $product) {
             $a = $product;
         }
-
-        // foreach ($products as $product) {
-        //     $color = $product->getResource()->getAttribute('color'); // Assuming 'color' is the attribute code for the color attribute
-        //     if ($color) {
-        //         echo "Color: " . $color . "<br>";
-        //     } else {
-        //         echo "Color not available for product ID: " . $product->getId() . "<br>";
-        //     }
-        // }
-
 
         // Debugging: Log the generated SQL query
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $logger = $objectManager->get(\Psr\Log\LoggerInterface::class);
         $logger->info($products->getSelect()->__toString());
 
-        // very important nested foreach example
-        // foreach ($products as $product) {
-        //     $simpleProductValues = [];
-        //     $configurableProductId = $product->getData()['entity_id'];
-        //     $associatedProductIds = $this->configurable->getChildrenIds($configurableProductId);
-        //     // var_dump($associatedProductIds);
-        //     // dd();
-        //     foreach ($associatedProductIds[0] as $simpleProductId) {
-        //         // Step 1: Load Simple Product by ID
-        //         $simpleProduct = $this->productRepository->getById($simpleProductId);
-
-        //         // Step 2: Fetch Color Attribute Value
-
-
-        //         // Step 3: Retrieve SKU and ID
-        //         $simpleProductSku = $simpleProduct->getSku();
-        //         $simpleProductValueId = $simpleProduct->getId();
-
-        //         $colorAttributeValue = $simpleProduct->getAttributeText('color'); // Replace 'color' with your actual attribute code if different
-        //         // var_dump($colorAttributeValue);
-        //         $simpleProductValues = [
-        //             'color' => $colorAttributeValue,
-        //             'sku' => $simpleProductSku,
-        //             'id' => $simpleProductValueId
-        //         ];
-        //         // Step 4: Display or Store Color Attribute Value
-        //         // if ($colorAttributeValue) {
-        //         //     echo "Simple Product ID: " . $simpleProductId . ", Color Attribute Value: " . $colorAttributeValue . PHP_EOL;
-        //         // } else {
-        //         //     echo "Simple Product ID: " . $simpleProductId . ", Color Attribute Value Not Available" . PHP_EOL;
-        //         // }
-        //         // var_dump($simpleProductId); // can use this id to get the simple product colors
-        //     }
-        //     return $simpleProductValues;
-        // }
-
         return $products;
     }
 
-    // public function getSimpleProductDetails($productsCollection)
-    // {
-    //     foreach ($productsCollection as $product) {
-    //         $simpleProductValues = [];
-    //         $configurableProductId = $product->getId();
-    //         $associatedProductIds = $this->configurable->getChildrenIds($configurableProductId);
-    //         // var_dump($associatedProductIds);
-    //         // dd();
-    //         foreach ($associatedProductIds[0] as $simpleProductId) {
-    //             // Step 1: Load Simple Product by ID
-    //             $simpleProduct = $this->productRepository->getById($simpleProductId);
-
-    //             // Step 2: Fetch Color Attribute Value
-
-
-    //             // Step 3: Retrieve SKU and ID
-    //             $simpleProductSku = $simpleProduct->getSku();
-    //             $simpleProductValueId = $simpleProduct->getId();
-
-    //             $colorAttributeValue = $simpleProduct->getAttributeText('color'); // Replace 'color' with your actual attribute code if different
-    //             // var_dump($colorAttributeValue);
-    //             $simpleProductValues = [
-    //                 'color' => $colorAttributeValue,
-    //                 'sku' => $simpleProductSku,
-    //                 'id' => $simpleProductValueId
-    //             ];
-    //             // Step 4: Display or Store Color Attribute Value
-    //             // if ($colorAttributeValue) {
-    //             //     echo "Simple Product ID: " . $simpleProductId . ", Color Attribute Value: " . $colorAttributeValue . PHP_EOL;
-    //             // } else {
-    //             //     echo "Simple Product ID: " . $simpleProductId . ", Color Attribute Value Not Available" . PHP_EOL;
-    //             // }
-    //             // var_dump($simpleProductId); // can use this id to get the simple product colors
-    //         }
-    //     }
-    //     return $simpleProductValues;
-    // }
-
     //colors from configurable products
+
+    /**
+     * This function returns the color options for the simple products
+     *
+     * @param int $productId
+     * @return array
+     * @throws NoSuchEntityException
+     */
     public function getColorOptions($productId)
     {
 
@@ -170,31 +124,8 @@ class Products extends Template
         $configurableProduct = $this->productRepository->getById($productId);
 
         // Step 3: Fetch Associated Simple Products
-        $associatedProducts = $configurableProduct->getTypeInstance()->getUsedProducts($configurableProduct);
-        // var_dump($associatedProducts);
-
-        // foreach ($associatedProducts as $product) {
-        //     $productId = $product->getId(); // Entity ID
-        //     $productSku = $product->getSku(); // SKU
-        //     $productPrice = $product->getPrice();
-        //     $productColor = $product->getAttributeText('color'); // Price
-
-        //     // Collect attributes into an array for each product
-        //     $productDetails[] = [
-        //         'entity_id' => $productId,
-        //         'sku' => $productSku,
-        //         'price' => $productPrice,
-        //         'color' => $productColor
-        //     ];
-
-        //     // You can also output or process each product's details here
-        //     echo "Entity ID: " . $productId . "<br>";
-        //     echo "SKU: " . $productSku . "<br>";
-        //     echo "Price: " . $productPrice . "<br>";
-        //     echo "Price: " . $productColor . "<br>";
-        //     echo "--------------------------<br>";
-        // }
-        // dd();
+        $associatedProducts = $configurableProduct->getTypeInstance()
+            ->getUsedProducts($configurableProduct);
 
         $product = $this->productRepository->getById($productId);
         if ($product->getTypeId() === 'configurable') {
@@ -213,13 +144,21 @@ class Products extends Template
         return [];
     }
 
+    /**
+     * This function returns the simple products from configurable products
+     *
+     * @param int $productId
+     * @return array
+     * @throws NoSuchEntityException
+     */
     public function getSimpleProductArray($productId)
     {
         // Step 2: Load Configurable Product
         $configurableProduct = $this->productRepository->getById($productId);
 
         // Step 3: Fetch Associated Simple Products
-        $associatedProducts = $configurableProduct->getTypeInstance()->getUsedProducts($configurableProduct);
+        $associatedProducts = $configurableProduct->getTypeInstance()
+            ->getUsedProducts($configurableProduct);
         // var_dump($associatedProducts);
 
         foreach ($associatedProducts as $product) {
@@ -236,49 +175,50 @@ class Products extends Template
                 'color' => $productColor
             ];
 
-            // You can also output or process each product's details here
-            // echo "Entity ID: " . $productId . "<br>";
-            // echo "SKU: " . $productSku . "<br>";
-            // echo "Price: " . $productPrice . "<br>";
-            // echo "Price: " . $productColor . "<br>";
-            // echo "--------------------------<br>";
         }
-
         return $productDetails;
     }
 
+    /**
+     * This function returns the image path
+     *
+     * @param string $imagePath
+     * @return string
+     * @throws NoSuchEntityException
+     */
     public function getImageUrlFromPath($imagePath)
     {
         //  used to get the store url
-        return $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $imagePath;
+        return $this->storeManager->getStore()
+                ->getBaseUrl(UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $imagePath;
     }
 
+    /**
+     * This functions returns the ID's from the product array
+     *
+     * @param array $product
+     * @return mixed
+     */
     public function getProductId($product)
     {
-        //        $productId = '';
-        //        $collection = $this->ProductCollection->create();
-        //        foreach ($collection as $item){
-        //            if ($item['entity_id'] == $product['entity_id'])
-        //            {
-        //                $productId = $item->getProductURL();
-        //
-        //                break;
-        //            }
-        //        }
-        //        var_dump($productId);
-        //        dd();
-        //        return $productId;
-
         return $product->getId();
     }
 
+    /**
+     * This function also returns the simple products from configurable products
+     *
+     * @param int $configurableProductSkuOrId
+     * @return array
+     * @throws NoSuchEntityException
+     */
     public function getSimpleProductsFromConfigurable($configurableProductSkuOrId)
     {
         // Step 2: Load Configurable Product
         $configurableProduct = $this->productRepository->get($configurableProductSkuOrId);
 
         // Step 3: Fetch Associated Simple Products
-        $associatedProducts = $configurableProduct->getTypeInstance()->getUsedProducts($configurableProduct);
+        $associatedProducts = $configurableProduct->getTypeInstance()
+            ->getUsedProducts($configurableProduct);
 
         // Step 4: Process and return the Simple Products
         $simpleProducts = [];
@@ -295,48 +235,34 @@ class Products extends Template
         return $simpleProducts;
     }
 
-    // public function getColorOptionsFromSimpleProducts($configurableProductSkuOrId)
-    // {
-    //     // Step 1: Load Configurable Product
-    //     $configurableProduct = $this->productRepository->get($configurableProductSkuOrId);
-
-    //     // Step 2: Fetch Associated Simple Products
-    //     $associatedProducts = $configurableProduct->getTypeInstance()->getUsedProducts($configurableProduct);
-
-    //     // Step 3: Initialize Array to Store Color Options
-    //     $colorOptions = [];
-
-    //     // Step 4: Iterate through each Simple Product to fetch Color Attribute
-    //     foreach ($associatedProducts as $simpleProduct) {
-    //         $simpleProductId = $simpleProduct->getId();
-    //         $simpleProductSku = $simpleProduct->getSku();
-
-    //         // Fetch Color Attribute Value
-    //         $colorAttributeValue = $simpleProduct->getAttributeText('color'); // Replace 'color' with your actual attribute code if different
-
-    //         // Store Color Attribute Value in Array with Simple Product ID and SKU
-    //         $colorOptions[] = [
-    //             'simple_product_id' => $simpleProductId,
-    //             'simple_product_sku' => $simpleProductSku,
-    //             'color_attribute_value' => $colorAttributeValue,
-    //         ];
-    //     }
-
-    //     return $colorOptions;
-    // }
-
-
+    /**
+     * This function returns the URL for the product
+     *
+     * @param array $product
+     * @return mixed
+     */
     public function getUrlForProduct($product)
     {
         return $product->getProductURL();
     }
 
+    /**
+     * This function is used to generate the form key
+     *
+     * @return string
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     public function getFormKeyForWishlist()
     {
         return $this->formKey->getFormKey();
     }
 
-
+    /**
+     * This function returns the details of the simple products
+     *
+     * @param int $configProductId
+     * @return array|string
+     */
     public function getSimpleProductDetails($configProductId)
     {
         $simpleProductId = $this->configurable->getChildrenIds($configProductId);
@@ -357,79 +283,4 @@ class Products extends Template
         // var_dump($simpleProduct);
         return $singleSimpleProduct;
     }
-
-    // get a single simple product
-    // public function getSimpleProduct($configurableProductId)
-    // {
-    //     $configurableProduct = $this->productRepository->get($configurableProductId);
-    //     $associatedProducts = $configurableProduct->getTypeInstance()->getUsedProducts($configurableProduct);
-    //     return $associatedProducts;
-    // }
-
-    // public function getSimpleProductDetails($simpleProductId)
-    // {
-    //     $simpleProductValues = [];
-    //     // $simpleProductId = $this->configurable->getChildrenIds($configProductId);
-    //     try {
-    //         $simpleProduct = $this->productRepository->getById((int)$simpleProductId);
-    //         $simpleProductValues = [
-    //             'sku' => $simpleProduct->getSku(),
-    //             'color' => $simpleProduct->getAttributeText('color'),
-    //         ];
-    //     } catch (NoSuchEntityException $e) {
-    //         return "Error" . $e;
-    //     }
-    //     //    var_dump($simpleProduct);
-    //     return $simpleProductValues;
-    // }
-
-    //        foreach ($products as $product) {
-    //            $simpleProductValues = [];
-    //            $configurableProductId = $product->getData()['entity_id'];
-    //            $associatedProductIds = $this->configurable->getChildrenIds($configurableProductId);
-    //            // var_dump($associatedProductIds);
-    //            // dd();
-    //            foreach ($associatedProductIds[0] as $simpleProductId) {
-    //                // Step 1: Load Simple Product by ID
-    //                $simpleProduct = $this->productRepository->getById($simpleProductId);
-    //
-    //                // Step 2: Fetch Color Attribute Value
-    //
-    //
-    //                // Step 3: Retrieve SKU and ID
-    //                $simpleProductSku = $simpleProduct->getSku();
-    //                $simpleProductValueId = $simpleProduct->getId();
-    //
-    //                $colorAttributeValue = $simpleProduct->getAttributeText('color'); // Replace 'color' with your actual attribute code if different
-    //                // var_dump($colorAttributeValue);
-    //                $simpleProductValues = [
-    //                    'color' => $colorAttributeValue,
-    //                    'sku' => $simpleProductSku,
-    //                    'id' => $simpleProductValueId
-    //                ];
-    //                // Step 4: Display or Store Color Attribute Value
-    //                // if ($colorAttributeValue) {
-    //                //     echo "Simple Product ID: " . $simpleProductId . ", Color Attribute Value: " . $colorAttributeValue . PHP_EOL;
-    //                // } else {
-    //                //     echo "Simple Product ID: " . $simpleProductId . ", Color Attribute Value Not Available" . PHP_EOL;
-    //                // }
-    //                // var_dump($simpleProductId); // can use this id to get the simple product colors
-    //            }
-    //            return $simpleProductValues;
-    //        }
-    //    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -7,6 +7,11 @@ use Magento\Ui\Component\Control\Container;
 
 class Save extends Generic implements ButtonProviderInterface
 {
+    /**
+     * This function creates the save button
+     *
+     * @return array
+     */
     public function getButtonData()
     {
         return [

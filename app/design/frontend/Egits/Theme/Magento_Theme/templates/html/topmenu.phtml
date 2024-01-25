@@ -7,10 +7,9 @@ $storeManager = $objectManager->get('\Magento\Store\Model\StoreManagerInterface'
 ?>
 
 <nav class="navigation" role="navigation">
-    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
-        <li class="level0 home <?php if ($currentUrl == '/') : ?>active<?php endif; ?>"><a
-                href="<?php echo $storeManager->getStore()->getBaseUrl(); ?>" title="<?php echo __('Home') ?>"
-                class="level-top"><span><?php echo __('Home') ?></span></a></li>
-        <?php echo $_menu; ?>
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true,
+        "position":{"my":"left top","at":"left bottom"}}}'>
+        <li class="level0 home <?php if ($currentUrl == '/') : ?>active<?php endif; ?>"><a href="<?= /* @noEscape */ $storeManager->getStore()->getBaseUrl(); ?>" title="<?= /* @noEscape */ __('Home') ?>" class="level-top"><span><?= /* @noEscape */ __('Home') ?></span></a></li>
+        <?= /* @noEscape */ $_menu; ?>
     </ul>
 </nav>

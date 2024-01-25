@@ -6,6 +6,11 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 class Back extends Generic implements ButtonProviderInterface
 {
+    /**
+     * This function is used to create the button
+     *
+     * @return array
+     */
     public function getButtonData()
     {
         return [
@@ -16,6 +21,11 @@ class Back extends Generic implements ButtonProviderInterface
         ];
     }
 
+    /**
+     * This function returns the url to redirect back
+     *
+     * @return string
+     */
     public function getBackUrl()
     {
         return $this->getUrl('*/*/');

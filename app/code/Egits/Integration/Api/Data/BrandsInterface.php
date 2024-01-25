@@ -7,16 +7,15 @@ interface BrandsInterface
     /**#@+
      * Constants for keys of data array. Identical to the name of the getter in snake case
      */
-    const BRAND_ID  = 'id';
-    const BRAND_NAME  = 'brand_name';
+    public const BRAND_ID  = 'id';
+    public const BRAND_NAME  = 'brand_name';
     // const EMAIL   = 'email';
-    const IMAGE_URL  = 'image_url';
+    public const IMAGE_URL  = 'image_url';
     // const NAME = 'name';
     // const SORT_ORDER = 'sort_order';
     // const IS_ACTIVE = 'is_active';
 
     /**#@-*/
-
 
     /**
      * Get Title
@@ -38,9 +37,12 @@ interface BrandsInterface
      * @return string|null
      */
     // public function getCustomerEmail();
-
+    /**
+     * Function is used to get the image url
+     *
+     * @return mixed
+     */
     public function getImageUrl();
-
 
     /**
      * Set Title
@@ -52,7 +54,7 @@ interface BrandsInterface
     /**
      * Set Title
      *
-     * @param string $customerName
+     * @param string $brandName
      * @return $this
      */
     public function setBrandName($brandName);
@@ -72,43 +74,4 @@ interface BrandsInterface
      * @return $this
      */
     public function setImageUrl($url);
-
-    // /**
-    //  * Set Title
-    //  *
-    //  * @param string $sortOrder 
-    //  * @return $this
-    //  */
-    // public function setSortOrder($sortOrder);
-
-    // /**
-    //  * Set Title
-    //  *
-    //  * @param string $isActive
-    //  * @return $this
-    //  */
-    // public function setIsActive($isActive);
-    // /**
-    //  * Set Content
-    //  *
-    //  * @param string $content
-    //  * @return $this
-    //  */
-    // public function setContent($content);
-
-    // /**
-    //  * Set Crated At
-    //  *
-    //  * @param int $createdAt
-    //  * @return $this
-    //  */
-    // public function setCreatedAt($createdAt);
-
-    // /**
-    //  * Set ID
-    //  *
-    //  * @param int $id
-    //  * @return $this
-    //  */
-    // public function setId($id);
 }

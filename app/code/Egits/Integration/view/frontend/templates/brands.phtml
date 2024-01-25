@@ -6,40 +6,41 @@ $blockobj = $block->getLayout()->createBlock(Brands::class);
 
 $brands = $blockobj->getDataForPHTML();
 
+
 //var_dump($category);
 ?>
 
-<script type="text/javascript">
-    require(['jquery', 'label'], function($) {
-        $('.top-brandSlider').owlCarousel({
-            loop: true,
-            dots: false,
-            autoPlay: 2000,
-            responsive: {
-                0: {
-                    autoWidth: true,
-                    margin: 10
-                },
-                768: {
-                    items: 4
-                },
-                860: {
-                    items: 5
-                },
-                992: {
-                    items: 4
-                },
-                1300: {
-                    items: 5
-                },
-                1500: {
-                    items: 6
-                }
+<script>
+require(['jquery', 'label'], function($) {
+    $('.top-brandSlider').owlCarousel({
+        loop: true,
+        dots: false,
+        autoPlay: 2000,
+        responsive: {
+            0: {
+                autoWidth: true,
+                margin: 10
+            },
+            768: {
+                items: 4
+            },
+            860: {
+                items: 5
+            },
+            992: {
+                items: 4
+            },
+            1300: {
+                items: 5
+            },
+            1500: {
+                items: 6
             }
-        })
-        // Your custom JavaScript code here, if needed
-        // Example: $('.top-category-slider').owlCarousel();
-    });
+        }
+    })
+    // Your custom JavaScript code here, if needed
+    // Example: $('.top-category-slider').owlCarousel();
+});
 </script>
 
 <section class="top-brands-section">
@@ -51,12 +52,13 @@ $brands = $blockobj->getDataForPHTML();
             <?php foreach ($brands as $brand) :
                 $brandUrl = $blockobj->getUrlForBrands($brand);
             ?>
-                <li class="top-brands-list">
-                    <a href="<?= $brandUrl ?>">
-                        <figure class="top-brands-image" style="background-image: url('<?php echo $brand['image_url']; ?>');"> </figure>
-                        <h4><?php echo $brand['brand_name']; ?></h4>
-                    </a>
-                </li>
+            <li class="top-brands-list">
+                <a href="<?= /* @noEscape */ $brandUrl ?>">
+                    <figure class="top-brands-image" style="background-image:
+                            url('<?= /* @noEscape */ $brand['image_url']; ?>');"> </figure>
+                    <h4><?= /* @noEscape */ $brand['brand_name']; ?></h4>
+                </a>
+            </li>
             <?php endforeach; ?>
         </ul>
     </div>

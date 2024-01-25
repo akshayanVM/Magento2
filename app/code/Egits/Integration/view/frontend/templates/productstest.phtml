@@ -6,6 +6,7 @@ $blockObj = $block->getLayout()->createBlock(Products::class);
 $productCollection = $blockObj->getDataForPHTML();
 foreach ($productCollection as $products) {
     $productid = $blockObj->getProductId($products);
-?>
-    <button id="testbutton" class="wishlist-button-test" data-test-id="<?= $productid ?>">Wishlist</button>
+    ?>
+    <button id="testbutton" class="wishlist-button-test"
+            data-test-id="<?= /* @noEscape */  $productid ?>">Wishlist</button>
 <?php } ?>

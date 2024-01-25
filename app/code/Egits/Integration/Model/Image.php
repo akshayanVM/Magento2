@@ -4,20 +4,26 @@ namespace Egits\Integration\Model;
 
 use Magento\Framework\UrlInterface;
 use Magento\Framework\Filesystem;
+
 // use Egits\Integration\Helper\Data as ModuleHelper;
 
 class Image
 {
     /**
-     * media sub folder
+     * Media sub folder
      * @var string
      */
     protected $subDir = 'TopBrands/'; //actual path is pub/media/webkul/image/
 
+    /**
+     * Helper
+     *
+     * @var $moduleHelper
+     */
     protected $moduleHelper;
 
     /**
-     * url builder
+     * Store the built url
      *
      * @var UrlInterface
      */
@@ -28,16 +34,22 @@ class Image
      */
     protected $fileSystem;
 
+    /**
+     * Full url for the image
+     *
+     * @var $imageFullUrl
+     */
     protected $imageFullUrl;
 
     /**
+     * Constructor function
+     *
      * @param UrlInterface $urlBuilder
      * @param Filesystem $fileSystem
-     * @param ModuleHelper $moduleHelper
      */
     public function __construct(
         UrlInterface $urlBuilder,
-        Filesystem $fileSystem,
+        Filesystem $fileSystem
         // ModuleHelper $moduleHelper
     ) {
         $this->urlBuilder = $urlBuilder;
@@ -45,13 +57,18 @@ class Image
         // $this->moduleHelper = $moduleHelper;
     }
 
+    /**
+     * Image url setter
+     *
+     * @param string $url
+     */
     public function setImageUrl($url)
     {
         $this->imageFullUrl = $url;
     }
 
     /**
-     * get images base url
+     * Get images base url
      *
      * @return string
      */

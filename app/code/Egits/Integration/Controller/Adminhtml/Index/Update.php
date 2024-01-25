@@ -11,10 +11,31 @@ use Magento\Framework\App\Action\Action;
 
 class Update extends Action
 {
+    /**
+     * @var PostResource
+     */
     protected $postResource;
+
+    /**
+     * @var PageFactory
+     */
     protected $resultPageFactory;
+
+    /**
+     * Used to call the collection
+     *
+     * @var PostFactory
+     */
     protected $collectionFactory;
 
+    /**
+     * Update constructor.
+     *
+     * @param Context $context
+     * @param PostResource $postResource
+     * @param PageFactory $resultPageFactory
+     * @param PostFactory $collectionFactory
+     */
     public function __construct(
         Context $context,
         PostResource $postResource,
@@ -27,6 +48,12 @@ class Update extends Action
         parent::__construct($context);
     }
 
+    /**
+     * The execute function
+     *
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
+     * @throws \Magento\Framework\Exception\AlreadyExistsException
+     */
     public function execute()
     {
         $data = $this->getRequest()->getParams();

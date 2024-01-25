@@ -10,16 +10,37 @@ use Magento\Store\Model\StoreManagerInterface;
 use Magento\Framework\UrlInterface;
 use Magento\Framework\Data\Form\FormKey;
 
-
 class Earphones extends Template
 {
+    /**
+     * Holds an instance of the collection factory
+     *
+     * @var CollectionFactory
+     */
     protected $ProductCollection;
+    /**
+     * Holds and instance of the category factory
+     *
+     * @var CategoryFactory
+     */
     protected $categoryFactory;
     /**
+     * This is an instance of the store manager interface
+     *
      * @var StoreManagerInterface
      */
     protected $storeManager;
 
+    /**
+     * Earphones constructor.
+     *
+     * @param Template\Context $context
+     * @param FormKey $formKey
+     * @param CollectionFactory $ProductCollection
+     * @param CategoryFactory $categoryFactory
+     * @param StoreManagerInterface $storeManager
+     * @param array $data
+     */
     public function __construct(
         Template\Context $context,
         FormKey $formKey,
@@ -34,6 +55,12 @@ class Earphones extends Template
         $this->storeManager = $storeManager;
         parent::__construct($context, $data);
     }
+
+    /**
+     * This function returns the  products data for the front end
+     *
+     * @return \Magento\Catalog\Model\ResourceModel\Product\Collection
+     */
     public function getDataForPHTML()
     {
         $categoryId = 53;
@@ -62,35 +89,48 @@ class Earphones extends Template
         return $products;
     }
 
+    /**
+     * This function returns the image url from the given path
+     *
+     * @param string $imagePath
+     * @return string
+     * @throws \Magento\Framework\Exception\NoSuchEntityException
+     */
     public function getImageUrlFromPath($imagePath)
     {
         //  used to get the store url
-        return $this->storeManager->getStore()->getBaseUrl(UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $imagePath;
+        return $this->storeManager->getStore()
+                ->getBaseUrl(UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $imagePath;
     }
 
+    /**
+     * This functions returns the url from the earphone array
+     *
+     * @param array $earphone
+     * @return mixed
+     */
     public function getUrlForEarphone($earphone) // move it into the utility block
     {
         return $earphone->getProductURL();
     }
 
+    /**
+     * This function returns the id from the earphone array
+     *
+     * @param array $earphone
+     * @return mixed
+     */
     public function getEarphoneId($earphone)
     {
-        //        $productId = '';
-        //        $collection = $this->ProductCollection->create();
-        //        foreach ($collection as $item){
-        //            if ($item['entity_id'] == $product['entity_id'])
-        //            {
-        //                $productId = $item->getProductURL();
-        //
-        //                break;
-        //            }
-        //        }
-        //        var_dump($productId);
-        //        dd();
-        //        return $productId;
-
         return $earphone->getId();
     }
+
+    /**
+     * This function generates the form key
+     *
+     * @return string
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     public function getFormKeyForEarphoneWishlist()
     {
         return $this->formKey->getFormKey();

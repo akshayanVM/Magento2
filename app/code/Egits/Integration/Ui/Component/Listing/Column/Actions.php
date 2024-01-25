@@ -10,25 +10,38 @@ use Magento\Framework\UrlInterface;
 class Actions extends Column
 {
     /** Url path */
-    const ROW_EDIT_URL = 'brands_module/index/editform'; // routeid/controller/class
+    public const ROW_EDIT_URL = 'brands_module/index/editform'; // routeid/controller/class
 
-    const ROW_DELETE_URL = 'brands_module/index/deleterow';
-    /** @var UrlInterface */
+    public const ROW_DELETE_URL = 'brands_module/index/deleterow';
+
+    /**
+     * @var UrlInterface
+     */
     protected $_urlBuilder;
 
     /**
+     * This variable holds the edit url
+     *
      * @var string
      */
     private $_editUrl;
+    /**
+     * This variable holds the delete url
+     *
+     * @var string
+     */
     private $_deleteUrl;
 
     /**
+     * This is the default contructor method
+     *
      * @param ContextInterface   $context
      * @param UiComponentFactory $uiComponentFactory
      * @param UrlInterface       $urlBuilder
      * @param array              $components
      * @param array              $data
      * @param string             $editUrl
+     * @param string             $deleteUrl
      */
     public function __construct(
         ContextInterface $context,
@@ -37,7 +50,7 @@ class Actions extends Column
         array $components = [],
         array $data = [],
         $editUrl = self::ROW_EDIT_URL,
-        $deleteUrl = self::ROW_DELETE_URL,
+        $deleteUrl = self::ROW_DELETE_URL
     ) {
         $this->_urlBuilder = $urlBuilder;
         $this->_editUrl = $editUrl;
@@ -49,7 +62,6 @@ class Actions extends Column
      * Prepare Data Source.
      *
      * @param array $dataSource
-     *
      * @return array
      */
     public function prepareDataSource(array $dataSource)
@@ -61,7 +73,9 @@ class Actions extends Column
                     $item[$name]['edit'] = [
                         'href' => $this->_urlBuilder->getUrl(
                             $this->_editUrl,
-                            ['id' => $item['id']] // appends the id to the url and builds a url which takes the id of the item along with it
+                            ['id' => $item['id']]
+                            // appends the id to the url and builds a url which takes
+                            // the id of the item along with it
                         ),
                         'label' => __('Edit'),
                     ];

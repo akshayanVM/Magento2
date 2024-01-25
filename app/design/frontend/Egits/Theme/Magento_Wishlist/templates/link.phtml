@@ -8,7 +8,7 @@
 /* @var \Magento\Wishlist\Block\Link $block */
 ?>
 <li class="link wishlist" data-bind="scope: 'wishlist'">
-    <a <?= /* @noEscape */ $block->getLinkAttributes() ?>><?= $block->escapeHtml("") ?>
+    <a <?= /* @noEscape */ $block->getLinkAttributes() ?>><?= /* @noEscape */ $block->escapeHtml("") ?>
 
     </a>
 </li>

@@ -9,43 +9,43 @@ $category = $blockobj->getDataForPHTML();
 //var_dump($category);
 ?>
 
-<script type="text/javascript">
-require(['jquery', 'label'], function($) {
-    $('.testing').owlCarousel({
-        loop: true,
-        dots: false,
-        autoPlay: 2000,
-        responsive: {
-            0: {
-                autoWidth: true,
-                margin: 10
-            },
-            768: {
-                items: 4
-            },
-            800: {
-                items: 4
-            },
-            900: {
-                items: 5
-            },
-            1000: {
-                items: 6
-            },
-            1200: {
-                items: 7
-            },
-            1300: {
-                items: 8
-            },
-            1500: {
-                items: 9
+<script>
+    require(['jquery', 'label'], function($) {
+        $('.testing').owlCarousel({
+            loop: true,
+            dots: false,
+            autoPlay: 2000,
+            responsive: {
+                0: {
+                    autoWidth: true,
+                    margin: 10
+                },
+                768: {
+                    items: 4
+                },
+                800: {
+                    items: 4
+                },
+                900: {
+                    items: 5
+                },
+                1000: {
+                    items: 6
+                },
+                1200: {
+                    items: 7
+                },
+                1300: {
+                    items: 8
+                },
+                1500: {
+                    items: 9
+                }
             }
-        }
-    })
-    // Your custom JavaScript code here, if needed
-    // Example: $('.top-category-slider').owlCarousel();
-});
+        })
+        // Your custom JavaScript code here, if needed
+        // Example: $('.top-category-slider').owlCarousel();
+    });
 </script>
 
 <section class="top-category-section">
@@ -54,82 +54,18 @@ require(['jquery', 'label'], function($) {
             <h2 class="title">Top Categories</h2>
         </div>
         <ul class="owl-carousel owl-theme top-category-slider owl-loaded owl-drag topcategoryslider testing">
-            <?php foreach ($category as $item) : ?>
+            <?php foreach ($category as $item): ?>
 
-            <li class="top-category-list">
-                <a href="<?php echo $item['url_path'] . ".html" ?>">
-                    <figure class="top-category-image" style="background-image: url('<?php echo $item['image']; ?>');">
-                    </figure>
-                    <h4><?php echo $item['url_key']; ?></h4>
-                </a>
-            </li>
+                <li class="top-category-list">
+                    <a href="<?= /* @noEscape */ $item['url_path'] . ".html" ?>">
+                        <figure class="top-category-image" style="background-image:
+                            url('<?= /* @noEscape */  $item['image']; ?>');">
+                        </figure>
+                        <h4><?= /* @noEscape */  $item['url_key']; ?></h4>
+                    </a>
+                </li>
             <?php endforeach; ?>
         </ul>
     </div>
 </section>
 
-
-
-<!--<section class="top-category-section">-->
-<!--    <div class="page-main">-->
-<!--        <div class="content-heading">-->
-<!--            <h2 class="title">Top Categories</h2>-->
-<!--        </div>-->
-<!--        <ul class="owl-theme top-category-slider">-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category1.jpg');"> </figure>-->
-<!--                    <h4>Kurta</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category2.jpg');"> </figure>-->
-<!--                    <h4>Hand Bags</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category3.jpg');"> </figure>-->
-<!--                    <h4>Watches</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category4.jpg');"> </figure>-->
-<!--                    <h4>Earphones</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category5.jpg');"> </figure>-->
-<!--                    <h4>T-Shirt</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category6.jpg');"> </figure>-->
-<!--                    <h4>Shoes</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category7.jpg');"> </figure>-->
-<!--                    <h4>jeans</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category8.jpg');"> </figure>-->
-<!--                    <h4>tops</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="top-category-list">-->
-<!--                <a href="#">-->
-<!--                    <figure class="top-category-image" style="background-image: url('images/top-category-image/category9.jpg');"> </figure>-->
-<!--                    <h4>sarees</h4>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</section>-->

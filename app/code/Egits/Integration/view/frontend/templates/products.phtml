@@ -7,47 +7,13 @@ $blockobj = $block->getLayout()->createBlock(Products::class);
 $priceobj = $block->getLayout()->createBlock(Utilities::class);
 
 
-$products = $blockobj->getDataForPHTML();
+$products =  $blockobj->getDataForPHTML();
 
 $configurableProductId = 2098;
-// $simpleProducts[] = $blockobj->getSimpleProductsFromConfigurable($configurableProductId);
-// $colorOptions = $blockobj->getColorOptionsFromSimpleProducts('2105');
 
-// foreach ($products as $product) {
-//     $productId = $blockobj->getProductId($product);
-//     $simpleProductId = $blockobj->getSimpleProducts($productId);
-//     var_dump($simpleProductId);
-// }
-
-
-// foreach ($products as $configurableProduct) {
-//     $configurableProductId = $configurableProduct->getId();
-//     if ($configurableProductId) {
-//         $configurableProductIds[] = $configurableProductId;
-//     }
-// }
-
-
-
-
-//var_dump($configurableProductIds);
-
-
-
-
-// var_dump($simpleProducts);
-//$productimage = $blockobj->getImageUrlFromPath($products[0]['image']);
-
-//var_dump($products->getData());
-// var_dump($products);
-// dd();
-//var_dump($productimage);
-//dd();
-// echo $products;
-//var_dump($category);
 ?>
 
-<script type="text/javascript">
+<script>
     require(['jquery', 'label'], function($) {
         $('.product-carousel-class').owlCarousel({
             loop: true,
@@ -86,8 +52,9 @@ $configurableProductId = 2098;
         <div class="block widget block-products-list grid">
             <div class="block-content">
                 <div class="products-grid grid">
-                    <ol class="product-items widget-product-grid owl-carousel product-carousel-class owl-theme product-carousel ">
-                        <?php foreach ($products as $product) :
+                    <ol class="product-items widget-product-grid owl-carousel product-carousel-class owl-theme
+                    product-carousel ">
+                        <?php foreach ($products as $product):
 
                             // $colors = [];
                             ////                            var_dump($product['entity_id']);
@@ -117,42 +84,59 @@ $configurableProductId = 2098;
                             // $color2 = $colors[1];
                             // $color3 = $colors[2];
 
-                        ?>
+                            ?>
                             <li class="product-item">
                                 <div class="product-item-info">
-                                    <a href="<?= $productUrl ?>" class="product-item-photo">
+                                    <a href="<?= /* @noEscape */  $productUrl ?>" class="product-item-photo">
                                         <span class="product-image-container product-image-container-1562">
                                             <span class="product-image-wrapper" style="padding-bottom: 125%;">
-                                                <img class="product-image-photo" src="<?= $productimage ?>"></span>
+                                                <img class="product-image-photo"
+                                                     src="<?= /* @noEscape */  $productimage ?>">
+                                            </span>
                                         </span>
                                     </a>
                                     <div class="product-item-details">
                                         <strong class="product-item-name">
-                                            <a title="Radiant Tee" href="<?= $productUrl  ?>" class="product-item-link">
-                                                <?php echo $product['name']; ?> </a>
+                                            <a title="Radiant Tee"
+                                               href="<?= /* @noEscape */  $productUrl  ?>"
+                                               class="product-item-link">
+                                                <?= /* @noEscape */  $product['name']; ?> </a>
                                         </strong>
-                                        <div class="price-box price-final_price" data-role="priceBox" data-product-id="1562" data-price-box="product-id-1562">
+                                        <div class="price-box price-final_price"
+                                             data-role="priceBox" data-product-id="1562"
+                                             data-price-box="product-id-1562">
                                             <span class="old-price">
-                                                <span><?php echo $convertedPrice ?></span>
+                                                <span><?= /* @noEscape */ $convertedPrice ?></span>
                                             </span>
                                             <span class="normal-price">
                                                 <span class="price-container price-final_price tax weee">
-                                                    <span id="old-price-1562-widget-product-grid" data-price-amount="22" data-price-type="finalPrice" class="price-wrapper "><span class="price"><?= $convertedSpecialPrice ?></span></span>
+                                                    <span id="old-price-1562-widget-product-grid"
+                                                          data-price-amount="22" data-price-type="finalPrice"
+                                                          class="price-wrapper ">
+                                                        <span class="price">
+                                                            <?= /* @noEscape */  $convertedSpecialPrice ?>
+                                                        </span>
+                                                    </span>
                                                 </span>
                                             </span>
 
                                         </div>
-                                        <div class="swatch-opt-1562" data-role="swatch-option-1562" data-rendered="true">
-                                            <!-- <div class="swatch-attribute size" data-attribute-code="size" data-attribute-id="144">
+                                        <div class="swatch-opt-1562"
+                                             data-role="swatch-option-1562" data-rendered="true">
 
-                                            </div> -->
-                                            <!-- <div class="swatch-attribute color" data-attribute-code="color" data-attribute-id="93"> -->
-                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false" aria-required="true" role="listbox" aria-label="Color" class="swatch-attribute-options clearfix">
-                                                <?php foreach ($simpleProductArray as $product) :
+                                            <div aria-activedescendant="" tabindex="0" aria-invalid="false"
+                                                 aria-required="true" role="listbox" aria-label="Color"
+                                                 class="swatch-attribute-options clearfix">
+                                                <?php foreach ($simpleProductArray as $product):
                                                     $color = $product['color'];
                                                     $swatchId = $product['entity_id'];
-                                                ?>
-                                                    <button id="<?= $swatchId ?>" data-swatch-data-id="<?= $swatchId ?>" data-swatch-form-key="<?= $formKey ?>" class="swatch-option color" style="background: <?= $color ?> no-repeat center;">
+                                                    ?>
+                                                    <button id="<?= /* @noEscape */  $swatchId ?>"
+                                                            data-swatch-data-id="<?= /* @noEscape */ $swatchId ?>"
+                                                            data-swatch-form-key="<?= /* @noEscape */  $formKey ?>"
+                                                            class="swatch-option color"
+                                                            style="background: <?= /* @noEscape */  $color ?>
+                                                                no-repeat center;">
                                                     </button>
                                                 <?php endforeach; ?>
                                             </div>
@@ -161,18 +145,39 @@ $configurableProductId = 2098;
                                         <div class="product-item-inner">
                                             <div class="product-item-actions">
                                                 <div class="actions-primary">
-                                                    <form data-role="tocart-form" data-product-sku="WS12" action="#" method="post">
+                                                    <form data-role="tocart-form" data-product-sku="WS12"
+                                                          action="#" method="post">
                                                         <input type="hidden" name="product" value="1562">
-                                                        <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
+                                                        <input type="hidden" name="uenc" value="aHR0cHM6Ly9tYWdlbnRv
+                                                        Lm51Ymx1ZS5jby51ay9jaGVja291dC9jYXJ0L2FkZC91ZW5jL2FIUjBjSE02THk
+                                                        5dFlXZGxiblJ2TG01MVlteDFaUzVqYnk1MWF5OCUyQy9wcm9kdWN0LzE1NjIv">
                                                         <input name="form_key" type="hidden" value="njfb4cUiqt9DIdtW">
-                                                        <button id="product-add-to-cart-button-<?= $productId ?>" data-cart-form-key="<?= $formKey ?>" data-product-cart-entity-id="<?= $productId ?>" title="Add to Cart" class="action tocart primary">
+                                                        <button id="product-add-to-cart-button-<?= /* @noEscape */
+                                                        $productId ?>"
+                                                                data-cart-form-key="<?= /* @noEscape */  $formKey ?>"
+                                                                data-product-cart-entity-id="<?=/* @noEscape */
+                                                                $productId ?>" title="Add to Cart"
+                                                                class="action tocart primary">
                                                             <span>Add to Cart</span>
                                                         </button>
-                                                        <input class="swatch-input super-attribute-select" name="super_attribute[144]" type="text" value="" data-selector="super_attribute[144]" data-validate="{required: true}" aria-required="true" aria-invalid="false"><input class="swatch-input super-attribute-select" name="super_attribute[93]" type="text" value="" data-selector="super_attribute[93]" data-validate="{required: true}" aria-required="true" aria-invalid="false">
+                                                        <input class="swatch-input super-attribute-select"
+                                                               name="super_attribute[144]" type="text" value=""
+                                                               data-selector="super_attribute[144]"
+                                                               data-validate="{required: true}" aria-required="true"
+                                                               aria-invalid="false">
+                                                        <input class="swatch-input super-attribute-select"
+                                                               name="super_attribute[93]" type="text" value=""
+                                                               data-selector="super_attribute[93]"
+                                                               data-validate="{required: true}" aria-required="true"
+                                                               aria-invalid="false">
                                                     </form>
                                                 </div>
                                                 <div class="actions-secondary" data-role="add-to-links">
-                                                    <button id="wish-list-button" data-form-key="<?= $formKey ?>" data-product-entity-id="<?= $productId ?>" class="wishlist-button action towishlist" data-action="add-to-wishlist" title="Add to Wish List">
+                                                    <button id="wish-list-button"
+                                                            data-form-key="<?= /* @noEscape */  $formKey ?>"
+                                                            data-product-entity-id="<?= /* @noEscape */  $productId ?>"
+                                                            class="wishlist-button action towishlist"
+                                                            data-action="add-to-wishlist" title="Add to Wish List">
                                                         <span>Add to Wish List</span>
                                                     </button>
                                                 </div>

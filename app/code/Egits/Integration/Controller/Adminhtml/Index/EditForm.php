@@ -11,31 +11,48 @@ use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 
 // use Magento\Framework\Message\ManagerInterface;
-
+/**
+ * This class is the controller for the new form used to edit the top brands data
+ *
+ */
 class EditForm extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGetActionInterface
 {
     /**
+     * An instance of the page factory
+     *
      * @var \Magento\Framework\View\Result\PageFactory
      */
     protected $resultPageFactory;
 
+    /**
+     * An instance of the post factory
+     *
+     * @var \Egits\Integration\Model\PostFactory
+     */
     private $postFactory;
 
+    /**
+     * An instance of the core registry
+     *
+     * @var \Magento\Framework\Registry
+     */
     private $coreRegistry;
 
     // protected $messageManager;
 
     /**
+     * The default construct method for the class
+     *
      * @param \Magento\Backend\App\Action\Context $context
      * @param \Magento\Framework\Registry $coreRegistry
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
-     * @param ManagerInterface $messageManager
+     * @param \Egits\Integration\Model\PostFactory $postFactory
      */
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\Registry $coreRegistry,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \Egits\Integration\Model\PostFactory $postFactory,
+        \Egits\Integration\Model\PostFactory $postFactory
     ) {
         $this->resultPageFactory = $resultPageFactory;
         $this->postFactory = $postFactory;
@@ -45,19 +62,10 @@ class EditForm extends \Magento\Cms\Controller\Adminhtml\Block implements HttpGe
     }
 
     /**
-     * Index action
+     * This default execute method for edit form
      *
-     * @return \Magento\Framework\Controller\ResultInterface
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface|void
      */
-    // public function execute()
-    // {
-    //     $rowId = (int) $this->getRequest()->getParam('id');
-    //     $rowData = $this->postFactory->create();
-    //     $resultPage = $this->resultPageFactory->create();
-    //     $resultPage->getConfig()->getTitle()->prepend((__('Edit Brand Page')));
-    //     return $resultPage;
-    // }
-
     public function execute()
     {
         $rowId = (int) $this->getRequest()->getParam('id');

@@ -9,12 +9,40 @@ use Egits\Integration\Model\ResourceModel\Post as PostResource;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\App\Action\Action;
 
+/**
+ * Class that does the save action
+ *
+ * @param Egits\Integration\Controller\Adminhtml\Index
+ */
 class Save extends Action
 {
+    /**
+     * Holds an instance of the post resource class
+     *
+     * @var PostResource
+     */
     protected $postResource;
+    /**
+     * Holds and instance of the page factory
+     *
+     * @var PageFactory
+     */
     protected $resultPageFactory;
+    /**
+     * Holds an instance of the collection factory
+     *
+     * @var $collectionFactory
+     */
     protected $collectionFactory;
 
+    /**
+     * Save constructor.
+     *
+     * @param Context $context
+     * @param PostResource $postResource
+     * @param PageFactory $resultPageFactory
+     * @param PostFactory $collectionFactory
+     */
     public function __construct(
         Context $context,
         PostResource $postResource,
@@ -27,6 +55,12 @@ class Save extends Action
         parent::__construct($context);
     }
 
+    /**
+     * The execute method used for saving the data
+     *
+     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\ResultInterface
+     * @throws \Magento\Framework\Exception\AlreadyExistsException
+     */
     public function execute()
     {
 

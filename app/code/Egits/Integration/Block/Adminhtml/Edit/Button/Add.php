@@ -7,6 +7,11 @@ use Magento\Ui\Component\Control\Container;
 
 class Add extends Generic implements ButtonProviderInterface
 {
+    /**
+     * This function creates the add button
+     *
+     * @return array
+     */
     public function getButtonData()
     {
         return [

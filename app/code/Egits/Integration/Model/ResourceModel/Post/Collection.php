@@ -15,7 +15,8 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
      */
     protected function _construct()
     {
-        $this->_init('Egits\Integration\Model\Post', 'Egits\Integration\Model\ResourceModel\Post');
+
+        $this->_init('Egits\Integration\Model\Post::class', 'Egits\Integration\Model\ResourceModel\Post::class');
     }
 
     // public function addTable2Join()

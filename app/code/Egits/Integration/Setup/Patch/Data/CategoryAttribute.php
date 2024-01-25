@@ -34,7 +34,7 @@ class CategoryAttribute implements DataPatchInterface
     private $moduleDataSetup;
 
     /**
-     * EavSetupFactory
+     * This eavsetupfactory is used to add a new attribute programmatically
      *
      * @var EavSetupFactory
      */
@@ -53,11 +53,15 @@ class CategoryAttribute implements DataPatchInterface
     }
 
     /**
-     * {@inheritdoc}
+     * This function is what applies the patch
+     *
+     * @return DataPatchInterface|void
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Validator\ValidateException
      */
     public function apply()
     {
-        /** @var EavSetup $eavSetup */
+
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
 
         $eavSetup->addAttribute(Category::ENTITY, 'enable_category', [
@@ -73,7 +77,9 @@ class CategoryAttribute implements DataPatchInterface
     }
 
     /**
-     * {@inheritdoc}
+     * This function returns the dependencies
+     *
+     * @return array|string[]
      */
     public static function getDependencies()
     {
@@ -81,7 +87,9 @@ class CategoryAttribute implements DataPatchInterface
     }
 
     /**
-     * {@inheritdoc}
+     * This function returns the aliases
+     *
+     * @return array|string[]
      */
     public function getAliases()
     {

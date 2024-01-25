@@ -8,25 +8,37 @@ use Egits\Integration\Model\PostFactory;
 
 class Thumbnail extends \Magento\Ui\Component\Listing\Columns\Column
 {
-    const NAME = 'thumbnail';
+    public const NAME = 'thumbnail';
 
-    const ALT_FIELD = 'name';
+    public const ALT_FIELD = 'name';
 
     /**
-     * @var \Egits\Integration\Model\Hello\Image
+     * This variable holds an instance of the image helper
+     *
+     * @var $imageHelper
      */
     protected $imageHelper;
 
     /**
-     * @var \Magento\Framework\UrlInterface
+     * This variable holds an instance of the URL builder
+     *
+     * @var $urlBuilder
      */
     protected $urlBuilder;
+    /**
+     * This is an instance of the post factory class
+     *
+     * @var $postFactory
+     */
     protected $postFactory;
 
     /**
+     * Thumbnail constructor.
+     *
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
-     * @param \Egits\Integration\Model\Image\Image $imageHelper
+     * @param \Egits\Integration\Model\Image $imageHelper
+     * @param \Egits\Integration\Model\Post $postFactory
      * @param \Magento\Framework\UrlInterface $urlBuilder
      * @param array $components
      * @param array $data
@@ -38,7 +50,7 @@ class Thumbnail extends \Magento\Ui\Component\Listing\Columns\Column
         \Egits\Integration\Model\Post $postFactory,
         \Magento\Framework\UrlInterface $urlBuilder,
         array $components = [],
-        array $data = [],
+        array $data = []
     ) {
         parent::__construct($context, $uiComponentFactory, $components, $data);
         $this->imageHelper = $imageHelper;
@@ -46,7 +58,7 @@ class Thumbnail extends \Magento\Ui\Component\Listing\Columns\Column
         $this->postFactory = $postFactory;
     }
 
-    /**s
+    /**
      * Prepare Data Source
      *
      * @param array $dataSource
@@ -72,8 +84,9 @@ class Thumbnail extends \Magento\Ui\Component\Listing\Columns\Column
     }
 
     /**
-     * @param array $row
+     * This function is used to check and update the field
      *
+     * @param array $row
      * @return null|string
      */
     protected function getAlt($row)

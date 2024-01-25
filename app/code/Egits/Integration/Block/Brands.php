@@ -7,7 +7,20 @@ use Egits\Integration\Model\ResourceModel\Post\CollectionFactory;
 
 class Brands extends Template
 {
+    /**
+     * This variable holds an instance of the collection factory
+     *
+     * @var CollectionFactory
+     */
     protected $brandsCollection;
+
+    /**
+     * Brands constructor.
+     *
+     * @param Template\Context $context
+     * @param CollectionFactory $brandsCollection
+     * @param array $data
+     */
     public function __construct(
         Template\Context $context,
         CollectionFactory $brandsCollection,
@@ -16,23 +29,25 @@ class Brands extends Template
         $this->brandsCollection = $brandsCollection;
         parent::__construct($context, $data);
     }
+
+    /**
+     * This function returns the data for the phtml
+     *
+     * @return \Egits\Integration\Model\ResourceModel\Post\Collection
+     */
     public function getDataForPHTML()
     {
         $brands = $this->brandsCollection->create();
 
-        // return "brands collection";
-        // $categories->addAttributeToSelect('*');
-        // $categories->addAttributeToFilter('enable_category', 1);
-        // foreach ($brands as $brand) {
-
-        //     //            var_dump($category->getData());
-        //     //            dd();
-        //     $collection[] = $brand->getData();
-        // }
-
         return $brands;
     }
 
+    /**
+     * This function returns the url for the brand
+     *
+     * @param array $brand
+     * @return mixed
+     */
     public function getUrlForBrand($brand)
     {
         return $brand->getProductURL();
